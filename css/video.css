@@ -1,0 +1,29 @@
+
+.plyr__control--overlaid{
+    background: rgba(0,114,58,.8)
+}
+.plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded=true]{
+    background: #00723A;
+}
+.plyr--full-ui input[type=range]{
+    color: #00723A;
+}
+.plyr {
+    height: 210px;
+}
+.plyr__poster{
+    background-size: cover;
+}
+
+.featured-project .inner-box {
+    margin:  0 10px;
+}
+.featured-project .inner-box .image-box{
+    height: 261px;
+}
+.featured-project .inner-box img{
+    height: 261px;
+}
+.video-owl .default-featured-column{
+    margin: 0 10px;
+}

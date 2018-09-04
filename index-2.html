@@ -30,6 +30,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link href="css/bootstrap-margin-padding.css" rel="stylesheet">
 <link href="css/responsive.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.plyr.io/3.4.3/plyr.css">
+<link href="css/video.css" rel="stylesheet">
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
@@ -37,8 +40,6 @@
 <body>
 <div class="page-wrapper">
  	
-    <!-- Preloader -->
-    <div class="preloader"></div>
 
     <!-- Header Style Two-->
     <header class="header-style-two">
@@ -250,21 +251,108 @@
             </div>
         </div>
     </section>
-    
+    <!--Recent Causes Section-->
+    <section class="recent-projects">
+        <div class="auto-container">
+            
+            <div class="sec-title clearfix">
+                <div class="pull-left">
+                    <h2><span class="normal-font theme_color"><b>Projectos</b></span> Recientes </h2>
+                    <div class="text">Una videoteca especializada en temas de desarrollo con más de 2,500 títulos.</div>
+                </div>
+                <div class="pull-right padd-top-30">
+                    <a href="#" class="theme-btn btn-style-two">Videoteca</a>
+                </div>
+            </div>
+            <div class="video-owl owl-carousel owl-nav-style owl-nav3">
+                
+                <!--Default Featured Column-->
+                <div class="column default-featured-column style-two">
+                    <article class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
+                        <div id="player" class="js-player" data-plyr-provider="youtube" data-plyr-embed-id="EWy3jBXhOG8"></div>
+                        <div class="content-box">
+                            <h3><a href="#">Soñando despiertas (SUB español)</a></h3>
+                        </div>
+                    </article>
+                </div>
+                
+                <!--Default Featured Column-->
+                <div class="column default-featured-column style-two">
+                    <article class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
+                        <div id="player" class="js-player" data-plyr-provider="vimeo" data-plyr-embed-id="250685597"></div>
+                        <div class="content-box">
+                            <h3><a href="#">Nica Libre</a></h3>
+                        </div>
+                    </article>
+                </div>
+                <!--Default Featured Column-->
+                <div class="column default-featured-column style-two">
+                    <article class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
+                        <div id="player" class="js-player" data-plyr-provider="youtube" data-plyr-embed-id="zlnJCRZ-T24"></div>
+                        <div class="content-box">
+                            <h3><a href="#">Muy Machos</a></h3>
+                        </div>
+                    </article>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
     <!--Events Section-->
     <section class="welcome-section pt-50 pb-60" data-bac="#fcfcfc">
         <div class="auto-container">
 
             <div class="row clearfix">
                 
+                
+                
+                <!--Featured Column-->
+                <div class="column default-featured-column style-three col-lg-8 col-md-6 col-sm-6 col-xs-12">
+                    <h4 class="inner-title double-line line-left"><span class="theme_color">Noticias</span> Recientes</h4>
+                    <div class="blog-news-column featured-project owl-carousel owl-nav-style owl-nav3">
+                        <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <figure class="image-box">
+                                <a href="#"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></a>
+                                <div class="news-date">22<span class="month">SEP</span></div>
+                            </figure>
+                            <div class="content-box">
+                                <h3><a href="#">Red Global por los DDHH y de las Mujeres</a></h3>
+                                <div class="post-info clearfix">
+                                    <div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
+                                </div>
+                                <div class="text">En el marco del proyecto "Construyendo Sinergias para una Red Global por los DDHH y de las Mujeres"...</div>
+                                <a href="#" class="theme-btn btn-style-two btn-sm">Leer más</a>
+                            </div>
+                        </article>
+                        
+                        <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <figure class="image-box">
+                                <a href="#"><img src="http://fundacionluciernaga.org/fem1(3).jpg" alt=""></a>
+                                <div class="news-date">22<span class="month">SEP</span></div>
+                            </figure>
+                            <div class="content-box">
+                                <h3><a href="#">Dia de acción por la vida de las mujeres</a></h3>
+                                <div class="post-info clearfix">
+                                    <div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
+                                </div>
+                                <div class="text">Por la vida de las mujeres ¡Ni una menos!, así fue denominado el día nacional de acción de gracia por la vida...</div>
+                                <a href="#" class="theme-btn btn-style-two btn-sm">Leer más</a>
+                            </div>
+                        </article
+                         <!--News Column-->
+
+                    </div>
+                </div>
+                
                 <!--Cause Column-->
                 <div class="column default-featured-column links-column col-lg-4 col-md-12">
                     <article class="inner-box mb-md-60">
-                        <h4 class="inner-title double-line line-left">Upcoming Event</h4>
                         <div class="vertical-links-outer events-post">
                             <div class="text-uppercase p-20 mb-5" data-bac="#393d42">
-                                <h2 class="white_color fw-b fs-24 mr-xs-80 mr-xxs-0">Join <span class="theme_color">our event</span> &amp; helping us by donation</h2>
+                                <h2 class="white_color fw-b fs-24 mr-xs-80 mr-xxs-0">Proximos eventos de <span class="theme_color">Luciernaga</span></h2>
                             </div>
+
 
                             <div class="bx-event-carousel-style2">
                                 <div class="link-block">
@@ -392,160 +480,20 @@
                     </article>
                 </div>
                 
-                <!--Featured Column-->
-                <div class="column default-featured-column style-three col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <h4 class="inner-title double-line line-left">Featured Project</h4>
-                    <div class="featured-project owl-carousel owl-nav-style owl-nav3">
-                        <article class="inner-box mb-xs-60">
-                            <figure class="image-box">
-                                <a href="#"><img src="images/resource/causes-u1.jpg" alt=""></a>
-                                <div class="post-tag">Urgent Cause</div>
-                            </figure>
-                            <div class="content-box">
-                                <h3><a href="#">Charity For Education</a></h3>
-                                <div class="column-info"><span class="raised-amount">Raised: $1890</span> Goal: $2500</div>
-                                <div class="text">Lorem ipsum dolor sit amet, eu qui modo expeten dis reformidans, ex sit appetere sententiae.. </div>
-                                <a href="#" class="theme-btn btn-style-two btn-sm mr-10">Donate Now</a>
-                                <a href="#" class="theme-btn btn-style-four btn-sm">Read More</a>
-                            </div>
-                        </article>
-                        <article class="inner-box mb-xs-60">
-                            <figure class="image-box">
-                                <a href="#"><img src="images/resource/causes-u1.jpg" alt=""></a>
-                                <div class="post-tag">Urgent Cause</div>
-                            </figure>
-                            <div class="content-box">
-                                <h3><a href="#">Urgent Clothe Needed</a></h3>
-                                <div class="column-info"><span class="raised-amount">Raised: $1890</span> Goal: $2500</div>
-                                <div class="text">Lorem ipsum dolor sit amet, eu qui modo expeten dis reformidans, ex sit appetere sententiae.. </div>
-                                <a href="#" class="theme-btn btn-style-two btn-sm mr-10">Donate Now</a>
-                                <a href="#" class="theme-btn btn-style-four btn-sm">Read More</a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                
-                <!--Featured Column-->
-                <div class="column default-featured-column style-three col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <h4 class="inner-title double-line line-left">Became a Volunteer</h4>
-                    <article class="inner-box mb-xs-60">
-                        <figure class="image-box">
-                            <a href="#"><img src="images/resource/team-image-b1.jpg" alt=""></a>
-                            <div class="post-tag"><span class="black_color roboto-font">30000+</span> Volunteer</div>
-                        </figure>
-                        <div class="content-box">
-                            <h3><a href="#">Meet Our Volunteers</a></h3>
-                            <div class="column-info">Join Our Volunteer & Helping Us</div>
-                            <div class="text">Lorem ipsum dolor sit amet, eu qui modo expeten dis reformidans, ex sit appetere sententiae.. </div>
-                            <a href="#" class="theme-btn btn-style-two btn-sm mr-10">Join With Us</a>
-                            <a href="#" class="theme-btn btn-style-four btn-sm">Volunteer</a>
-                        </div>
-                    </article>
-                </div>
-                
                 
             </div>
         </div>
     </section>
 
-    <!--Recent Causes Section-->
-    <section class="recent-projects">
-        <div class="auto-container">
-            
-            <div class="sec-title clearfix">
-                <div class="pull-left">
-                    <h2>Recent <span class="normal-font theme_color">Causes</span></h2>
-                    <div class="text">Lorem ipsum dolor sit amet, cum at inani interesset, nisl fugit munere ad mel,vix an omnium dolor amet </div>
-                </div>
-                <div class="pull-right padd-top-30">
-                    <a href="#" class="theme-btn btn-style-three">See All Projects</a>
-                </div>
-            </div>
-            <div class="row clearfix">
-                
-                <!--Default Featured Column-->
-                <div class="column default-featured-column style-two col-md-4 col-sm-4 col-xs-12">
-                    <article class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
-                        <figure class="image-box">
-                            <a href="#"><img src="images/causes/1.jpg" alt=""></a>
-                            <div class="donate-piechart">
-                              <div class="piechart-block">
-                                <div class="piechart style-one"  data-fg-color="rgba(250,119,68,1)" data-value=".75">
-                                  <span>.75</span>
-                                </div>
-                              </div>
-                            </div>
-                        </figure>
-                        <div class="content-box">
-                            <h3><a href="#">Charity For Education</a></h3>
-                            <div class="column-info"><span class="raised-amount">Raised: $1890</span> Goal: $2500</div>
-                            <div class="text">Lorem ipsum dolor sit amet et siu amet amet audiam copiosaei mei.</div>
-                            <a href="#" class="theme-btn btn-style-four btn-sm mr-10">Donate Now</a>
-                            <a href="#" class="theme-btn btn-style-two btn-sm">Read More</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <!--Default Featured Column-->
-                <div class="column default-featured-column style-two col-md-4 col-sm-4 col-xs-12">
-                    <article class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
-                        <figure class="image-box">
-                            <a href="#"><img src="images/causes/2.jpg" alt=""></a>
-                            <div class="donate-piechart">
-                              <div class="piechart-block">
-                                <div class="piechart style-one"  data-fg-color="rgba(250,119,68,1)" data-value=".65">
-                                  <span>.65</span>
-                                </div>
-                              </div>
-                            </div>
-                        </figure>
-                        <div class="content-box">
-                            <h3><a href="#">Charity For Education</a></h3>
-                            <div class="column-info"><span class="raised-amount">Raised: $1890</span> Goal: $2500</div>
-                            <div class="text">Lorem ipsum dolor sit amet et siu amet amet audiam copiosaei mei.</div>
-                            <a href="#" class="theme-btn btn-style-four btn-sm mr-10">Donate Now</a>
-                            <a href="#" class="theme-btn btn-style-two btn-sm">Read More</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <!--Default Featured Column-->
-                <div class="column default-featured-column style-two col-md-4 col-sm-4 col-xs-12">
-                    <article class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
-                        <figure class="image-box">
-                            <a href="#"><img src="images/causes/3.jpg" alt=""></a>
-                            <div class="donate-piechart">
-                              <div class="piechart-block">
-                                <div class="piechart style-one"  data-fg-color="rgba(250,119,68,1)" data-value=".85">
-                                  <span>.85</span>
-                                </div>
-                              </div>
-                            </div>
-                        </figure>
-                        <div class="content-box">
-                            <h3><a href="#">Charity For Education</a></h3>
-                            <div class="column-info"><span class="raised-amount">Raised: $1890</span> Goal: $2500</div>
-                            <div class="text">Lorem ipsum dolor sit amet et siu amet amet audiam copiosaei mei.</div>
-                            <a href="#" class="theme-btn btn-style-four btn-sm mr-10">Donate Now</a>
-                            <a href="#" class="theme-btn btn-style-two btn-sm">Read More</a>
-                        </div>
-                    </article>
-                </div>
-                
-            </div>
-        </div>
-    </section>
     
     <!--Main Features-->
-    <section class="main-features parallax-section theme-overlay overlay-deep-white" style="background-image:url(images/parallax/image-1.jpg);">
+    <section class="main-features parallax-section theme-overlay overlay-deep-white" style="background-image:url(http://fundacionluciernaga.org/img.php?i=files/59d4ee99ca2cad34bb3fdaff5cfb8d9e130.jpg&width=1024);">
         <div class="auto-container">
             <div class="title-box text-center mb-0">
-                <h1 class="fs-36 mb-15">Charity For Education</h1>
-                <h2>Working With US by helping & donation</h2>
-                <div class="text">Lorem ipsum dolor sit amet, pro in harum aperiri persecuti, eu mea minim platonem, mea cetero intellegam eu. Mel ferri</div>
+                <h1 class="fs-36 mb-15">Red Centro America de Comunicación</h1>
+                <h2>Contennido audiovisual para el ejercicio de los derechos humanos</h2>
                 <div class="">
-                    <a class="theme-btn btn-style-four" href="#">Join With Us</a>
-                    <a class="theme-btn btn-style-two" href="#">Donate Now</a>
+                    <a class="theme-btn btn-style-two" href="#">Visitar sitio</a>
                 </div>
             </div>
         </div>
@@ -732,218 +680,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!--Team Section-->
-    <section class="team-section">
-        <div class="auto-container">
-            <div class="sec-title clearfix">
-                <div class="pull-left">
-                    <h2>Meet <span class="normal-font theme_color">Volunteers</span></h2>
-                    <div class="text">Lorem ipsum dolor sit amet, cum at inani interesset, nisl fugit munere ad mel,vix an omnium dolor amet </div>
-                </div>
-                <div class="pull-right padd-top-30">
-                    <a class="theme-btn btn-style-three" href="#">See All Volunteers</a>
-                </div>
-            </div>
-            
-            <div class="row clearfix">
-                
-                <!--Column-->
-                <article class="column team-member col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image"><a href="mailto:mail@email.com"><img src="images/resource/team-image-1.jpg" alt=""></a></figure>
-                        <div class="member-info">
-                            <h3>Onnonto Jolil</h3>
-                            <div class="designation">Senior Worker</div>
-                        </div>
-                        <div class="content">
-                            <div class="text"><p>Cras dapibus. Vivamus element modo semper Aenean vulementum semper Aenean vulputate set tellus.</p></div>
-                            <div class="social-links">
-                                <a href="#"><span class="fa fa-facebook-f"></span></a>
-                                <a href="#"><span class="fa fa-twitter"></span></a>
-                                <a href="#"><span class="fa fa-google-plus"></span></a>
-                                <a href="#"><span class="fa fa-linkedin"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                
-                <!--Column-->
-                <article class="column team-member col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image"><a href="mailto:mail@email.com"><img src="images/resource/team-image-2.jpg" alt=""></a></figure>
-                        <div class="member-info">
-                            <h3>Jannatul Ferdaous</h3>
-                            <div class="designation">Senior Worker</div>
-                        </div>
-                        <div class="content">
-                            <div class="text"><p>Cras dapibus. Vivamus element modo semper Aenean vulementum semper Aenean vulputate set tellus.</p></div>
-                            <div class="social-links">
-                                <a href="#"><span class="fa fa-facebook-f"></span></a>
-                                <a href="#"><span class="fa fa-twitter"></span></a>
-                                <a href="#"><span class="fa fa-google-plus"></span></a>
-                                <a href="#"><span class="fa fa-linkedin"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                
-                <!--Column-->
-                <article class="column team-member col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image"><a href="mailto:mail@email.com"><img src="images/resource/team-image-3.jpg" alt=""></a></figure>
-                        <div class="member-info">
-                            <h3>Henna</h3>
-                            <div class="designation">Senior Worker</div>
-                        </div>
-                        <div class="content">
-                            <div class="text"><p>Cras dapibus. Vivamus element modo semper Aenean vulementum semper Aenean vulputate set tellus.</p></div>
-                            <div class="social-links">
-                                <a href="#"><span class="fa fa-facebook-f"></span></a>
-                                <a href="#"><span class="fa fa-twitter"></span></a>
-                                <a href="#"><span class="fa fa-google-plus"></span></a>
-                                <a href="#"><span class="fa fa-linkedin"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                
-                <!--Column-->
-                <article class="column team-member col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="900ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image"><a href="mailto:mail@email.com"><img src="images/resource/team-image-4.jpg" alt=""></a></figure>
-                        <div class="member-info">
-                            <h3>Muhibbur Rashid</h3>
-                            <div class="designation">Senior Worker</div>
-                        </div>
-                        <div class="content">
-                            <div class="text"><p>Cras dapibus. Vivamus element modo semper Aenean vulementum semper Aenean vulputate set tellus.</p></div>
-                            <div class="social-links">
-                                <a href="#"><span class="fa fa-facebook-f"></span></a>
-                                <a href="#"><span class="fa fa-twitter"></span></a>
-                                <a href="#"><span class="fa fa-google-plus"></span></a>
-                                <a href="#"><span class="fa fa-linkedin"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                
-            </div>
-            
-        </div>
-    </section>
-    
-    <!--Main Features-->
-    <section class="main-features parallax-section theme-overlay overlay-deep-white" style="background-image:url(images/parallax/image-1.jpg);">
-        <div class="auto-container">
-            <div class="title-box text-center mb-0">
-                <h1 class="text-uppercase fs-36 mb-15">Became A Part Of The World</h1>
-                <h2>Working With US by helping & donation</h2>
-                <div class="text">Lorem ipsum dolor sit amet, pro in harum aperiri persecuti, eu mea minim platonem, mea cetero intellegam eu. Mel ferri</div>
-                <div class="">
-                    <a class="theme-btn btn-style-four" href="#">Join With Us</a>
-                    <a class="theme-btn btn-style-two" href="#">Donate Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--Blog News Section-->
-    <section class="blog-news-section latest-news">
-    	<div class="auto-container">
-        	
-            <div class="sec-title text-center">
-                <h2>Latest <span class="normal-font theme_color">News</span></h2>
-                <div class="text">Lorem ipsum dolor sit amet, cum at inani interessetnisl omnium dolor amet amet qco modo cum text </div>
-            </div>
-        	<div class="row clearfix">
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                	<article class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                		<figure class="image-box">
-                        	<a href="#"><img src="images/blog/1.jpg" alt=""></a>
-                            <div class="news-date">28<span class="month">OCT</span></div>
-                        </figure>
-                        <div class="content-box">
-                        	<h3><a href="#">Lates blog post with image</a></h3>
-                        	<div class="post-info clearfix">
-                            	<div class="post-author">Posted by Rashed Kabir</div>
-                                <div class="post-options clearfix">
-                                	<a href="#" class="comments-count"><span class="icon flaticon-communication-2"></span> 6</a>
-                                    <a href="#" class="fav-count"><span class="icon flaticon-favorite-1"></span> 14</a>
-                                </div>
-                            </div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn read-more">Read More</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                	<article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                		<figure class="image-box">
-                        	<a href="#"><img src="images/blog/2.jpg" alt=""></a>
-                            <div class="news-date">22<span class="month">APR</span></div>
-                        </figure>
-                        <div class="content-box">
-                        	<h3><a href="#">Lates blog post with image</a></h3>
-                        	<div class="post-info clearfix">
-                            	<div class="post-author">Posted by Rashed Kabir</div>
-                                <div class="post-options clearfix">
-                                	<a href="#" class="comments-count"><span class="icon flaticon-communication-2"></span> 6</a>
-                                    <a href="#" class="fav-count"><span class="icon flaticon-favorite-1"></span> 14</a>
-                                </div>
-                            </div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn read-more">Read More</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <article class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <figure class="image-box">
-                            <a href="#"><img src="images/blog/3.jpg" alt=""></a>
-                            <div class="news-date">28<span class="month">OCT</span></div>
-                        </figure>
-                        <div class="content-box">
-                            <h3><a href="#">Lates blog post with image</a></h3>
-                            <div class="post-info clearfix">
-                                <div class="post-author">Posted by Rashed Kabir</div>
-                                <div class="post-options clearfix">
-                                    <a href="#" class="comments-count"><span class="icon flaticon-communication-2"></span> 6</a>
-                                    <a href="#" class="fav-count"><span class="icon flaticon-favorite-1"></span> 14</a>
-                                </div>
-                            </div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn read-more">Read More</a>
-                        </div>
-                    </article>
-                </div>
-                
-                
-            </div>
-        </div>
-    </section>
-
-    <!--Sponsors Section-->
-    <section class="sponsors-section">
-        <div class="auto-container">
-            <div class="slider-outer">
-                <!--Sponsors Slider-->
-                <ul class="sponsors-slider">
-                    <li><a href="#"><img src="images/clients/logo-1.png" alt=""></a></li>
-                    <li><a href="#"><img src="images/clients/logo-2.png" alt=""></a></li>
-                    <li><a href="#"><img src="images/clients/logo-3.png" alt=""></a></li>
-                    <li><a href="#"><img src="images/clients/logo-4.png" alt=""></a></li>
-                    <li><a href="#"><img src="images/clients/logo-5.png" alt=""></a></li>
-                </ul>
-            </div>            
         </div>
     </section>
 
@@ -1241,5 +977,8 @@
 <script src="js/jquery.countTo.js"></script>
 
 <script src="js/script.js"></script>
+<script src="https://cdn.plyr.io/3.4.3/plyr.js"></script>
+<script>const players = Plyr.setup('.js-player');</script>
+
 </body>
 </html>

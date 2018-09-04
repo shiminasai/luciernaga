@@ -242,13 +242,41 @@
 					items:1
 				},
 				600:{
-					items:1
+					items:2
 				},
 				800:{
-					items:1
+					items:2
 				},
 				1200:{
-					items:1
+					items:2
+				}
+			}
+		});    		
+	}
+	if ($('.video-owl').length) {
+		$('.video-owl').owlCarousel({
+			loop:true,
+			margin:0,
+			dots:false,
+			nav:true,
+			smartSpeed: 500,
+			autoplay: false,
+			navText: [ '<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>' ],
+			responsive:{
+				0:{
+					items:2
+				},
+				480:{
+					items:2
+				},
+				600:{
+					items:3
+				},
+				800:{
+					items:3
+				},
+				1200:{
+					items:3
 				}
 			}
 		});    		
@@ -292,7 +320,7 @@
 	        auto: false,
 	        speed: 300,
 	        mode: 'vertical',
-	        minSlides: 3,
+	        minSlides: 4,
 	        slideMargin: 20,
 	        pager: false,
 	        prevText: '<i class="fa fa-angle-left"></i>',
