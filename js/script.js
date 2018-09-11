@@ -245,6 +245,34 @@
 					items:2
 				},
 				800:{
+					items:2
+				},
+				1200:{
+					items:2
+				}
+			}
+		});    		
+	}
+	if ($('.featured-video').length) {
+		$('.featured-video').owlCarousel({
+			loop:true,
+			margin:0,
+			dots:false,
+			nav:true,
+			smartSpeed: 500,
+			autoplay: false,
+			navText: [ '<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>' ],
+			responsive:{
+				0:{
+					items:1
+				},
+				480:{
+					items:1
+				},
+				600:{
+					items:2
+				},
+				800:{
 					items:3
 				},
 				1200:{

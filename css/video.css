@@ -18,6 +18,9 @@
 .featured-project .inner-box {
     margin:  0 10px;
 }
+.featured-video .inner-box {
+    margin:  0 10px;
+}
 .featured-project .inner-box .image-box{
     height: 261px;
 }

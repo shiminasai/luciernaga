@@ -30,7 +30,7 @@
 <link href="css/bootstrap-margin-padding.css" rel="stylesheet">
 <link href="css/responsive.css" rel="stylesheet"`>
 
-
+<link rel="stylesheet" href="css/fancy/jquery.fancybox.css">
 <link href="css/video.css" rel="stylesheet">
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
@@ -134,7 +134,9 @@
             </div>
         </div>
     </section>
-    
+    <a data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0">
+      YouTube video - hide controls and info
+    </a>
     
     <!--Team Section-->
     <section class="team-section member-details">
@@ -180,7 +182,7 @@
                 <!--Featured Column-->
                 <div class="column default-featured-column style-three" data-bac="#fcfcfc">
                     <h4 class="inner-title double-line line-left">Loma <span class="theme_color">Verde</span> </h4>
-                    <div class="blog-news-column featured-project owl-video owl-nav-style owl-nav3">
+                    <div class="blog-news-column featured-video owl-video owl-nav-style owl-nav3">
                         <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
 
                             <iframe width="100%" height="auto" src="https://www.youtube.com/embed/ts8VLJaomo8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -496,10 +498,21 @@
 <script src="js/jquery.js"></script> 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.bxslider.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script>
+
 <script src="js/owl.js"></script>
 <script src="js/wow.js"></script>
+<script src="js/fancy/jquery.fancybox.js"></script>
 <script src="js/script.js"></script>
+<script type="text/javascript">
+    $('[data-fancybox]').fancybox({
+    youtube : {
+        controls : 0,
+        showinfo : 0
+    },
+    vimeo : {
+        color : 'f00'
+    }
+});
+</script>
 </body>
 </html>
