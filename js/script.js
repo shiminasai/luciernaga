@@ -245,10 +245,10 @@
 					items:2
 				},
 				800:{
-					items:2
+					items:3
 				},
 				1200:{
-					items:2
+					items:4
 				}
 			}
 		});    		

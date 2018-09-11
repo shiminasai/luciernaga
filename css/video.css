@@ -8,7 +8,7 @@
 .plyr--full-ui input[type=range]{
     color: #00723A;
 }
-.plyr {
+.default-featured-column .plyr {
     height: 210px;
 }
 .plyr__poster{
@@ -26,4 +26,7 @@
 }
 .video-owl .default-featured-column{
     margin: 0 10px;
+}
+.video_info li+li{
+	content:'•';
 }
