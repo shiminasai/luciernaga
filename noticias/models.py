@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
 from django.db import models
+from django.template import defaultfilters
 from django.contrib.auth.models import User
 
 from taggit.managers import TaggableManager
@@ -21,6 +22,7 @@ class Temas(models.Model):
 
 class Noticias(models.Model):
     titulo = models.CharField(max_length=250)
+    slug = models.SlugField(max_length=250, editable=False)
     fecha = models.DateTimeField()
     tema = models.ForeignKey('Temas',
                                                     on_delete=models.CASCADE,
@@ -31,6 +33,9 @@ class Noticias(models.Model):
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL,
                                                         on_delete=models.CASCADE,
                                                         )
+    def save(self, *args, **kwargs):
+      self.slug = defaultfilters.slugify(self.titulo)
+      super(Noticias, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.titulo
