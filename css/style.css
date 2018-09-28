@@ -1096,7 +1096,7 @@ ul,li{
 	position:relative;
 	display:block;
 	padding:8px 0px;
-	font-size:14px;
+	font-size:17px;
 	color:#444444;
 	line-height:24px;
 	text-transform:uppercase;
@@ -1303,7 +1303,7 @@ ul,li{
 .header-style-two .header-top{
 	position:relative;
 	color:#677c91;
-	padding:20px 0px;
+	padding:10px 0px;
 }
 
 .header-style-two .header-top .info-outer{
@@ -1448,7 +1448,7 @@ ul,li{
 	left:0px;
 	top:0px;
 	width:100%;
-	padding:18px 210px 18px 40px;
+	padding:18px 40px 18px 40px;
 	background:#00723A;	
 }
 
