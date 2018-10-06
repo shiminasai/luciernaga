@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'noticias',
     'eventos',
     'videoteca',
+    'configuracion',
     #third party
     'taggit',
     'sorl.thumbnail',
@@ -36,6 +37,7 @@ INSTALLED_APPS = [
     'filebrowser',
     'geoposition',
     'import_export',
+    'solo.apps.SoloAppConfig',
 ]
 
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBdQtBr_qwV2fMWrT4FrzBOziYTw2odlVo'

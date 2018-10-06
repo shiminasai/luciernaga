@@ -6,8 +6,9 @@
         <div class="tp-banner-container">
             <div class="tp-banner">
                 <ul>
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="http://fundacionluciernaga.org/Merche%20y%20Carmen%20copy.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                    <img src="http://fundacionluciernaga.org/Merche%20y%20Carmen%20copy.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
+                    {% for portada in  site_config.fotosportada_set.all %}
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/media/{{portada.foto}}"  data-saveperformance="off"  data-title="Awesome Title Here">
+                    <img src="/media/{{portada.foto}}"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
                     <div class="tp-caption sfl sfb tp-resizeme"
                     data-x="center" data-hoffset="0"
                     data-y="center" data-voffset="-20"
@@ -19,7 +20,7 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><h3 class="bg-color">Producciones audio visuales de calidad</h3>
+                    data-endeasing="Power4.easeIn"><h3 class="bg-color">{{portada.titulo|safe}}</h3>
                    </div>
                     <div class="tp-caption sfl sfb tp-resizeme text-center"
                     data-x="center" data-hoffset="0"
@@ -32,9 +33,10 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><div class="text bg-color2">Lorem ipsum dolor sit amet, debet dolore mollis his ad, ea ususoleat detraxit. <br>In vix agam moderatius. Modo partiendo.</div>
+                    data-endeasing="Power4.easeIn"><div class="text bg-color2">{{portada.descripcion|safe}}</div>
                    </div>
                 </li>
+                {% endfor %}
                 </ul>
             </div>
         </div>
