@@ -19,7 +19,7 @@ class FotosPortada(models.Model):
     sitio = models.ForeignKey(SiteConfiguration, on_delete=models.CASCADE)
     titulo = models.CharField(max_length=250)
     descripcion = models.TextField()
-    foto = models.FileField(upload_to='portada/')
+    foto = models.FileField(upload_to='fotoportada/')
 
     def __str__(self):
         return self.titulo
