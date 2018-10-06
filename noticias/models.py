@@ -27,7 +27,7 @@ class Noticias(models.Model):
     tema = models.ForeignKey('Temas',
                                                     on_delete=models.CASCADE,
                                                     )
-    portada = ImageField(upload_to='media/portadas/')
+    portada = ImageField(upload_to='portadas/')
     contenido = HTMLField()
     tags = TaggableManager()
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL,
