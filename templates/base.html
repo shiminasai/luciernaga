@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>Luciérnaga - website</title>
+<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Stylesheets -->
+<link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
+<link href="{% static 'css/revolution-slider.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link href="{% static 'css/bootstrap-margin-padding.css' %}" rel="stylesheet">
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+<link href="{% static 'css/video.css' %}" rel="stylesheet">
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+<div class="page-wrapper">
+
+    <!-- Header Style Two-->
+    <header class="header-style-two">
+        <!-- Header Top -->
+        <div class="header-top">
+            <div class="auto-container clearfix">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html"><img src="{% static 'images/logo-1.png' %}" alt="Greenture"></a>
+                 </div>
+
+                 <!--Info Outer-->
+                 <div class="info-outer">
+                    <!--Info Box-->
+                    <!-- <div class="info-box">
+                        <div class="icon"><span class="flaticon-computer"></span></div>
+                        <strong>Correo</strong>
+                        <a href="mailt:companyname@mail.com">luciernaga@gmail.com</a>
+                    </div> -->
+                    <!--Info Box-->
+                    <!-- <div class="info-box">
+                        <div class="icon"><span class="flaticon-technology-5"></span></div>
+                        <strong>Teléfonos</strong>
+                        <a class="phone" href="#">(505) 2266-0811</a>
+                    </div> -->
+                    <!--Info Box-->
+                    <div class="info-box social-box">
+                        <div class="social-links clearfix">
+                            <a href="#" class="facebook img-circle"><span class="fa fa-facebook-f"></span></a>
+                            <a href="#" class="twitter img-circle"><span class="fa fa-twitter"></span></a>
+                            <a href="#" class="google-plus img-circle"><span class="fa fa-google-plus"></span></a>
+                            <a href="#" class="vimeo img-circle"><span class="fa fa-vimeo"></span></a>
+
+                        </div>
+                    </div>
+                 </div>
+
+            </div>
+        </div><!-- Header Top End -->
+
+        <!-- Lower Part -->
+        <div class="lower-part">
+            <div class="auto-container clearfix">
+
+                <!--Outer Box-->
+                <div class="outer-box clearfix">
+
+
+
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation">
+                                <li><a href="#">Inicio</a></li>
+                                <li class="current dropdown"><a href="#">Acerca de</a>
+                                    <ul>
+                                        <li><a href="index.html">Que hacemos</a></li>
+                                        <li><a href="index-2.html">Que ofrecemos</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Casa Luciérnaga</a></li>
+                                <li><a href="#">Proyectos</a></li>
+
+                                <li><a href="#">Videoteca</a></li>
+                                <li><a href="#">Canal CA</a></li>
+                                <li><a href="">Contáctenos</a></li>
+                            </ul>
+                        </div>
+                    </nav><!-- Main Menu End-->
+
+                </div>
+            </div>
+        </div><!-- Lower Part End-->
+
+    </header><!--End Header Style Two-->
+
+    {% block content %} {% endblock%}
+    <!--Main Footer-->
+    <footer class="main-footer" style="background-image:url({% static 'materiales/img/Videoteca1.jpg' %});">
+
+        <!--Footer Upper-->
+        <div class="footer-upper">
+            <div class="auto-container">
+                <div class="row clearfix">
+
+                    <div class="col-lg-3 col-sm-6 col-xs-12 column mb-xs-50">
+                        <div class="footer-widget about-widget">
+                            <div class="logo"><a href="index.html"><img src="{% static 'images/luciernaga-01.png' %}" class="img-responsive" alt=""></a></div>
+
+
+                        </div>
+                    </div>
+                    <!--Footer Column-->
+                    <div class="col-lg-3 col-sm-6 col-xs-12 column">
+                        <div class="footer-widget contact-widget other-info">
+                            <h2>Contactos</h2>
+                            <ul class="info-box">
+                            <li class="theme_color"><span class="icon flaticon-location"></span><strong class="white_color">Dirección</strong> Reparto Bolonia, Sumedico 1 c. al Oeste, Managua, Nicaragua</li>
+                            <li class="theme_color"><span class="icon flaticon-technology-5"></span><strong class="white_color">Teléfono</strong> (505)<a href=""> 2266-0811</a>, <a href="">2268-7802</a></li>
+                            <li class="theme_color"><span class="icon flaticon-interface-1"></span><strong class="white_color">Correo</strong> <a href="mailt:luciernaga@gmail.com">luciernaga@gmail.com</a></li>
+                        </ul>
+                        <br>
+                        <div class="social-links-two clearfix">
+                                <a href="#" class="facebook img-circle"><span class="fa fa-facebook-f"></span></a>
+                                <a href="#" class="twitter img-circle"><span class="fa fa-twitter"></span></a>
+                                <a href="#" class="google-plus img-circle"><span class="fa fa-google-plus"></span></a>
+                                <a href="#" class="vimeo img-circle"><span class="fa fa-vimeo"></span></a>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--Footer Column-->
+                    <div class="col-lg-3 col-sm-6 col-xs-12 column">
+                        <h2>Links de Interés</h2>
+                        <div class="footer-widget links-widget">
+                            <ul>
+                                <li><a href="#">Videoteca</a></li>
+                                <li><a href="#">Noticia</a></li>
+                                <li><a href="#">Eventos</a></li>
+                                <li><a href="#">Acerca de</a></li>
+                                <li><a href="#">Loma verde</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <!--Footer Column-->
+                    <div class="col-lg-3 col-sm-6 col-xs-12 column">
+                        <div class="footer-widget news-widget">
+                            <h2>Últimas Noticias</h2>
+
+                            <!--News Post-->
+                            <div class="news-post">
+                                <div class="icon"></div>
+                                <div class="news-content"><figure class="image-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure><a href="#">Red Global por los DDHH y de las Mujeres</a></div>
+                                <div class="time">Agosto 28, 2018</div>
+                            </div>
+
+                            <!--News Post-->
+                            <div class="news-post">
+                                <div class="icon"></div>
+                                <div class="news-content"><figure class="image-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure><a href="#">Red Global por los DDHH y de las Mujeres</a></div>
+                                <div class="time">Agosto 28, 2018</div>
+                            </div>
+
+                            <!--News Post-->
+                            <div class="news-post">
+                                <div class="icon"></div>
+                                <div class="news-content"><figure class="image-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure><a href="#">Red Global por los DDHH y de las Mujeres</a></div>
+                                <div class="time">Agosto 28, 2018</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <!--Footer Bottom-->
+        <div class="footer-bottom">
+            <div class="auto-container clearfix">
+                <!--Copyright-->
+                <div class="copyright text-center">Todos los derechos reservados <a href="#">Fundación Luciernaga</a>. Desarollado por <a href="">SIMAS</a></div>
+            </div>
+        </div>
+
+    </footer>
+
+</div>
+<!--End pagewrapper-->
+
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target=".page-wrapper"><span class="fa fa-long-arrow-up"></span></div>
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/revolution.min.js' %}"></script>
+<script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox-media.js' %}"></script>
+<script src="{% static 'js/owl.js' %}"></script>
+<script src="{% static 'js/mixitup.js' %}"></script>
+<script src="{% static 'js/wow.js' %}"></script>
+<script src="{% static 'js/circle-progress.js' %}"></script>
+<script src="{% static 'js/jquery.appear.js' %}"></script>
+<script src="{% static 'js/jquery.countTo.js' %}"></script>
+
+<script src="{% static 'js/script.js' %}"></script>
+<script src="https://cdn.plyr.io/3.4.3/plyr.js"></script>
+<script>const players = Plyr.setup('.js-player');</script>
+
+</body>
+</html>

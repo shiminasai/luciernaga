@@ -21,6 +21,7 @@ from filebrowser.sites import site
 
 urlpatterns = [
     #path('jet/', include('jet.urls', 'jet')),
+    path('', include('noticias.urls')),
     path('admin/', admin.site.urls),
     path('admin/filebrowser/', site.urls),
     path('tinymce/', include('tinymce.urls')),
