@@ -109,35 +109,22 @@
                 <div class="column default-featured-column style-three col-lg-8 col-md-6 col-sm-6 col-xs-12">
                     <h4 class="inner-title double-line line-left"><span class="theme_color">Noticias</span> Recientes</h4>
                     <div class="blog-news-column featured-project owl-carousel owl-nav-style owl-nav3">
+                    {% for nota in noticias %}
                         <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                             <figure class="image-box">
                                 <a href="#"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></a>
-                                <div class="news-date">22<span class="month">SEP</span></div>
+                                <div class="news-date">{{nota.fecha|date:"d"}}<span class="month">{{nota.fecha|date:"M"}}</span></div>
                             </figure>
                             <div class="content-box">
-                                <h3><a href="#">Red Global por los DDHH y de las Mujeres</a></h3>
+                                <h3><a href="#">{{nota.titulo}}</a></h3>
                                 <div class="post-info clearfix">
-                                    <div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
+                                    <div class="post-author">Autor <span class="theme_color">{{nota.usuario.username}}</span></div>
                                 </div>
-                                <div class="text">En el marco del proyecto "Construyendo Sinergias para una Red Global por los DDHH y de las Mujeres"...</div>
+                                <div class="text">{{nota.contenido|safe|striptags|truncatewords:30}}.</div>
                                 <a href="#" class="theme-btn btn-style-two btn-sm">Leer más</a>
                             </div>
                         </article>
-
-                        <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                            <figure class="image-box">
-                                <a href="#"><img src="http://fundacionluciernaga.org/fem1(3).jpg" alt=""></a>
-                                <div class="news-date">22<span class="month">SEP</span></div>
-                            </figure>
-                            <div class="content-box">
-                                <h3><a href="#">Dia de acción por la vida de las mujeres</a></h3>
-                                <div class="post-info clearfix">
-                                    <div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
-                                </div>
-                                <div class="text">Por la vida de las mujeres ¡Ni una menos!, así fue denominado el día nacional de acción de gracia por la vida...</div>
-                                <a href="#" class="theme-btn btn-style-two btn-sm">Leer más</a>
-                            </div>
-                        </article
+                    {% endfor %}
                          <!--News Column-->
 
                     </div>
@@ -153,104 +140,26 @@
 
 
                             <div class="bx-event-carousel-style2">
+                            {% for evento in eventos %}
                                 <div class="link-block">
                                     <div class="default inner">
                                         <figure class="image-thumb"><img src="http://fundacionluciernaga.org/img.php?i=files/5e05d022a820a15893d719cd553a8930753.jpg&width=120" alt=""></figure>
-                                        <h4 class="title">Presentaciones Loma Verde</h4>
+                                        <h4 class="title">{{evento.titulo}}</h4>
                                         <ul class="event-held">
-                                            <li><i class="fa fa-clock-o"></i> de 9:00 am - 5:30 pm</li>
-                                            <li> <i class="fa fa-map-marker"></i>Matagalpa Parque Esquipulas</li>
+                                            <li><i class="fa fa-clock-o"></i> de {{evento.fecha_inicio|time:"P"}} - {{evento.fecha_finalizacion|time:"P"}}</li>
+                                            <li> <i class="fa fa-map-marker"></i>{{evento.lugar}}</li>
                                         </ul>
                                         <ul class="event-date">
-                                            <li class="event-day">28</li>
-                                            <li class="event-month">Aug</li>
+                                            <li class="event-day">{{evento.fecha_inicio|date:"d"}}</li>
+                                            <li class="event-month">{{evento.fecha_inicio|date:"M"}}</li>
                                         </ul>
                                     </div>
                                     <div class="alternate">
-                                        <p class="desc">Lorem ipsum dolor sit amet et siu amet sio audiam si copiosaei mei purto </p>
-                                        <a class="theme-btn btn-style-five btn-xs mr-10" href="#">Read More</a>
-                                        <a class="theme-btn btn-style-two btn-xs mr-10" href="#">Join Now</a>
+                                        <p class="desc">{{evento.descripcion|safe|striptags|truncatewords:11}}</p>
+                                        <a class="theme-btn btn-style-five btn-xs mr-10" href="#">Leer más</a>
                                     </div>
                                 </div>
-                                <div class="link-block">
-                                    <div class="default inner">
-                                        <figure class="image-thumb"><img src="http://fundacionluciernaga.org/img.php?i=files/a6cd8c717f2082b1f080c6c18578087a369.jpg&width=120" alt=""></figure>
-                                        <h4 class="title">Foro Audiovisual sobre Violencia</h4>
-                                        <ul class="event-held">
-                                            <li><i class="fa fa-clock-o"></i> de 9:00 am - 5:30 pm</li>
-                                            <li> <i class="fa fa-map-marker"></i>Matagalpa Parque Esquipulas</li>
-                                        </ul>
-                                        <ul class="event-date">
-                                            <li class="event-day">28</li>
-                                            <li class="event-month">Aug</li>
-                                        </ul>
-                                    </div>
-                                    <div class="alternate">
-                                        <p class="desc">Lorem ipsum dolor sit amet et siu amet sio audiam si copiosaei mei purto </p>
-                                        <a class="theme-btn btn-style-five btn-xs mr-10" href="#">Read More</a>
-                                        <a class="theme-btn btn-style-two btn-xs mr-10" href="#">Join Now</a>
-                                    </div>
-                                </div>
-                                <div class="link-block">
-                                    <div class="default inner">
-                                        <figure class="image-thumb"><img src="http://fundacionluciernaga.org/img.php?i=files/3c2003c3c8b386d97186fdf1de6790cc865.png&width=120" alt=""></figure>
-                                        <h4 class="title">Lanzamiento Adicción Fatal</h4>
-                                        <ul class="event-held">
-                                            <li><i class="fa fa-clock-o"></i> de 9:00 am - 5:30 pm</li>
-                                            <li> <i class="fa fa-map-marker"></i>Matagalpa Parque Esquipulas</li>
-                                        </ul>
-                                        <ul class="event-date">
-                                            <li class="event-day">28</li>
-                                            <li class="event-month">Aug</li>
-                                        </ul>
-                                    </div>
-                                    <div class="alternate">
-                                        <p class="desc">Lorem ipsum dolor sit amet et siu amet sio audiam si copiosaei mei purto </p>
-                                        <a class="theme-btn btn-style-five btn-xs mr-10" href="#">Read More</a>
-                                        <a class="theme-btn btn-style-two btn-xs mr-10" href="#">Join Now</a>
-                                    </div>
-                                </div>
-                                <div class="link-block">
-                                    <div class="default inner">
-                                        <figure class="image-thumb"><img src="http://fundacionluciernaga.org/img.php?i=files/77c388e1049645a4a472a076587994f8.jpg&width=120" alt=""></figure>
-                                        <h4 class="title">Certamen Nacional de Cine, Video y TV</h4>
-                                        <ul class="event-held">
-                                            <li><i class="fa fa-clock-o"></i> de 9:00 am - 5:30 pm</li>
-                                            <li> <i class="fa fa-map-marker"></i>Matagalpa Parque Esquipulas</li>
-                                        </ul>
-                                        <ul class="event-date">
-                                            <li class="event-day">28</li>
-                                            <li class="event-month">Aug</li>
-                                        </ul>
-                                    </div>
-                                    <div class="alternate">
-                                        <p class="desc">Lorem ipsum dolor sit amet et siu amet sio audiam si copiosaei mei purto </p>
-                                        <a class="theme-btn btn-style-five btn-xs mr-10" href="#">Read More</a>
-                                        <a class="theme-btn btn-style-two btn-xs mr-10" href="#">Join Now</a>
-                                    </div>
-                                </div>
-
-
-                                <div class="link-block">
-                                    <div class="default inner">
-                                        <figure class="image-thumb"><img src="http://fundacionluciernaga.org/img.php?i=files/3c2003c3c8b386d97186fdf1de6790cc865.png&width=120" alt=""></figure>
-                                        <h4 class="title">Lanzamiento Adicción Fatal</h4>
-                                        <ul class="event-held">
-                                            <li><i class="fa fa-clock-o"></i> de 9:00 am - 5:30 pm</li>
-                                            <li> <i class="fa fa-map-marker"></i>Matagalpa Parque Esquipulas</li>
-                                        </ul>
-                                        <ul class="event-date">
-                                            <li class="event-day">28</li>
-                                            <li class="event-month">Aug</li>
-                                        </ul>
-                                    </div>
-                                    <div class="alternate">
-                                        <p class="desc">Lorem ipsum dolor sit amet et siu amet sio audiam si copiosaei mei purto </p>
-                                        <a class="theme-btn btn-style-five btn-xs mr-10" href="#">Read More</a>
-                                        <a class="theme-btn btn-style-two btn-xs mr-10" href="#">Join Now</a>
-                                    </div>
-                                </div>
-
+                            {% endfor %}
                             </div>
 
                         </div>
