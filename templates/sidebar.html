@@ -1,0 +1,50 @@
+<!--Sidebar-->
+                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                    <aside class="sidebar">
+
+                        <!-- Search Form -->
+                        <div class="widget search-box">
+
+                            <form method="post" action="index.html">
+                                <div class="form-group">
+                                    <input type="search" name="search-field" value="" placeholder="Buscar">
+                                    <button type="submit"><span class="icon flaticon-tool-5"></span></button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <!-- Popular Categories -->
+                        <div class="widget popular-categories wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="sidebar-title"><h3>Temas</h3></div>
+
+                            <ul class="list">
+                                {% for tema in temas %}
+                                    <li><a href="#" class="pdr10">{{tema}}</a></li>
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+
+
+                        <!-- Recent Posts -->
+                        <div class="widget recent-posts wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="sidebar-title"><h3>Últimas Noticias</h3></div>
+                            {% for ultima in ultimas_noticias %}
+                                <article class="post">
+                                    <figure class="post-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure>
+                                    <h4><a href="{% url 'noticia_detail' ultima.id ultima.slug %}">{{ultima.titulo}}</a></h4>
+                                    <div class="post-info"><span class="icon flaticon-people-1"></span> Por {{ultima.usuario.username}} </div>
+                                </article>
+                            {% endfor %}
+                        </div>
+                        <!-- Popular Tags -->
+                        <div class="widget popular-tags">
+                            <div class="sidebar-title"><h3>Palabras claves</h3></div>
+                                {% for tag in object.tags.all %}
+                                     <a href="#">{{tag}}</a>
+                                {% endfor %}
+                        </div>
+                    </aside>
+                </div>
+                <!--Sidebar-->

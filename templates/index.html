@@ -33,7 +33,7 @@
                     data-elementdelay="0.01"
                     data-endelementdelay="0.3"
                     data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><div class="text bg-color2">{{portada.descripcion|safe}}</div>
+                    data-endeasing="Power4.easeIn"><div class="text bg-color2">{{portada.descripcion|safe|truncatewords:12}}</div>
                    </div>
                 </li>
                 {% endfor %}
@@ -116,12 +116,12 @@
                                 <div class="news-date">{{nota.fecha|date:"d"}}<span class="month">{{nota.fecha|date:"M"}}</span></div>
                             </figure>
                             <div class="content-box">
-                                <h3><a href="#">{{nota.titulo}}</a></h3>
+                                <h3><a href="{% url 'noticia_detail' nota.id nota.slug %}">{{nota.titulo}}</a></h3>
                                 <div class="post-info clearfix">
                                     <div class="post-author">Autor <span class="theme_color">{{nota.usuario.username}}</span></div>
                                 </div>
                                 <div class="text">{{nota.contenido|safe|striptags|truncatewords:30}}.</div>
-                                <a href="#" class="theme-btn btn-style-two btn-sm">Leer más</a>
+                                <a href="{% url 'noticia_detail' nota.id nota.slug %}" class="theme-btn btn-style-two btn-sm">Leer más</a>
                             </div>
                         </article>
                     {% endfor %}
@@ -156,7 +156,7 @@
                                     </div>
                                     <div class="alternate">
                                         <p class="desc">{{evento.descripcion|safe|striptags|truncatewords:11}}</p>
-                                        <a class="theme-btn btn-style-five btn-xs mr-10" href="#">Leer más</a>
+                                        <a class="theme-btn btn-style-five btn-xs mr-10" href="{% url 'evento_detail' evento.pk evento.slug %}">Leer más</a>
                                     </div>
                                 </div>
                             {% endfor %}

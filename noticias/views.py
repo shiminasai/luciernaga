@@ -18,3 +18,33 @@ class HomeView(TemplateView):
         context['videotecas'] = Videotecas.objects.all().order_by('-id')[:8]
 
         return context
+
+
+class NoticiasList(ListView):
+    template_name = 'lista_noticias.html'
+    model = Noticias
+
+class NoticiaDetailView(DetailView):
+    model = Noticias
+    template_name = 'blog_single.html'
+    #context_object_name = 'nota'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ultimas_noticias'] = Noticias.objects.exclude(pk=self.object.pk).order_by('-fecha')[:3]
+        context['temas'] = Temas.objects.all()
+
+        return context
+
+
+class EventoDetailView(DetailView):
+    model = Eventos
+    template_name = 'event_single.html'
+    #context_object_name = 'nota'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ultimas_noticias'] = Noticias.objects.order_by('-fecha')[:3]
+        context['temas'] = Temas.objects.all()
+
+        return context

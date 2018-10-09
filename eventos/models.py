@@ -3,12 +3,13 @@ from django.template import defaultfilters
 
 from geoposition.fields import GeopositionField
 from sorl.thumbnail import ImageField
+from taggit.managers import TaggableManager
 
 # Create your models here.
 
 class Eventos(models.Model):
     titulo = models.CharField(max_length=250)
-    slug = models.SlugField(max_length=250)
+    slug = models.SlugField(max_length=250, editable=False)
     portada = ImageField(upload_to='eventos/')
     fecha_inicio = models.DateTimeField()
     fecha_finalizacion = models.DateTimeField()
@@ -17,7 +18,8 @@ class Eventos(models.Model):
     name = models.CharField('Ciudad', max_length=100)
     position = GeopositionField()
 
-    adjunto = models.FileField(upload_to='uploads/%Y/%m/%d/')
+    adjunto = models.FileField(upload_to='uploads/%Y/%m/%d/', null=True, blank=True)
+    tags = TaggableManager()
 
     def save(self, *args, **kwargs):
       self.slug = defaultfilters.slugify(self.titulo)

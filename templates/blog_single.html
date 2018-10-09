@@ -1,153 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>CharityClub Nonprofit HTML5 Template | Blog Details Page</title>
-<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+{% extends "base.html" %}
 
-<!-- Stylesheets -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link href="css/bootstrap-margin-padding.css" rel="stylesheet">
-<link href="css/responsive.css" rel="stylesheet"`>
-<link href="css/video.css" rel="stylesheet">
-<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-</head>
-
-<body>
-<div class="page-wrapper">
-
-    
- 	
-    <!-- Header Style Two-->
-    <header class="header-style-two">
-        <!-- Header Top -->
-        <div class="header-top">
-            <div class="auto-container clearfix">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="index.html"><img src="images/logo-2.png" alt="Greenture"></a>
-                 </div>
-                 
-                 <!--Info Outer-->
-                 <div class="info-outer">
-                    <!--Info Box-->
-                    <div class="info-box">
-                        <div class="icon"><span class="flaticon-computer"></span></div>
-                        <strong>Correo</strong>
-                        <a href="mailt:companyname@mail.com">luciernaga@gmail.com</a>
-                    </div>
-                    <!--Info Box-->
-                    <div class="info-box">
-                        <div class="icon"><span class="flaticon-technology-5"></span></div>
-                        <strong>Teléfonos</strong>
-                        <a class="phone" href="#">(505) 2266-0811</a>
-                    </div>
-                    <!--Info Box-->
-                    <div class="info-box social-box">
-                        <div class="social-links clearfix">
-                            <a href="#" class="facebook img-circle"><span class="fa fa-facebook-f"></span></a>
-                            <a href="#" class="twitter img-circle"><span class="fa fa-twitter"></span></a>
-                            <a href="#" class="google-plus img-circle"><span class="fa fa-google-plus"></span></a>
-                            <a href="#" class="vimeo img-circle"><span class="fa fa-vimeo"></span></a>
-
-                        </div>
-                    </div>
-                 </div>
-                
-            </div>
-        </div><!-- Header Top End -->
-        
-        <!-- Lower Part -->
-        <div class="lower-part">
-            <div class="auto-container clearfix">
-                
-                <!--Outer Box-->
-                <div class="outer-box clearfix">
-                
-
-                    
-                    <!-- Main Menu -->
-                    <nav class="main-menu">
-                        
-                        <div class="navbar-header">
-                            <!-- Toggle Button -->      
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        
-                        <div class="navbar-collapse collapse clearfix">
-                            <ul class="navigation">
-                                <li><a href="#">Inicio</a></li>
-                                <li class="current dropdown"><a href="#">Acerca de</a>
-                                    <ul>
-                                        <li><a href="index.html">Que hacemos</a></li>
-                                        <li><a href="index-2.html">Que ofrecemos</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Noticias</a></li>
-                                <li><a href="#">Eventos</a></li>
-                                <li><a href="#">Loma verde</a></li>
-                                <li><a href="#">Videoteca</a></li>
-                                <li><a href="#">Galería</a></li>
-                            </ul>
-                        </div>
-                    </nav><!-- Main Menu End-->
-                    
-                </div>
-            </div>
-        </div><!-- Lower Part End-->
-        
-    </header><!--End Header Style Two-->
-    
-    
+{% block content %}
     <!--Page Title-->
     <section class="page-title" style="background-image:url(http://fundacionluciernaga.org/img.php?i=files/59d4ee99ca2cad34bb3fdaff5cfb8d9e130.jpg&width=1024);">
     	<div class="auto-container">
         	<div class="sec-title">
-                <h1>Detalle <span class="normal-font">Noticia</span></h1>
+                <h1>Detalle <span class="normal-font">{{object.titulo}}</span></h1>
                 <div class="bread-crumb">
-                    <a href="index.html">Inicio</a> / <a href="">Noticias</a>
+                    <a href="/">Inicio</a> / <a href="/">Noticias</a>
                 </div>
             </div>
         </div>
     </section>
-    
-    
+
+
     <!--Sidebar Page-->
     <div class="sidebar-page">
     	<div class="auto-container">
         	<div class="row clearfix">
-            	
-                <!--Content Side-->	
+
+                <!--Content Side-->
                 <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
-                    
+
                     <!--Projects Section-->
                     <section class="blog-news-section blog-detail no-padd-bottom no-padd-top padd-right-20">
-                            
+
                         <!--News Column-->
                         <div class="column blog-news-column">
                             <article class="inner-box">
@@ -156,247 +33,40 @@
                                     <div class="news-date">28<span class="month">OCT</span></div>
                                 </figure>
                                 <div class="content-box padd-top-30">
-                                    <h3><a href="#">Save the children from hunger</a></h3>
+                                    <h3><a href="#">{{object.titulo}}</a></h3>
                                     <div class="post-info clearfix">
-                                        <div class="post-author">Por <span class="theme_color">Pablo Garcia</span></div>
+                                        <div class="post-author">Por <span class="theme_color">{{object.usuario.username}}</span></div>
                                         <div class="post-options clearfix">
                                             <a href="#" class="comments-count"><span class="icon fa fa-eye"></span> 6</a>
                                         </div>
                                     </div>
                                     <div class="text">
-                                    	<p>En el marco del proyecto "Construyendo Sinergias para una Red Global por los DDHH y de las Mujeres", financiado por la Agencia Andaluza de Cooperación Internacional para el Desarrollo, la semana del 3 al 10 de febrero, acogió un encuentro entre asociaciones centroamericanas y andaluzas.</p>
-
-                                        <p> En esos días, se presentaron en los municipios andaluces de Pozoblanco (Córdoba), El Saucejo (Sevilla), Alameda (Málaga) y Villargordo (Jaén), los audiovisuales realizados por los colectivos andaluces participantes del proyecto. Desde el otro lado del charco, tuvimos el gusto de contar con Ingrid Palacios de la organización salvadoreña Mujeres Transformando, y con Alberto Jiménez Pérez de Fundación Luciérnaga de Nicaragua, ambos colectivos centroamericanos dieron la réplica, desde su punto de vista, al vídeo realizado por los colectivos andaluces. El guion de cada audiovisual se confeccionó en sesiones de talleres, donde a través de la reflexión, y el debate conjunto, se consensuó qué se quería contar y como presentarlo al pueblo, siempre cumpliendo con el objetivo del proyecto. </p>
-                                    	<br>
-                                        <div class="row clearfix">
-                                        	<div class="col-lg-4 col-md-6 col-xs-12">
-                                            	<figure><img class="img-responsive" src="http://www.pazcondignidad.org/wp-content/uploads/2018/03/01-concentrate-1-400x400.jpeg" alt=""></figure>
-                                            </div>
-                                            <div class="col-lg-8 col-md-6 col-xs-12">
-                                            	<blockquote>
-                                                	<p>En Pozoblanco (Córdoba) hemos trabajado con la Asociación de Mujeres Ventana Abierta. El audiovisual que hemos grabado se titula: MICRO-machismo, y pretende, por un lado poner en evidencia, desde experiencias reales, la invisibilización a las mujeres a través del lenguaje y de los gestos cotidianos; y por otro, desmitificar el feminismo.</p>
-
-                                                </blockquote>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <p>Lanza un importante mensaje para contribuir a la igualdad real entre hombres y mujeres desde el cuestionamiento a las actitudes machistas que se dan en nuestro día a día. Réplicas: "Coordinadora de mujeres rurales" (Nicaragua) y "Por mi cuerpo y mi vida decido yo" (El Salvador).</p>
-
-                                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D1959376914379249%26id%3D1617293805254230&width=500" width="500" height="688" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    
+                                    	{{object.contenido|safe}}
                                     </div>
                                 </div>
-                                
+
                                 <div class="post-share-options clearfix">
-                                	<div class="pull-left tags"><strong>Tag</strong> : <a href="#">NoALaViolencia</a>, <a href="#">Género</a>, <a href="#">Movimiento civil</a></div>
+                                	<div class="pull-left tags"><strong>Tag</strong> :
+                                        {% for tag in object.tags.all %}
+                                                <a href="{{tag.slug}}">{{tag}}</a> {% if  forloop.last%}{% else %},{% endif %}
+                                        {% endfor %}
+                                    </div>
                                     <div class="pull-right social-links-two clearfix">
                                     	<a href="#" class="facebook img-circle"><span class="fa fa-facebook-f"></span></a>
                                         <a href="#" class="twitter img-circle"><span class="fa fa-twitter"></span></a>
                                         <a href="#" class="google-plus img-circle"><span class="fa fa-google-plus"></span></a>
                                     </div>
                                 </div>
-                                
+
                             </article>
-                        </div>                        
+                        </div>
                     </section>
-                
-                    
+
+
                 </div>
                 <!--Content Side-->
-                
-                <!--Sidebar-->  
-                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-                    <aside class="sidebar">
-                    
-                        <!-- Search Form -->
-                        <div class="widget search-box">
-                            
-                            <form method="post" action="index.html">
-                                <div class="form-group">
-                                    <input type="search" name="search-field" value="" placeholder="Buscar">
-                                    <button type="submit"><span class="icon flaticon-tool-5"></span></button>
-                                </div>
-                            </form>
-                            
-                        </div>
-                        
-                        <!-- Popular Categories -->
-                        <div class="widget popular-categories wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="sidebar-title"><h3>Temas</h3></div>
-                            
-                            <ul class="list">
-                                <li><a href="#" class="pdr10">Movimiento civil</a></li>
-                                    <li><a href="#" class="pdr10">Género</a></li>
-                                    <li><a href="#" class="pdr10">Violencia</a></li>
-                                    <li><a href="#" class="pdr10">Medios de vida</a></li>
-                                    <li><a href="#" class="pdr10">Promotoria rural </a></li>
-
-                            </ul>
-                            
-                        </div>
-                        
-                        
-                        <!-- Recent Posts -->
-                        <div class="widget recent-posts wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="sidebar-title"><h3>Últimas Noticias</h3></div>
-                            
-                            <article class="post">
-                                <figure class="post-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure>
-                                <h4><a href="#">Red Global por los DDHH y de las Mujeres</a></h4>
-                                <div class="post-info"><span class="icon flaticon-people-1"></span> Por Pablo Garcia </div>
-                            </article>
-                            
-                            <article class="post">
-                                <figure class="post-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure>
-                                <h4><a href="#">Red Global por los DDHH y de las Mujeres</a></h4>
-                                <div class="post-info"><span class="icon flaticon-people-1"></span> Por Pablo Garcia </div>
-                            </article>
-                            
-                           <article class="post">
-                                <figure class="post-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure>
-                                <h4><a href="#">Red Global por los DDHH y de las Mujeres</a></h4>
-                                <div class="post-info"><span class="icon flaticon-people-1"></span> Por Pablo Garcia </div>
-                            </article>
-                            
-                        </div>
-                        
-                        
-                        <!-- Popular Tags -->
-                        <div class="widget popular-tags">
-                            <div class="sidebar-title"><h3>Palabras claves</h3></div>
-                            
-                                <a href="#">acciones</a>
-                                <a href="#">No a la Violencia</a>
-                                <a href="#">Empoderamiento</a>
-                                <a href="#">derechos</a>
-                                <a href="#">familias</a>
-                                <a href="#">igualdad</a>
-                            
-                        </div>
-                                
-                    </aside>
-                
-                    
-                </div>
-                <!--Sidebar-->                
-                
+                {% include "sidebar.html" %}
             </div>
         </div>
-    </div>    
-
-    <!--Main Footer-->
-    <footer class="main-footer" style="background-image:url(materiales/img/Videoteca%201.jpg);">
-        
-        <!--Footer Upper-->        
-        <div class="footer-upper">
-            <div class="auto-container">
-                <div class="row clearfix">
-
-                    <div class="col-lg-3 col-sm-6 col-xs-12 column mb-xs-50">
-                        <div class="footer-widget about-widget">
-                            <div class="logo"><a href="index.html"><img src="images/luciernaga-01.png" class="img-responsive" alt=""></a></div>                      
-                            
-                            
-                        </div>
-                    </div>
-                    <!--Footer Column-->
-                    <div class="col-lg-3 col-sm-6 col-xs-12 column">
-                        <div class="footer-widget contact-widget other-info">
-                            <h2>Contactos</h2>
-                            <ul class="info-box">
-                            <li class="theme_color"><span class="icon flaticon-location"></span><strong class="white_color">Dirección</strong> Reparto Bolonia, Sumedico 1 c. al Oeste, Managua, Nicaragua</li>
-                            <li class="theme_color"><span class="icon flaticon-technology-5"></span><strong class="white_color">Teléfono</strong> (505)<a href=""> 2266-0811</a>, <a href="">2268-7802</a></li>
-                            <li class="theme_color"><span class="icon flaticon-interface-1"></span><strong class="white_color">Correo</strong> <a href="mailt:luciernaga@gmail.com">luciernaga@gmail.com</a></li>
-                        </ul>
-                        <br>
-                        <div class="social-links-two clearfix">
-                                <a href="#" class="facebook img-circle"><span class="fa fa-facebook-f"></span></a>
-                                <a href="#" class="twitter img-circle"><span class="fa fa-twitter"></span></a>
-                                <a href="#" class="google-plus img-circle"><span class="fa fa-google-plus"></span></a>
-                                <a href="#" class="vimeo img-circle"><span class="fa fa-vimeo"></span></a>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    
-                    <!--Footer Column-->
-                    <div class="col-lg-3 col-sm-6 col-xs-12 column">
-                        <h2>Links de Interés</h2>
-                        <div class="footer-widget links-widget">
-                            <ul>
-                                <li><a href="#">Videoteca</a></li>
-                                <li><a href="#">Noticia</a></li>
-                                <li><a href="#">Eventos</a></li>
-                                <li><a href="#">Acerca de</a></li>
-                                <li><a href="#">Loma verde</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-
-                    <!--Footer Column-->
-                    <div class="col-lg-3 col-sm-6 col-xs-12 column">
-                        <div class="footer-widget news-widget">
-                            <h2>Últimas Noticias</h2>   
-                            
-                            <!--News Post-->
-                            <div class="news-post">
-                                <div class="icon"></div>
-                                <div class="news-content"><figure class="image-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure><a href="#">Red Global por los DDHH y de las Mujeres</a></div>
-                                <div class="time">Agosto 28, 2018</div>
-                            </div>
-                            
-                            <!--News Post-->
-                            <div class="news-post">
-                                <div class="icon"></div>
-                                <div class="news-content"><figure class="image-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure><a href="#">Red Global por los DDHH y de las Mujeres</a></div>
-                                <div class="time">Agosto 28, 2018</div>
-                            </div>
-                            
-                            <!--News Post-->
-                            <div class="news-post">
-                                <div class="icon"></div>
-                                <div class="news-content"><figure class="image-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure><a href="#">Red Global por los DDHH y de las Mujeres</a></div>
-                                <div class="time">Agosto 28, 2018</div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    
-                    
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        <!--Footer Bottom-->
-        <div class="footer-bottom">
-            <div class="auto-container clearfix">
-                <!--Copyright-->
-                <div class="copyright text-center">Todos los derechos reservados <a href="#">Fundación Luciernaga</a>. Desarollado por <a href="">SIMAS</a></div>
-            </div>
-        </div>
-        
-    </footer>
-    
-</div>
-<!--End pagewrapper-->
-
-
-<!--Scroll to top-->
-<div class="scroll-to-top scroll-to-target" data-target=".page-wrapper"><span class="fa fa-long-arrow-up"></span></div>
-
-
-
-<script src="js/jquery.js"></script> 
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.bxslider.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script>
-<script src="js/owl.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/script.js"></script>
-</body>
-</html>
+    </div>
+{% endblock content %}

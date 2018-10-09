@@ -7,6 +7,7 @@ from solo.models import SingletonModel
 class SiteConfiguration(SingletonModel):
     site_name = models.CharField(max_length=255, default='Site Name')
     maintenance_mode = models.BooleanField(default=False)
+    acerca = models.TextField()
 
     def __str__(self):
         return u"Sitio Configuración"
