@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+
+{% block content%}
+    <!--Main Slider-->
+    <section class="main-slider revolution-slider">
+        <div class="tp-banner-container">
+            <div class="tp-banner">
+                <ul>
+                    {% for portada in  site_config.fotosportada_set.all %}
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/media/{{portada.foto}}"  data-saveperformance="off"  data-title="Awesome Title Here">
+                    <img src="/media/{{portada.foto}}"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
+                    <div class="tp-caption sfl sfb tp-resizeme"
+                    data-x="center" data-hoffset="0"
+                    data-y="center" data-voffset="-20"
+                    data-speed="1500"
+                    data-start="1500"
+                    data-easing="easeOutExpo"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-elementdelay="0.01"
+                    data-endelementdelay="0.3"
+                    data-endspeed="1200"
+                    data-endeasing="Power4.easeIn"><h3 class="bg-color">{{portada.titulo|safe}}</h3>
+                   </div>
+                    <div class="tp-caption sfl sfb tp-resizeme text-center"
+                    data-x="center" data-hoffset="0"
+                    data-y="center" data-voffset="50"
+                    data-speed="1500"
+                    data-start="2000"
+                    data-easing="easeOutExpo"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-elementdelay="0.01"
+                    data-endelementdelay="0.3"
+                    data-endspeed="1200"
+                    data-endeasing="Power4.easeIn"><div class="text bg-color2">{{portada.descripcion|safe|truncatewords:12}}</div>
+                   </div>
+                </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--Recent Causes Section-->
+    <section class="recent-projects">
+        <div class="auto-container">
+
+            <div class="sec-title clearfix">
+                <div class="pull-left">
+                    <h2><span class="normal-font theme_color"><b>Audiovisuales</b></span> Recientes </h2>
+                    <div class="text">Una videoteca especializada en temas de desarrollo con más de 2,500 títulos.</div>
+                </div>
+                <div class="pull-right padd-top-30">
+                    <a href="#" class="theme-btn btn-style-two">Videoteca</a>
+                </div>
+            </div>
+            <div class="video-owl owl-carousel owl-nav-style owl-nav3">
+
+                <!--Default Featured Column-->
+                <div class="column default-featured-column style-two">
+                    <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="image-box video-box">
+                            <img src="https://i.ytimg.com/vi/XNJYpnaGwYU/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLA32q6iPcRKlGAVoUvzpByYWam9Ww" alt="">
+                            <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
+                        </figure>
+                        <div class="content-box">
+                            <h3><a href="#">Ya no más</a></h3>
+                        </div>
+                    </article>
+                </div>
+
+                <!--Default Featured Column-->
+                <div class="column default-featured-column style-two">
+
+                    <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="image-box video-box">
+                            <img src="https://i.vimeocdn.com/video/676982156_780x439.webp" alt="">
+                            <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
+                        </figure>
+                        <div class="content-box">
+                            <h3><a href="#">Nica Libre</a></h3>
+                        </div>
+                    </article>
+                </div>
+                <!--Default Featured Column-->
+                <div class="column default-featured-column style-two">
+                    <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="image-box video-box">
+                            <img src="https://i.ytimg.com/vi/zlnJCRZ-T24/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCCbyjj7hlXl2M81CgXLn2O38gBAQ" alt="">
+                            <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
+                        </figure>
+                        <div class="content-box">
+                            <h3><a href="#">Muy Machos</a></h3>
+                        </div>
+                    </article>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!--Events Section-->
+    <section class="pt-50 pb-60" data-bac="#fcfcfc">
+        <div class="auto-container">
+
+            <div class="row clearfix">
+
+                <!--Featured Column-->
+                <div class="column default-featured-column style-three col-lg-8 col-md-6 col-sm-6 col-xs-12">
+                    <h4 class="inner-title double-line line-left"><span class="theme_color">Noticias</span> Recientes</h4>
+                    <div class="blog-news-column featured-project owl-carousel owl-nav-style owl-nav3">
+                    {% for nota in noticias %}
+                        <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <figure class="image-box">
+                                <a href="#"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></a>
+                                <div class="news-date">{{nota.fecha|date:"d"}}<span class="month">{{nota.fecha|date:"M"}}</span></div>
+                            </figure>
+                            <div class="content-box">
+                                <h3><a href="{% url 'noticia_detail' nota.id nota.slug %}">{{nota.titulo}}</a></h3>
+                                <div class="post-info clearfix">
+                                    <div class="post-author">Autor <span class="theme_color">{{nota.usuario.username}}</span></div>
+                                </div>
+                                <div class="text">{{nota.contenido|safe|striptags|truncatewords:30}}.</div>
+                                <a href="{% url 'noticia_detail' nota.id nota.slug %}" class="theme-btn btn-style-two btn-sm">Leer más</a>
+                            </div>
+                        </article>
+                    {% endfor %}
+                         <!--News Column-->
+
+                    </div>
+                </div>
+
+                <!--Cause Column-->
+                <div class="column default-featured-column links-column col-lg-4 col-md-12">
+                    <article class="inner-box mb-md-60">
+                        <div class="vertical-links-outer events-post">
+                            <div class="text-uppercase p-20 mb-5" data-bac="#393d42">
+                                <h2 class="white_color fw-b fs-24 mr-xs-80 mr-xxs-0">Proximos eventos de <span class="theme_color">Luciernaga</span></h2>
+                            </div>
+
+
+                            <div class="bx-event-carousel-style2">
+                            {% for evento in eventos %}
+                                <div class="link-block">
+                                    <div class="default inner">
+                                        <figure class="image-thumb"><img src="http://fundacionluciernaga.org/img.php?i=files/5e05d022a820a15893d719cd553a8930753.jpg&width=120" alt=""></figure>
+                                        <h4 class="title">{{evento.titulo}}</h4>
+                                        <ul class="event-held">
+                                            <li><i class="fa fa-clock-o"></i> de {{evento.fecha_inicio|time:"P"}} - {{evento.fecha_finalizacion|time:"P"}}</li>
+                                            <li> <i class="fa fa-map-marker"></i>{{evento.lugar}}</li>
+                                        </ul>
+                                        <ul class="event-date">
+                                            <li class="event-day">{{evento.fecha_inicio|date:"d"}}</li>
+                                            <li class="event-month">{{evento.fecha_inicio|date:"M"}}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="alternate">
+                                        <p class="desc">{{evento.descripcion|safe|striptags|truncatewords:11}}</p>
+                                        <a class="theme-btn btn-style-five btn-xs mr-10" href="{% url 'evento_detail' evento.pk evento.slug %}">Leer más</a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--Main Features-->
+    <section class="main-features parallax-section theme-overlay overlay-deep-white" style="background-image:url(http://fundacionluciernaga.org/img.php?i=files/59d4ee99ca2cad34bb3fdaff5cfb8d9e130.jpg&width=1024);">
+        <div class="auto-container">
+            <div class="title-box text-center mb-0">
+                <h1 class="fs-36 mb-15">Red Centro America de Comunicación</h1>
+                <h2>Contennido audiovisual para el ejercicio de los derechos humanos</h2>
+                <div class="">
+                    <a class="theme-btn btn-style-two" href="#">Visitar sitio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-50 pb-60" data-bac="#fcfcfc">
+        <div class="auto-container">
+
+            <div class="row clearfix">
+                <!--Column-->
+                <div class="column image-column col-md-6 col-sm-12 col-xs-12">
+                    <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="image-box">
+                            <img src="http://fundacionluciernaga.org/foto%20casa%20luciernaga.JPG" alt="" width="100%">
+                        </figure>
+                    </article>
+                </div>
+
+                <!--Column-->
+                <div class="column default-text-column with-margin col-md-6 col-sm-12 col-xs-12">
+                    <article class="inner-box mt-10 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <h2 class="fs-32">Fundación <span class="theme_color roboto-font">Luciernaga</span></h2>
+
+                        <div class="text">
+                            <p>La Fundación Luciérnaga nació en 1993 gracias al impulso de un grupo de personas que vieron la necesidad de promover, difundir y hacer uso del audiovisual con fines educativos y de sensibilización.</p>
+                            <p>
+                                 Nacemos como una pequeña videoteca con 175 videos de distintos temas y con la finalidad de acercar estos videos a la mayor cantidad de personas y organizaciones que estuvieran trabajando por el desarrollo social.
+                            </p>
+                            <br>
+                            <a class="theme-btn btn-style-four" href="#">leer más</a>
+                        </div>
+
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Intro Section-->
+    <section class="subscribe-intro">
+        <div class="auto-container">
+            <form action="" class="row clearfix">
+                <!--Column-->
+                <div class="column col-md-9 col-sm-12 col-xs-12">
+                    <h2>Suscríbete a nuestro boletín electrónico </h2>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <input type="email" class="form-control" width="20%">
+                        </div>
+                    </div>
+
+
+                </div>
+                <!--Column-->
+                <div class="column col-md-3 col-sm-12 col-xs-12">
+                    <div class="text-right padd-top-20">
+                        <a href="#" class="theme-btn btn-style-one">Subscribirse ahora</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}

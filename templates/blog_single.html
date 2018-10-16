@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url(http://fundacionluciernaga.org/img.php?i=files/59d4ee99ca2cad34bb3fdaff5cfb8d9e130.jpg&width=1024);">
+    	<div class="auto-container">
+        	<div class="sec-title">
+                <h1>Detalle <span class="normal-font">{{object.titulo}}</span></h1>
+                <div class="bread-crumb">
+                    <a href="/">Inicio</a> / <a href="/">Noticias</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Sidebar Page-->
+    <div class="sidebar-page">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+
+                <!--Content Side-->
+                <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+
+                    <!--Projects Section-->
+                    <section class="blog-news-section blog-detail no-padd-bottom no-padd-top padd-right-20">
+
+                        <!--News Column-->
+                        <div class="column blog-news-column">
+                            <article class="inner-box">
+                                <figure class="image-box">
+                                    <a href="#"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></a>
+                                    <div class="news-date">28<span class="month">OCT</span></div>
+                                </figure>
+                                <div class="content-box padd-top-30">
+                                    <h3><a href="#">{{object.titulo}}</a></h3>
+                                    <div class="post-info clearfix">
+                                        <div class="post-author">Por <span class="theme_color">{{object.usuario.username}}</span></div>
+                                        <div class="post-options clearfix">
+                                            <a href="#" class="comments-count"><span class="icon fa fa-eye"></span> 6</a>
+                                        </div>
+                                    </div>
+                                    <div class="text">
+                                    	{{object.contenido|safe}}
+                                    </div>
+                                </div>
+
+                                <div class="post-share-options clearfix">
+                                	<div class="pull-left tags"><strong>Tag</strong> :
+                                        {% for tag in object.tags.all %}
+                                                <a href="{{tag.slug}}">{{tag}}</a> {% if  forloop.last%}{% else %},{% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="pull-right social-links-two clearfix">
+                                    	<a href="#" class="facebook img-circle"><span class="fa fa-facebook-f"></span></a>
+                                        <a href="#" class="twitter img-circle"><span class="fa fa-twitter"></span></a>
+                                        <a href="#" class="google-plus img-circle"><span class="fa fa-google-plus"></span></a>
+                                    </div>
+                                </div>
+
+                            </article>
+                        </div>
+                    </section>
+
+
+                </div>
+                <!--Content Side-->
+                {% include "sidebar.html" %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}
