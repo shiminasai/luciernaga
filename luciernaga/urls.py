@@ -28,6 +28,7 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('pages/', include('django.contrib.flatpages.urls')),
     path('lista-notas/', TemplateView.as_view(template_name="notas_lista.html")),
+    path('lista-eventos/', TemplateView.as_view(template_name="eventos_lista.html")),
 ]
 
 if settings.DEBUG:
