@@ -37,8 +37,9 @@ class Temas(models.Model):
 
 class Videotecas(models.Model):
     cod_cat = models.CharField('Codigo categoría', max_length=50)
+    fecha = models.DateTimeField(auto_now_add=True)
     titulo = models.CharField(max_length=250)
-    slug = models.SlugField(max_length=250)
+    slug = models.SlugField(max_length=250, editable=False)
     anio = models.CharField('Año', max_length=50)
     apoyo = models.CharField('Apoyo de', max_length=50)
     coleccion = models.CharField('Colección', max_length=250)

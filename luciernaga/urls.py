@@ -29,6 +29,8 @@ urlpatterns = [
     path('pages/', include('django.contrib.flatpages.urls')),
     path('lista-notas/', TemplateView.as_view(template_name="notas_lista.html")),
     path('lista-eventos/', TemplateView.as_view(template_name="eventos_lista.html")),
+    #path('videotecas/', TemplateView.as_view(template_name="videoteca.html")),
+
 ]
 
 if settings.DEBUG:

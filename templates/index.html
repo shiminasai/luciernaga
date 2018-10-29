@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="video-owl owl-carousel owl-nav-style owl-nav3">
-
+            {% for obj in videotecas %}
                 <!--Default Featured Column-->
                 <div class="column default-featured-column style-two">
                     <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
@@ -64,37 +64,11 @@
                             <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
                         </figure>
                         <div class="content-box">
-                            <h3><a href="#">Ya no más</a></h3>
+                            <h3><a href="#">{{obj.titulo}}</a></h3>
                         </div>
                     </article>
                 </div>
-
-                <!--Default Featured Column-->
-                <div class="column default-featured-column style-two">
-
-                    <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <figure class="image-box video-box">
-                            <img src="https://i.vimeocdn.com/video/676982156_780x439.webp" alt="">
-                            <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
-                        </figure>
-                        <div class="content-box">
-                            <h3><a href="#">Nica Libre</a></h3>
-                        </div>
-                    </article>
-                </div>
-                <!--Default Featured Column-->
-                <div class="column default-featured-column style-two">
-                    <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <figure class="image-box video-box">
-                            <img src="https://i.ytimg.com/vi/zlnJCRZ-T24/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCCbyjj7hlXl2M81CgXLn2O38gBAQ" alt="">
-                            <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
-                        </figure>
-                        <div class="content-box">
-                            <h3><a href="#">Muy Machos</a></h3>
-                        </div>
-                    </article>
-                </div>
-
+            {% endfor %}
 
             </div>
         </div>
@@ -177,7 +151,7 @@
         <div class="auto-container">
             <div class="title-box text-center mb-0">
                 <h1 class="fs-36 mb-15">Red Centro America de Comunicación</h1>
-                <h2>Contennido audiovisual para el ejercicio de los derechos humanos</h2>
+                <h2>Contenido audiovisual para el ejercicio de los derechos humanos</h2>
                 <div class="">
                     <a class="theme-btn btn-style-two" href="#">Visitar sitio</a>
                 </div>
