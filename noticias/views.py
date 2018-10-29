@@ -19,7 +19,6 @@ class HomeView(TemplateView):
 
         return context
 
-
 class NoticiasList(ListView):
     template_name = 'lista_noticias.html'
     model = Noticias
@@ -36,7 +35,6 @@ class NoticiaDetailView(DetailView):
 
         return context
 
-
 class EventoDetailView(DetailView):
     model = Eventos
     template_name = 'event_single.html'
@@ -48,3 +46,22 @@ class EventoDetailView(DetailView):
         context['temas'] = Temas.objects.all()
 
         return context
+
+class VideotecaDetailView(DetailView):
+    model = Videotecas
+    template_name = 'videoteca.html'
+    #context_object_name = 'nota'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ultimas_videotecas'] = Videotecas.objects.exclude(pk=self.object.pk).order_by('-fecha')[:3]
+        context['temas'] = Temas.objects.all()
+
+        return context
+
+
+class VideotecaListView(ListView):
+    template_name = 'videoteca.html'
+    model = Videotecas
+
+
