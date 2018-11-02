@@ -19,8 +19,8 @@ class HomeView(TemplateView):
 
         return context
 
-class NoticiasList(ListView):
-    template_name = 'lista_noticias.html'
+class NoticiasListView(ListView):
+    template_name = 'notas_lista.html'
     model = Noticias
 
 class NoticiaDetailView(DetailView):
@@ -35,6 +35,10 @@ class NoticiaDetailView(DetailView):
 
         return context
 
+class EventosListView(ListView):
+    template_name = 'eventos_lista.html'
+    model = Eventos
+
 class EventoDetailView(DetailView):
     model = Eventos
     template_name = 'event_single.html'
@@ -47,6 +51,10 @@ class EventoDetailView(DetailView):
 
         return context
 
+class VideotecasListView(ListView):
+    template_name = 'videoteca.html'
+    model = Videotecas
+
 class VideotecaDetailView(DetailView):
     model = Videotecas
     template_name = 'videoteca.html'
@@ -58,10 +66,5 @@ class VideotecaDetailView(DetailView):
         context['temas'] = Temas.objects.all()
 
         return context
-
-
-class VideotecaListView(ListView):
-    template_name = 'videoteca.html'
-    model = Videotecas
 
 

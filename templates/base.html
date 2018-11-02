@@ -52,19 +52,21 @@
 
                  <!--Info Outer-->
                  <div class="info-outer">
+                {% if request.path == '/videotecas/' %}
                     <!--Info Box-->
-                    <!-- <div class="info-box">
+                    <div class="info-box">
                         <div class="icon"><span class="flaticon-computer"></span></div>
                         <strong>Correo</strong>
                         <a href="mailt:companyname@mail.com">luciernaga@gmail.com</a>
-                    </div> -->
+                    </div>
                     <!--Info Box-->
-                    <!-- <div class="info-box">
+                    <div class="info-box">
                         <div class="icon"><span class="flaticon-technology-5"></span></div>
                         <strong>Teléfonos</strong>
                         <a class="phone" href="#">(505) 2266-0811</a>
-                    </div> -->
+                    </div>
                     <!--Info Box-->
+                {% endif %}
                     <div class="info-box social-box">
                         <div class="social-links clearfix">
                             <a href="#" class="facebook img-circle"><span class="fa fa-facebook-f"></span></a>
@@ -102,19 +104,19 @@
 
                         <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation">
-                                <li><a href="#">Inicio</a></li>
+                                <li><a href="/">Inicio</a></li>
                                 <li class="current dropdown"><a href="#">Acerca de</a>
                                     <ul>
-                                        <li><a href="index.html">Que hacemos</a></li>
-                                        <li><a href="index-2.html">Que ofrecemos</a></li>
+                                        <li><a href="/que-hacemos/">Que hacemos</a></li>
+                                        <li><a href="/que-ofrecemos/">Que ofrecemos</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="">Casa Luciérnaga</a></li>
-                                <li><a href="#">Proyectos</a></li>
+                                <li><a href="/">Casa Luciérnaga</a></li>
+                                <li><a href="/proyectos/">Proyectos</a></li>
 
-                                <li><a href="#">Videoteca</a></li>
-                                <li><a href="#">Canal CA</a></li>
-                                <li><a href="">Contáctenos</a></li>
+                                <li><a href="/videotecas/">Videoteca</a></li>
+                                <li><a href="/">Canal CA</a></li>
+                                <li><a href="/">Contáctenos</a></li>
                             </ul>
                         </div>
                     </nav><!-- Main Menu End-->

@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from filebrowser.sites import site
-from django.views.generic import TemplateView
+#from django.views.generic import TemplateView
 
 urlpatterns = [
     #path('jet/', include('jet.urls', 'jet')),
@@ -27,9 +27,9 @@ urlpatterns = [
     path('admin/filebrowser/', site.urls),
     path('tinymce/', include('tinymce.urls')),
     path('pages/', include('django.contrib.flatpages.urls')),
-    path('lista-notas/', TemplateView.as_view(template_name="notas_lista.html")),
-    path('lista-eventos/', TemplateView.as_view(template_name="eventos_lista.html")),
-    #path('videotecas/', TemplateView.as_view(template_name="videoteca.html")),
+    #path('lista-notas/', TemplateView.as_view(template_name="notas_lista.html")),
+    #path('lista-eventos/', TemplateView.as_view(template_name="eventos_lista.html")),
+    #path('videotecas/detalle/', TemplateView.as_view(template_name="detalle_video.html")),
 
 ]
 
