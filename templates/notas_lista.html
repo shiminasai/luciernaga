@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 
+{% load thumbnail el_pagination_tags %}
+
 {% block content %}
     <!--Page Title-->
-    <section class="page-title" style="background-image:url(images/background/page-title-bg.jpg);">
+    <section class="page-title" style="background-image:url(http://fundacionluciernaga.org/img.php?i=files/59d4ee99ca2cad34bb3fdaff5cfb8d9e130.jpg&width=1024);">
     	<div class="auto-container">
         	<div class="sec-title">
                 <h1>Lista <span class="normal-font">Noticias</span></h1>
-                <div class="bread-crumb"><a href="index.html">Inicio</a>
+                <div class="bread-crumb"><a href="/">Inicio</a>
             </div>
         </div>
     </section>
-    
-    
+
+
     <!--Blog News Section-->
     <section class="blog-news-section latest-news">
     	<div class="auto-container">
@@ -36,193 +38,43 @@
                     </form>
                 </div>
             </div>
-        
+
         	<div class="row clearfix">
-                
+            {% paginate 9 object_list %}
+            {% for obj in object_list %}
                 <!--News Column-->
                 <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 	<article class="inner-box">
                 		<figure class="image-box">
-                        	<a href="#"><img src="https://via.placeholder.com/350x250" alt=""></a>
-                            <div class="news-date">28<span class="month">OCT</span></div>
+                        {% if obj.portada %}
+                         {% thumbnail obj.portada "350x250" crop="center" as im %}
+                            <a href="{% url 'noticia_detail' obj.id obj.slug %}"><img src="{{ im.url }}" alt="{{obj.titulo}}"></a>
+                        {% endthumbnail %}
+                        {% else %}
+                        	<a href="{% url 'noticia_detail' obj.id obj.slug %}"><img src="https://via.placeholder.com/350x250" alt="{{obj.titulo}}"></a>
+                        {% endif %}
+                            <div class="news-date">{{obj.fecha|date:"d"}}<span class="month">{{obj.fecha|date:"M"}}</span></div>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="#">Titulo de noticia</a></h3>
+                        	<h3><a href="{% url 'noticia_detail' obj.id obj.slug %}">{{obj.titulo}}</a></h3>
                         	<div class="post-info clearfix">
-                            	<div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
-                                
+                            	<div class="post-author">Autor <span class="theme_color">{{obj.usuario.username}}</span></div>
+
                             </div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn read-more">Leer más</a>
+                            <div class="text">{{obj.contenido|safe|striptags|truncatewords:12}}</div>
+                            <a href="{% url 'noticia_detail' obj.id obj.slug %}" class="theme-btn read-more">Leer más</a>
                         </div>
                     </article>
                 </div>
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                	<article class="inner-box">
-                		<figure class="image-box">
-                        	<a href="#"><img src="https://via.placeholder.com/350x250" alt=""></a>
-                            <div class="news-date">22<span class="month">APR</span></div>
-                        </figure>
-                        <div class="content-box">
-                        	<h3><a href="#">Titulo de noticia</a></h3>
-                        	<div class="post-info clearfix">
-                            	<div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
-                                
-                            </div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn read-more">Leer más</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                	<article class="inner-box">
-                		<figure class="image-box">
-                        	<a href="#"><img src="https://via.placeholder.com/350x250" alt=""></a>
-                            <div class="news-date">23<span class="month">MAR</span></div>
-                        </figure>
-                        <div class="content-box">
-                        	<h3><a href="#">Titulo de noticia</a></h3>
-                        	<div class="post-info clearfix">
-                            	<div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
-                                
-                            </div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn read-more">Leer más</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                	<article class="inner-box">
-                		<figure class="image-box">
-                        	<a href="#"><img src="https://via.placeholder.com/350x250" alt=""></a>
-                            <div class="news-date">28<span class="month">OCT</span></div>
-                        </figure>
-                        <div class="content-box">
-                        	<h3><a href="#">Titulo de noticia</a></h3>
-                        	<div class="post-info clearfix">
-                            	<div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
-                                
-                            </div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn read-more">Leer más</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                	<article class="inner-box">
-                		<figure class="image-box">
-                        	<a href="#"><img src="https://via.placeholder.com/350x250" alt=""></a>
-                            <div class="news-date">22<span class="month">APR</span></div>
-                        </figure>
-                        <div class="content-box">
-                        	<h3><a href="#">Titulo de noticia</a></h3>
-                        	<div class="post-info clearfix">
-                            	<div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
-                                
-                            </div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn read-more">Leer más</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                	<article class="inner-box">
-                		<figure class="image-box">
-                        	<a href="#"><img src="https://via.placeholder.com/350x250" alt=""></a>
-                            <div class="news-date">23<span class="month">MAR</span></div>
-                        </figure>
-                        <div class="content-box">
-                        	<h3><a href="#">Titulo de noticia</a></h3>
-                        	<div class="post-info clearfix">
-                            	<div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
-                                
-                            </div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn read-more">Leer más</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                	<article class="inner-box">
-                		<figure class="image-box">
-                        	<a href="#"><img src="https://via.placeholder.com/350x250" alt=""></a>
-                            <div class="news-date">28<span class="month">OCT</span></div>
-                        </figure>
-                        <div class="content-box">
-                        	<h3><a href="#">Titulo de noticia</a></h3>
-                        	<div class="post-info clearfix">
-                            	<div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
-                                
-                            </div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn read-more">Leer más</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                	<article class="inner-box">
-                		<figure class="image-box">
-                        	<a href="#"><img src="https://via.placeholder.com/350x250" alt=""></a>
-                            <div class="news-date">22<span class="month">APR</span></div>
-                        </figure>
-                        <div class="content-box">
-                        	<h3><a href="#">Titulo de noticia</a></h3>
-                        	<div class="post-info clearfix">
-                            	<div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
-                                
-                            </div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn read-more">Leer más</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <!--News Column-->
-                <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                	<article class="inner-box">
-                		<figure class="image-box">
-                        	<a href="#"><img src="https://via.placeholder.com/350x250" alt=""></a>
-                            <div class="news-date">23<span class="month">MAR</span></div>
-                        </figure>
-                        <div class="content-box">
-                        	<h3><a href="#">Titulo de noticia</a></h3>
-                        	<div class="post-info clearfix">
-                            	<div class="post-author">Autor <span class="theme_color">Pablo Garcia</span></div>
-                                
-                            </div>
-                            <div class="text">Lorem ipsum dolor sit amet, consectetur adipi elit sed do eiusmod tempor incididunt ut modo labore et dolore magna aliqua veniam...</div>
-                            <a href="#" class="theme-btn read-more">Leer más</a>
-                        </div>
-                    </article>
-                </div>
-                
+            {% endfor %}
+
             </div>
-            
+
             <!-- Styled Pagination -->
             <div class="styled-pagination text-center margin-bott-40">
-                <ul>
-                    <li><a class="prev" href="#"><span class="fa fa-angle-left"></span>&ensp;Prev</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#" class="active">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a class="next" href="#">Next&ensp;<span class="fa fa-angle-right"></span></a></li>
-                </ul>
+                {% show_pages %}
             </div>
-            
+
         </div>
     </section>
 {% endblock content %}

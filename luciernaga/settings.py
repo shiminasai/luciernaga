@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'geoposition',
     'import_export',
     'solo.apps.SoloAppConfig',
+    'el_pagination',
 ]
 
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBdQtBr_qwV2fMWrT4FrzBOziYTw2odlVo'

@@ -12,7 +12,7 @@
     	<div class="auto-container">
         	<div class="sec-title">
                 <h1>Detalle <span class="normal-font">{{object.titulo}}</span></h1>
-                <div class="bread-crumb"><a href="/">Inicio</a> / <a href="/">Eventos</a></div>
+                <div class="bread-crumb"><a href="/">Inicio</a> / <a href="/eventos/">Eventos</a></div>
             </div>
         </div>
     </section>
@@ -32,7 +32,12 @@
                         <div class="column default-featured-column style-two">
                             <article class="inner-box">
                                 <figure class="image-box">
-                                    <a href="#"><img src="http://fundacionluciernaga.org/luc%20matagalpa.jpg" alt=""></a>
+                                {% if object.portada %}
+                                    <a href="#"><img src="/media/{{object.portada}}" alt="{{object.titulo}}"></a>
+                                {% else %}
+                                    <a href="#"><img src="http://fundacionluciernaga.org/luc%20matagalpa.jpg" alt="{{object.titulo}}"></a>
+                                {% endif %}
+
                                 </figure>
                                 <div class="content-box padd-top-40">
                                     <div class="row detail-header clearfix">
@@ -53,8 +58,11 @@
                                     <br>
 
                                     <ul class="styled-list-one normal-font">
-                                        <li><a href="">Agenda</a></li>
-                                        <li><a href="">Documento Adjunto</a> </li>
+                                        {% if object.adjunto %}
+                                            <li><a href="{{object.adjunto.url}}">Documento Adjunto</a> </li>
+
+                                        {% endif %}
+
                                     </ul>
 
                                     <br><br>

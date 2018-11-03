@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load thumbnail %}
+
 {% block content%}
     <!--Main Slider-->
     <section class="main-slider revolution-slider">
@@ -7,7 +9,7 @@
             <div class="tp-banner">
                 <ul>
                     {% for portada in  site_config.fotosportada_set.all %}
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/media/{{portada.foto}}"  data-saveperformance="off"  data-title="Awesome Title Here">
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="/media/{{portada.foto}}"  data-saveperformance="off"  data-title="{{portada.titulo|safe}}">
                     <img src="/media/{{portada.foto}}"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" />
                     <div class="tp-caption sfl sfb tp-resizeme"
                     data-x="center" data-hoffset="0"
@@ -86,7 +88,13 @@
                     {% for nota in noticias %}
                         <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                             <figure class="image-box">
-                                <a href="#"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></a>
+                            {% if nota.portada %}
+                                {% thumbnail nota.portada "350x250" crop='center' as im %}
+                                    <a href="{% url 'noticia_detail' nota.id nota.slug %}"><img src="{{ im.url }}" alt="{{nota.titulo}}"></a>
+                                {% endthumbnail %}
+                            {% else %}
+                                    <a href="{% url 'noticia_detail' nota.id nota.slug %}"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt="{{nota.titulo}}"></a>
+                            {% endif %}
                                 <div class="news-date">{{nota.fecha|date:"d"}}<span class="month">{{nota.fecha|date:"M"}}</span></div>
                             </figure>
                             <div class="content-box">
@@ -109,15 +117,21 @@
                     <article class="inner-box mb-md-60">
                         <div class="vertical-links-outer events-post">
                             <div class="text-uppercase p-20 mb-5" data-bac="#393d42">
-                                <h2 class="white_color fw-b fs-24 mr-xs-80 mr-xxs-0">Proximos eventos de <span class="theme_color">Luciernaga</span></h2>
+                                <h2 class="white_color fw-b fs-24 mr-xs-80 mr-xxs-0">Próximos eventos de <span class="theme_color">Luciérnaga</span></h2>
                             </div>
-
-
                             <div class="bx-event-carousel-style2">
                             {% for evento in eventos %}
                                 <div class="link-block">
                                     <div class="default inner">
-                                        <figure class="image-thumb"><img src="http://fundacionluciernaga.org/img.php?i=files/5e05d022a820a15893d719cd553a8930753.jpg&width=120" alt=""></figure>
+                                        <figure class="image-thumb">
+                                        {% if evento.portada %}
+                                        {% thumbnail evento.portada "120x71"  as im %}
+                                            <img src="{{im.url}}" alt="{{evento.titulo}}">
+                                        {% endthumbnail %}
+                                        {% else %}
+                                            <img src="http://fundacionluciernaga.org/img.php?i=files/5e05d022a820a15893d719cd553a8930753.jpg&width=120" alt="{{evento.titulo}}">
+                                        {% endif %}
+                                        </figure>
                                         <h4 class="title">{{evento.titulo}}</h4>
                                         <ul class="event-held">
                                             <li><i class="fa fa-clock-o"></i> de {{evento.fecha_inicio|time:"P"}} - {{evento.fecha_finalizacion|time:"P"}}</li>
@@ -177,12 +191,9 @@
                         <h2 class="fs-32">Fundación <span class="theme_color roboto-font">Luciernaga</span></h2>
 
                         <div class="text">
-                            <p>La Fundación Luciérnaga nació en 1993 gracias al impulso de un grupo de personas que vieron la necesidad de promover, difundir y hacer uso del audiovisual con fines educativos y de sensibilización.</p>
-                            <p>
-                                 Nacemos como una pequeña videoteca con 175 videos de distintos temas y con la finalidad de acercar estos videos a la mayor cantidad de personas y organizaciones que estuvieran trabajando por el desarrollo social.
-                            </p>
+                           {{ site_config.acerca }}
                             <br>
-                            <a class="theme-btn btn-style-four" href="#">leer más</a>
+                            <a class="theme-btn btn-style-four" href="/acerca/">leer más</a>
                         </div>
 
                     </article>

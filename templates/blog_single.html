@@ -7,7 +7,7 @@
         	<div class="sec-title">
                 <h1>Detalle <span class="normal-font">{{object.titulo}}</span></h1>
                 <div class="bread-crumb">
-                    <a href="/">Inicio</a> / <a href="/">Noticias</a>
+                    <a href="/">Inicio</a> / <a href="/noticias/">Noticias</a>
                 </div>
             </div>
         </div>
@@ -29,19 +29,19 @@
                         <div class="column blog-news-column">
                             <article class="inner-box">
                                 <figure class="image-box">
-                                    <a href="#"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></a>
-                                    <div class="news-date">28<span class="month">OCT</span></div>
+                                    <a href="#"><img src="/media/{{object.portada}}" alt="{{object.titulo}}"></a>
+                                    <div class="news-date">{{object.fecha|date:"d"}}<span class="month">{{object.fecha|date:"M"}}</span></div>
                                 </figure>
                                 <div class="content-box padd-top-30">
                                     <h3><a href="#">{{object.titulo}}</a></h3>
                                     <div class="post-info clearfix">
                                         <div class="post-author">Por <span class="theme_color">{{object.usuario.username}}</span></div>
                                         <div class="post-options clearfix">
-                                            <a href="#" class="comments-count"><span class="icon fa fa-eye"></span> 6</a>
+                                            <a href="#" class="comments-count"><span class="icon fa fa-date"></span>{{object.fecha}}</a>
                                         </div>
                                     </div>
                                     <div class="text">
-                                    	{{object.contenido|safe}}
+                                    	{{object.contenido|safe|striptags}}
                                     </div>
                                 </div>
 
