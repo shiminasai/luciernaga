@@ -24,7 +24,7 @@ admin.site.site_title = "Sitio Administrativo de Luciérnaga"
 admin.site.site_header = "Luciérnaga Administración"
 
 urlpatterns = [
-    #path('jet/', include('jet.urls', 'jet')),
+    path('jet/', include('jet.urls', 'jet')),
     path('', include('noticias.urls')),
     path('admin/', admin.site.urls),
     path('admin/filebrowser/', site.urls),
