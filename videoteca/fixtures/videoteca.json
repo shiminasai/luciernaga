@@ -1,0 +1,639 @@
+[
+{
+  "model": "videoteca.generos",
+  "pk": 1,
+  "fields": {
+    "nombre": "Ficci\u00f3n - Largometraje"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 2,
+  "fields": {
+    "nombre": "Ficci\u00f3n - Cortometraje"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 3,
+  "fields": {
+    "nombre": "Ficci\u00f3n - Serie TV"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 4,
+  "fields": {
+    "nombre": "Documental"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 5,
+  "fields": {
+    "nombre": "Radio"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 6,
+  "fields": {
+    "nombre": "Musical"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 7,
+  "fields": {
+    "nombre": "Spots"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 8,
+  "fields": {
+    "nombre": "Noticiero"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 9,
+  "fields": {
+    "nombre": "Audiovisual educativo"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 10,
+  "fields": {
+    "nombre": "Obra de teatro"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 11,
+  "fields": {
+    "nombre": "Reportaje"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 12,
+  "fields": {
+    "nombre": "V\u00eddeo corporativo"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 13,
+  "fields": {
+    "nombre": "Documental experimental"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 14,
+  "fields": {
+    "nombre": "Presentaci\u00f3n"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 15,
+  "fields": {
+    "nombre": "Talleres"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 16,
+  "fields": {
+    "nombre": "Documentaci\u00f3n multimedia"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 17,
+  "fields": {
+    "nombre": "Broadcating"
+  }
+},
+{
+  "model": "videoteca.generos",
+  "pk": 18,
+  "fields": {
+    "nombre": "Video familiar/ amateur"
+  }
+},
+{
+  "model": "videoteca.idiomas",
+  "pk": 1,
+  "fields": {
+    "nombre": "Espa\u00f1ol"
+  }
+},
+{
+  "model": "videoteca.idiomas",
+  "pk": 2,
+  "fields": {
+    "nombre": "Franc\u00e9s"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 1,
+  "fields": {
+    "nombre": "DERECHOS HUMANOS"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 2,
+  "fields": {
+    "nombre": "Educaci\u00f3n en Derechos Humanos"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 3,
+  "fields": {
+    "nombre": "Derechos del ni\u00f1o y la ni\u00f1a"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 4,
+  "fields": {
+    "nombre": "Derechos de la mujer"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 5,
+  "fields": {
+    "nombre": "Derechos ind\u00edgenas, resistencia, lucha por la tierra"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 6,
+  "fields": {
+    "nombre": "Guerra, invasi\u00f3n, represi\u00f3n, censura "
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 7,
+  "fields": {
+    "nombre": "Refugiados, exiliados, repatriados "
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 8,
+  "fields": {
+    "nombre": "HISTORIA Y POL\u00cdTICA"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 9,
+  "fields": {
+    "nombre": "Historia de Am\u00e9rica"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 10,
+  "fields": {
+    "nombre": "Revoluci\u00f3n e Historia de Nicaragua"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 11,
+  "fields": {
+    "nombre": "Procesos de cambio social"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 12,
+  "fields": {
+    "nombre": "Soberan\u00eda"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 13,
+  "fields": {
+    "nombre": "ECONOM\u00cdA Y POLITICA ECON\u00d3MICA"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 14,
+  "fields": {
+    "nombre": "Organizaci\u00f3n productiva y desarrollo econ\u00f3mico"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 15,
+  "fields": {
+    "nombre": "Pobreza y desigualdad"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 16,
+  "fields": {
+    "nombre": "Globalizaci\u00f3n y problem\u00e1tica norte-sur"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 17,
+  "fields": {
+    "nombre": "Narcotr\u00e1fico, drogas y cultivos de sustituci\u00f3n "
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 18,
+  "fields": {
+    "nombre": "G\u00c9NERO"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 19,
+  "fields": {
+    "nombre": "Equidad  de g\u00e9nero "
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 20,
+  "fields": {
+    "nombre": "Procesos participativos de g\u00e9nero"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 21,
+  "fields": {
+    "nombre": "Organizaci\u00f3n y empoderamiento de la mujer"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 22,
+  "fields": {
+    "nombre": "Explotaci\u00f3n y violencia contra la mujer"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 23,
+  "fields": {
+    "nombre": "Prostituci\u00f3n"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 24,
+  "fields": {
+    "nombre": "SALUD Y SEXUALIDAD"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 25,
+  "fields": {
+    "nombre": "SIDA y enfermedades de transmisi\u00f3n sexual"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 26,
+  "fields": {
+    "nombre": "Planificaci\u00f3n familiar, educaci\u00f3n sexual y maternidad"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 27,
+  "fields": {
+    "nombre": "Medicina natural"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 28,
+  "fields": {
+    "nombre": "Salud mental y psicolog\u00eda "
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 29,
+  "fields": {
+    "nombre": "Enfermedades, higiene"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 30,
+  "fields": {
+    "nombre": "CULTURA Y RELIGI\u00d3N"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 31,
+  "fields": {
+    "nombre": "Identidad y valores "
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 32,
+  "fields": {
+    "nombre": "Etnias "
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 33,
+  "fields": {
+    "nombre": "Comunicaci\u00f3n"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 34,
+  "fields": {
+    "nombre": "M\u00fasica "
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 35,
+  "fields": {
+    "nombre": "Teatro y t\u00edteres comunitarios"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 36,
+  "fields": {
+    "nombre": "Religi\u00f3n y religiosidad"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 37,
+  "fields": {
+    "nombre": "Iglesia comprometida con los pobres"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 38,
+  "fields": {
+    "nombre": "INFANCIA "
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 39,
+  "fields": {
+    "nombre": "Educaci\u00f3n y participaci\u00f3n de la ni\u00f1\u00e9z"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 40,
+  "fields": {
+    "nombre": "Indigencia, explotaci\u00f3n y desamparo infantil"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 41,
+  "fields": {
+    "nombre": "Salud de la ni\u00f1ez"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 42,
+  "fields": {
+    "nombre": "Entretenimiento formativo"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 43,
+  "fields": {
+    "nombre": "AGRICULTURA Y ALIMENTACI\u00d3N"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 44,
+  "fields": {
+    "nombre": "Agricultura org\u00e1nica, comercio justo"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 45,
+  "fields": {
+    "nombre": "T\u00e9cnicas de cultivo, conservacion de productos"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 46,
+  "fields": {
+    "nombre": "Acceso a la tierra"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 47,
+  "fields": {
+    "nombre": "Seguridad alimentaria"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 48,
+  "fields": {
+    "nombre": "MEDIO AMBIENTE"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 49,
+  "fields": {
+    "nombre": "Educaci\u00f3n en medio ambiente"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 50,
+  "fields": {
+    "nombre": "Deforestaci\u00f3n y desertificaci\u00f3n"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 51,
+  "fields": {
+    "nombre": "Conservaci\u00f3n forestal y reforestaci\u00f3n"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 52,
+  "fields": {
+    "nombre": "Biodiversidad y protecci\u00f3n de especies"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 53,
+  "fields": {
+    "nombre": "Poluci\u00f3n"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 54,
+  "fields": {
+    "nombre": "Desastre natural"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 55,
+  "fields": {
+    "nombre": "Efecto invernadero"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 56,
+  "fields": {
+    "nombre": "Energ\u00eda no contaminante"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 57,
+  "fields": {
+    "nombre": "Agua "
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 58,
+  "fields": {
+    "nombre": "CONOCIMIENTO"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 59,
+  "fields": {
+    "nombre": "Historia y Sociedad"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 60,
+  "fields": {
+    "nombre": "Arte y Literatura"
+  }
+},
+{
+  "model": "videoteca.temas",
+  "pk": 61,
+  "fields": {
+    "nombre": "Ciencias"
+  }
+},
+{
+  "model": "videoteca.series",
+  "pk": 1,
+  "fields": {
+    "nombre": "Mundo Rural"
+  }
+},
+{
+  "model": "videoteca.series",
+  "pk": 2,
+  "fields": {
+    "nombre": "Medio Ambiente"
+  }
+},
+{
+  "model": "videoteca.series",
+  "pk": 3,
+  "fields": {
+    "nombre": "Turismos"
+  }
+},
+{
+  "model": "videoteca.series",
+  "pk": 4,
+  "fields": {
+    "nombre": "Sexualidad y Poder"
+  }
+},
+{
+  "model": "videoteca.series",
+  "pk": 5,
+  "fields": {
+    "nombre": "Memoria Hist\u00f3rica"
+  }
+},
+{
+  "model": "videoteca.series",
+  "pk": 6,
+  "fields": {
+    "nombre": "Ni\u00f1ez y Juventud"
+  }
+},
+{
+  "model": "videoteca.series",
+  "pk": 7,
+  "fields": {
+    "nombre": "Loma Verde"
+  }
+},
+{
+  "model": "videoteca.pais",
+  "pk": 1,
+  "fields": {
+    "nombre": "Nicaragua"
+  }
+},
+{
+  "model": "videoteca.pais",
+  "pk": 2,
+  "fields": {
+    "nombre": "Francia"
+  }
+},
+{
+  "model": "videoteca.pais",
+  "pk": 3,
+  "fields": {
+    "nombre": "Reino Unido"
+  }
+}
+]
