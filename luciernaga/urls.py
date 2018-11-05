@@ -20,6 +20,9 @@ from django.conf.urls.static import static
 from filebrowser.sites import site
 #from django.views.generic import TemplateView
 
+admin.site.site_title = "Sitio Administrativo de Luciérnaga"
+admin.site.site_header = "Luciérnaga Administración"
+
 urlpatterns = [
     #path('jet/', include('jet.urls', 'jet')),
     path('', include('noticias.urls')),
