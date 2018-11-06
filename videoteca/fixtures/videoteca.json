@@ -635,5 +635,68 @@
   "fields": {
     "nombre": "Reino Unido"
   }
+},
+{
+  "model": "videoteca.coleccion",
+  "pk": 1,
+  "fields": {
+    "nombre": "ARCHIVO HIST\u00d3RICO"
+  }
+},
+{
+  "model": "videoteca.coleccion",
+  "pk": 2,
+  "fields": {
+    "nombre": "BIBLIOTECA MULTIMEDIA"
+  }
+},
+{
+  "model": "videoteca.coleccion",
+  "pk": 3,
+  "fields": {
+    "nombre": "CEDOC"
+  }
+},
+{
+  "model": "videoteca.coleccion",
+  "pk": 4,
+  "fields": {
+    "nombre": "LUCI\u00c9RNAGA"
+  }
+},
+{
+  "model": "videoteca.coleccion",
+  "pk": 5,
+  "fields": {
+    "nombre": "MUESTRA AUDIOVISUAL"
+  }
+},
+{
+  "model": "videoteca.coleccion",
+  "pk": 6,
+  "fields": {
+    "nombre": "PNUD"
+  }
+},
+{
+  "model": "videoteca.coleccion",
+  "pk": 7,
+  "fields": {
+    "nombre": "RADIO"
+  }
+},
+{
+  "model": "videoteca.coleccion",
+  "pk": 8,
+  "fields": {
+    "nombre": "RED CENTROAMERICANA DE COMUNICACI\u00d3N"
+  }
+},
+{
+  "model": "videoteca.coleccion",
+  "pk": 9,
+  "fields": {
+    "nombre": "TVE"
+  }
 }
 ]

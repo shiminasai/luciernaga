@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
+{% load thumbnail  el_pagination_tags %}
+
 {% block content %}
     <!--Page Title-->
     <section class="page-title" style="background-image:url(http://fundacionluciernaga.org/img.php?i=files/59d4ee99ca2cad34bb3fdaff5cfb8d9e130.jpg&width=1024);">
     	<div class="auto-container">
         	<div class="sec-title">
                 <h1>Videoteca</h1>
-                <div class="bread-crumb"><a href="index.html">Inicio</a></div>
+                <div class="bread-crumb"><a href="/">Inicio</a></div>
             </div>
         </div>
     </section>
@@ -39,8 +41,6 @@
                     </form>
                 </div>
             </div>
-
-
 
         </div>
     </section>
@@ -121,103 +121,21 @@
         <div class="auto-container">
             <h4 class="inner-title double-line line-left">Últimas producciones  </h4>
             <div class="row clearfix">
+            {% paginate 12 object_list %}
+            {% for obj in object_list %}
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
                     <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
                         <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
                         <div class="content-box">
-                            <h3><a href="#">Soñando despiertas</a></h3>
+                            <h3><a href="{% url 'videoteca_detail' obj.pk obj.slug%}">{{obj.titulo}}</a></h3>
                         </div>
                     </article>
                 </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/440f73573cf7de67e09cf2c3c7dcd369.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Perú Adentro</a></h3>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/34d6e7af5dff03b26f031064b7209584.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">El Tigre Suelto</a></h3>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="/static/materiales/img/1.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Gente, valores, arte e ideas</a></h3>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="/static/materiales/img/3.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Colección abuso sexual</a></h3>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="/static/materiales/img/4.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Colección VIH SIDA</a></h3>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="/static/materiales/img/6.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Derechos sexuales y reproductivos</a></h3>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="/static/materiales/img/7.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Soberania alimentaria</a></h3>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="/static/materiales/img/8.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">salud sexuales y reproductivos</a></h3>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/555a5648249148c7d37f310acf5afe97.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Nica Libre</a></h3>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/8a7e01f32870eb8f8a023309d64d7bc3.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Nicaragua Sangre y Miel</a></h3>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/441fd68cdc1cc19036116625af153a0a.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Los Caminos del Silencio</a></h3>
-                        </div>
-                    </article>
-                </div>
-
+            {% endfor %}
+            </div>
+             <!-- Styled Pagination -->
+            <div class="styled-pagination text-center padd-top-20 margin-bott-40">
+                {% show_pages %}
             </div>
         </div>
     </section>

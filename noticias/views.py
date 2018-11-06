@@ -57,12 +57,11 @@ class VideotecasListView(ListView):
 
 class VideotecaDetailView(DetailView):
     model = Videotecas
-    template_name = 'videoteca.html'
-    #context_object_name = 'nota'
+    template_name = 'detalle_videoteca.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['ultimas_videotecas'] = Videotecas.objects.exclude(pk=self.object.pk).order_by('-fecha')[:3]
+        context['ultimas_videotecas'] = Videotecas.objects.exclude(pk=self.object.pk).order_by('-id')[:3]
         context['temas'] = Temas.objects.all()
 
         return context

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from import_export import resources
-from .models import Generos, Idiomas, Temas, Videotecas, Series, Pais
+from .models import Generos, Idiomas, Temas, Videotecas, Series, Pais, Coleccion
 from import_export.admin import ImportExportModelAdmin
 
 class VideotecasResource(resources.ModelResource):
@@ -28,6 +28,10 @@ class PaisResource(resources.ModelResource):
     class Meta:
         model = Pais
 
+class ColeccionResource(resources.ModelResource):
+    class Meta:
+        model = Coleccion
+
 class GenerosAdmin(ImportExportModelAdmin):
     resource_class = GenerosResource
 
@@ -43,6 +47,9 @@ class SeriesAdmin(ImportExportModelAdmin):
 class PaisAdmin(ImportExportModelAdmin):
     resource_class = PaisResource
 
+class ColeccionAdmin(ImportExportModelAdmin):
+    resource_class = ColeccionResource
+
 class VideotecasAdmin(ImportExportModelAdmin):
     resource_class = VideotecasResource
 
@@ -52,4 +59,5 @@ admin.site.register(Idiomas, IdiomasAdmin)
 admin.site.register(Temas, TemasAdmin)
 admin.site.register(Series, SeriesAdmin)
 admin.site.register(Pais, PaisAdmin)
+admin.site.register(Coleccion, ColeccionAdmin)
 admin.site.register(Videotecas, VideotecasAdmin)
