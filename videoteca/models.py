@@ -107,3 +107,16 @@ class Videotecas(models.Model):
         verbose_name = 'Videoteca'
         verbose_name_plural = 'Videotecas'
 
+class GuiasVideoteca(models.Model):
+    titulo = models.CharField('Titulo de la guia', max_length=50)
+    guia = models.FileField(upload_to='/guiasVideotecas/')
+
+    def __str__(self):
+        return self.titulo
+
+    class Meta:
+        verbose_name = 'Guia de videoteca'
+        verbose_name_plural = 'Guias de videotecas'
+
+class ColeccionesPDF(models.Model):
+    pass
