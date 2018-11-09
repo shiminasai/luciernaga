@@ -3,6 +3,11 @@
 {% load thumbnail %}
 
 {% block content%}
+<style type="text/css">
+    .header-style-two .header-top .logo img{
+        max-width:100%;  
+    }
+</style>
     <!--Main Slider-->
     <section class="main-slider revolution-slider">
         <div class="tp-banner-container">
@@ -80,79 +85,77 @@
         <div class="auto-container">
 
             <div class="row clearfix">
-
-                <!--Featured Column-->
-                <div class="column default-featured-column style-three col-lg-8 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-8 col-md-12">
                     <h4 class="inner-title double-line line-left"><span class="theme_color">Noticias</span> Recientes</h4>
                     <div class="blog-news-column featured-project owl-carousel owl-nav-style owl-nav3">
-                    {% for nota in noticias %}
-                        <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                            <figure class="image-box">
-                            {% if nota.portada %}
-                                {% thumbnail nota.portada "350x250" crop='center' as im %}
-                                    <a href="{% url 'noticia_detail' nota.id nota.slug %}"><img src="{{ im.url }}" alt="{{nota.titulo}}"></a>
-                                {% endthumbnail %}
-                            {% else %}
-                                    <a href="{% url 'noticia_detail' nota.id nota.slug %}"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt="{{nota.titulo}}"></a>
-                            {% endif %}
-                                <div class="news-date">{{nota.fecha|date:"d"}}<span class="month">{{nota.fecha|date:"M"}}</span></div>
-                            </figure>
-                            <div class="content-box">
-                                <h3><a href="{% url 'noticia_detail' nota.id nota.slug %}">{{nota.titulo}}</a></h3>
-                                <div class="post-info clearfix">
-                                    <div class="post-author">Autor <span class="theme_color">{{nota.usuario.username}}</span></div>
+                        {% for nota in noticias %}
+                            <article class="inner-box wow fadeInUp index_nota" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <figure class="image-box">
+                                {% if nota.portada %}
+                                    {% thumbnail nota.portada "350x250" crop='center' as im %}
+                                        <a href="{% url 'noticia_detail' nota.id nota.slug %}"><img src="{{ im.url }}" alt="{{nota.titulo}}"></a>
+                                    {% endthumbnail %}
+                                {% else %}
+                                        <a href="{% url 'noticia_detail' nota.id nota.slug %}"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt="{{nota.titulo}}"></a>
+                                {% endif %}
+                                    <div class="news-date">{{nota.fecha|date:"d"}}<span class="month">{{nota.fecha|date:"M"}}</span></div>
+                                </figure>
+                                <div class="content-box">
+                                    <h3><a href="{% url 'noticia_detail' nota.id nota.slug %}">{{nota.titulo}}</a></h3>
+                                    <div class="post-info clearfix">
+                                        <div class="post-author">Autor <span class="theme_color">{{nota.usuario.username}}</span></div>
+                                    </div>
+                                    <div class="text">{{nota.contenido|safe|striptags|truncatewords:30}}.</div>
+                                    <a href="{% url 'noticia_detail' nota.id nota.slug %}" class="theme-btn btn-style-two btn-sm">Leer más</a>
                                 </div>
-                                <div class="text">{{nota.contenido|safe|striptags|truncatewords:30}}.</div>
-                                <a href="{% url 'noticia_detail' nota.id nota.slug %}" class="theme-btn btn-style-two btn-sm">Leer más</a>
-                            </div>
-                        </article>
-                    {% endfor %}
-                         <!--News Column-->
+                            </article>
+                        {% endfor %}
 
                     </div>
                 </div>
-
-                <!--Cause Column-->
                 <div class="column default-featured-column links-column col-lg-4 col-md-12">
                     <article class="inner-box mb-md-60">
                         <div class="vertical-links-outer events-post">
                             <div class="text-uppercase p-20 mb-5" data-bac="#393d42">
                                 <h2 class="white_color fw-b fs-24 mr-xs-80 mr-xxs-0">Próximos eventos de <span class="theme_color">Luciérnaga</span></h2>
                             </div>
-                            <div class="bx-event-carousel-style2">
-                            {% for evento in eventos %}
-                                <div class="link-block">
-                                    <div class="default inner">
-                                        <figure class="image-thumb">
-                                        {% if evento.portada %}
-                                        {% thumbnail evento.portada "120x71"  as im %}
-                                            <img src="{{im.url}}" alt="{{evento.titulo}}">
-                                        {% endthumbnail %}
-                                        {% else %}
-                                            <img src="http://fundacionluciernaga.org/img.php?i=files/5e05d022a820a15893d719cd553a8930753.jpg&width=120" alt="{{evento.titulo}}">
-                                        {% endif %}
-                                        </figure>
-                                        <h4 class="title">{{evento.titulo}}</h4>
-                                        <ul class="event-held">
-                                            <li><i class="fa fa-clock-o"></i> de {{evento.fecha_inicio|time:"P"}} - {{evento.fecha_finalizacion|time:"P"}}</li>
-                                            <li> <i class="fa fa-map-marker"></i>{{evento.lugar}}</li>
-                                        </ul>
-                                        <ul class="event-date">
-                                            <li class="event-day">{{evento.fecha_inicio|date:"d"}}</li>
-                                            <li class="event-month">{{evento.fecha_inicio|date:"M"}}</li>
-                                        </ul>
-                                    </div>
-                                    <div class="alternate">
-                                        <p class="desc">{{evento.descripcion|safe|striptags|truncatewords:11}}</p>
-                                        <a class="theme-btn btn-style-five btn-xs mr-10" href="{% url 'evento_detail' evento.pk evento.slug %}">Leer más</a>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                            </div>
 
+                            <div class="bx-event-carousel-style2">
+                                {% for evento in eventos %}
+                                    <div class="link-block">
+                                        <div class="default inner">
+                                            <figure class="image-thumb">
+                                            {% if evento.portada %}
+                                            {% thumbnail evento.portada "120x71"  as im %}
+                                                <img src="{{im.url}}" alt="{{evento.titulo}}">
+                                            {% endthumbnail %}
+                                            {% else %}
+                                                <img src="http://fundacionluciernaga.org/img.php?i=files/5e05d022a820a15893d719cd553a8930753.jpg&width=120" alt="{{evento.titulo}}">
+                                            {% endif %}
+                                            </figure>
+                                            <h4 class="title">{{evento.titulo}}</h4>
+                                            <ul class="event-held">
+                                                <li><i class="fa fa-clock-o"></i> de {{evento.fecha_inicio|time:"P"}} - {{evento.fecha_finalizacion|time:"P"}}</li>
+                                                <li> <i class="fa fa-map-marker"></i>{{evento.lugar}}</li>
+                                            </ul>
+                                            <ul class="event-date">
+                                                <li class="event-day">{{evento.fecha_inicio|date:"d"}}</li>
+                                                <li class="event-month">{{evento.fecha_inicio|date:"M"}}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="alternate">
+                                            <p class="desc">{{evento.descripcion|safe|striptags|truncatewords:11}}</p>
+                                            <a class="theme-btn btn-style-five btn-xs mr-10" href="{% url 'evento_detail' evento.pk evento.slug %}">Leer más</a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            
                         </div>
                     </article>
                 </div>
+
+                
 
 
             </div>
@@ -164,10 +167,10 @@
     <section class="main-features parallax-section theme-overlay overlay-deep-white" style="background-image:url(http://fundacionluciernaga.org/img.php?i=files/59d4ee99ca2cad34bb3fdaff5cfb8d9e130.jpg&width=1024);">
         <div class="auto-container">
             <div class="title-box text-center mb-0">
-                <h1 class="fs-36 mb-15">Red Centro America de Comunicación</h1>
+                <h1 class="fs-36 mb-15">Videoteca Casa Luciérnaga</h1>
                 <h2>Contenido audiovisual para el ejercicio de los derechos humanos</h2>
                 <div class="">
-                    <a class="theme-btn btn-style-two" href="#">Visitar sitio</a>
+                    <a class="theme-btn btn-style-two" href="/videotecas/">Visitar</a>
                 </div>
             </div>
         </div>
@@ -193,7 +196,7 @@
                         <div class="text">
                            {{ site_config.acerca }}
                             <br>
-                            <a class="theme-btn btn-style-four mt-20" href="/acerca/">leer más</a>
+                            <a class="theme-btn btn-style-four mt-20" href="/historia/">leer más</a>
                         </div>
 
                     </article>
