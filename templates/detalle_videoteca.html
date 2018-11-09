@@ -21,7 +21,13 @@
                 <div class="inner-box">
                 	<div class="row clearfix">
                     	<div class="column image-column col-lg-5 col-md-3 col-sm-3 col-xs-12">
-                    		<figure class="image"><img class="img-responsive" src="/static/materiales/img/AbusoSexual.jpg" alt=""></figure>
+                    		<figure class="image">
+                                {% if object.imagen_portada %}
+                                    <img class="img-responsive" src="/media/{{object.imagen_portada}}" alt="{{object.titulo}}" width="100%">
+                                {% else %}
+                                    <img class="img-responsive" src="/media/{{object.imagen_fill}}" alt="{{object.titulo}}">
+                                {% endif %}
+                            </figure>
                         </div>
 
                         <div class="column content-column col-lg-7 col-md-9 col-sm-9 col-xs-12">
