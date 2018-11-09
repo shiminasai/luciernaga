@@ -1,7 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>{{flatpage.title}}</h2>
+	<section class="default-section pb-0 mb-50">
+    	<div class="auto-container">
+    		<article class="inner-box mt-10 wow fadeInRight default-text-column" data-wow-delay="0ms" data-wow-duration="1500ms">
+    			<h2 class="fs-32"> {{flatpage.title}} </h2>
+                <div class="text">
+                	<p>
+                		{{ flatpage.content }}
+                	</p>
+                </div>
+            </article> 
+        </div>
+    </section>
 
-{{ flatpage.content }}
+
+
 {% endblock content %}
