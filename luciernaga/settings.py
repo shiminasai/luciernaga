@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'import_export',
     'solo.apps.SoloAppConfig',
     'el_pagination',
-    #'mptt',
-    #'treenav',
     'sitetree',
 ]
 
@@ -79,7 +77,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #'treenav.context_processors.treenav_active',
             ],
         },
     },
