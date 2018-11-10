@@ -1,3 +1,31 @@
+
+
+.lista_notas .blog-news-column h3{
+    height: 60px;
+    overflow: hidden;
+}
+.lista_notas .blog-news-column .text{
+    height: 50px;
+    overflow: hidden;
+}
+
+.header-style-two .header-top .logo2{
+    position:relative;
+    float:left;
+    padding-left: 100px; 
+    display: none;
+}
+
+.header-style-two .header-top .logo2 img{
+    max-width:90%;
+    /*display:inline-block;*/
+    display: none;   
+}
+
+
+
+
+
 .featured-project .inner-box {
     margin:  0 10px;
 }
@@ -82,4 +110,44 @@
 }
 .footer-bottom{
     background: #313131;
+}
+@media (min-width: 768px){
+  .crea_foro .comment-form .form-group input {
+    width: auto;
+  }
+  .image-box iframe{
+    min-height: 450px; 
+  }
+  .form-inline  .textInput{
+    min-width: 60% !important;
+  }
+
+}
+@media (max-width: 600px){
+
+  .blog-news-column .inner-box .text img, .blog-news-column .inner-box .text iframe, .default-featured-column .inner-box .text img, .default-section .text_about img{
+    width: 100% !important;
+    height: auto !important;
+    margin:10px 0px !important;
+  }
+  .image-box iframe{
+
+    min-height: 300px; 
+  }
+   .btn-nav .glyphicon {
+        padding-top: 12px;
+        font-size: 26px;
+    }
+    .team-section .team-member .image {
+      height: auto !important;
+    }
+}
+@media only screen and (max-width: 1023px){
+.main-header .header-upper .logo2, .header-style-two .header-top .logo2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-left: 0px;
+    display: none;
+}
 }
