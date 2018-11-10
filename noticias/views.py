@@ -48,6 +48,7 @@ class EventoDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['ultimas_noticias'] = Noticias.objects.order_by('-fecha')[:3]
         context['temas'] = Temas.objects.all()
+        context['position'] = self.object.position.split(',')
 
         return context
 
