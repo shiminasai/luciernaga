@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static solo_tags %}
+{% load sitetree %}
 <html>
 <head>
     {% get_solo 'configuracion.SiteConfiguration' as site_config %}
@@ -92,7 +93,6 @@
 
                     <!-- Main Menu -->
                     <nav class="main-menu">
-
                         <div class="navbar-header">
                             <!-- Toggle Button -->
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -106,7 +106,7 @@
                             <ul class="navigation">
                                 <li><a href="/">Inicio</a></li>
                                 <li><a href="/noticias/">Noticias</a></li>
-                                
+
                                 <li class="current dropdown"><a href="#">Acerca de</a>
                                     <ul>
                                         <li><a href="/historia/">Historia</a></li>
@@ -136,7 +136,7 @@
                 </div>
             </div>
         </div><!-- Lower Part End-->
-
+        {% sitetree_menu from "menutree" include "trunk" %}
     </header><!--End Header Style Two-->
 
     {% block content %} {% endblock%}

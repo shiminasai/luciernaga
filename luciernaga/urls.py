@@ -30,9 +30,7 @@ urlpatterns = [
     path('admin/filebrowser/', site.urls),
     path('tinymce/', include('tinymce.urls')),
     path('pages/', include('django.contrib.flatpages.urls')),
-    #path('lista-notas/', TemplateView.as_view(template_name="notas_lista.html")),
-    #path('lista-eventos/', TemplateView.as_view(template_name="eventos_lista.html")),
-    #path('videotecas/detalle/', TemplateView.as_view(template_name="detalle_video.html")),
+    #path('treenav/', include('treenav.urls')),
 
 ]
 
