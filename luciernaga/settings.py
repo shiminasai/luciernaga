@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'tinymce',
     'filebrowser',
-    'geoposition',
+    #'geoposition',
+    'location_field.apps.DefaultConfig',
     'import_export',
     'solo.apps.SoloAppConfig',
     'el_pagination',
@@ -43,14 +44,14 @@ INSTALLED_APPS = [
 ]
 
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBdQtBr_qwV2fMWrT4FrzBOziYTw2odlVo'
-GEOPOSITION_MAP_OPTIONS = {
-    'minZoom': 3,
-    'maxZoom': 15,
-}
+# GEOPOSITION_MAP_OPTIONS = {
+#     'minZoom': 3,
+#     'maxZoom': 15,
+# }
 
-GEOPOSITION_MARKER_OPTIONS = {
-    'cursor': 'move'
-}
+# GEOPOSITION_MARKER_OPTIONS = {
+#     'cursor': 'move'
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -132,6 +133,28 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_media"),
 ]
 
+LOCATION_FIELD_PATH = STATIC_URL + 'location_field'
+
+LOCATION_FIELD = {
+    'map.provider': 'openstreetmap',
+    'map.zoom': 13,
+
+    'search.provider': 'google',
+    'search.suffix': '',
+
+    # OpenStreetMap
+    'provider.openstreetmap.max_zoom': 18,
+
+    # misc
+    'resources.root_path': LOCATION_FIELD_PATH,
+    'resources.media': {
+        'js': [
+            LOCATION_FIELD_PATH + '/js/jquery.livequery.js',
+            LOCATION_FIELD_PATH + '/js/form.js',
+        ],
+    },
+}
+
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
     'width': '75%',
@@ -163,4 +186,40 @@ TINYMCE_DEFAULT_CONFIG = {
 
 #TINYMCE_SPELLCHECKER = True
 TINYMCE_COMPRESSOR = True
+
+JET_DEFAULT_THEME = 'light-gray'
+JET_SIDE_MENU_COMPACT = True
+JET_THEMES = [
+    {
+        'theme': 'default', # theme folder name
+        'color': '#47bac1', # color of the theme's button in user menu
+        'title': 'Default' # theme title
+    },
+    {
+        'theme': 'green',
+        'color': '#44b78b',
+        'title': 'Green'
+    },
+    {
+        'theme': 'light-green',
+        'color': '#2faa60',
+        'title': 'Light Green'
+    },
+    {
+        'theme': 'light-violet',
+        'color': '#a464c4',
+        'title': 'Light Violet'
+    },
+    {
+        'theme': 'light-blue',
+        'color': '#5EADDE',
+        'title': 'Light Blue'
+    },
+    {
+        'theme': 'light-gray',
+        'color': '#222',
+        'title': 'Light Gray'
+    }
+]
+
 

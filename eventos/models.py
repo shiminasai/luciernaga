@@ -1,9 +1,10 @@
 from django.db import models
 from django.template import defaultfilters
 
-from geoposition.fields import GeopositionField
+#from geoposition.fields import GeopositionField
 from sorl.thumbnail import ImageField
 from taggit.managers import TaggableManager
+from location_field.models.plain import PlainLocationField
 
 # Create your models here.
 
@@ -16,7 +17,7 @@ class Eventos(models.Model):
     descripcion = models.TextField()
     lugar = models.CharField(max_length=250)
     name = models.CharField('Ciudad', max_length=100)
-    position = GeopositionField()
+    position = PlainLocationField(based_fields=['name'], zoom=7)
 
     adjunto = models.FileField(upload_to='uploads/%Y/%m/%d/', null=True, blank=True)
     tags = TaggableManager()
