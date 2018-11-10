@@ -142,11 +142,11 @@
                         <h2>Links de Interés</h2>
                         <div class="footer-widget links-widget">
                             <ul>
-                                <li><a href="#">Videoteca</a></li>
-                                <li><a href="#">Noticia</a></li>
-                                <li><a href="#">Eventos</a></li>
-                                <li><a href="#">Acerca de</a></li>
-                                <li><a href="#">Loma verde</a></li>
+                                <li><a href="/videotecas/">Videoteca</a></li>
+                                <li><a href="/noticias/">Noticia</a></li>
+                                <li><a href="/eventos/">Eventos</a></li>
+                                <li><a href="/historia/">Acerca de</a></li>
+                                <li><a href="/loma-verde/">Loma verde</a></li>
                             </ul>
 
                         </div>
@@ -156,28 +156,14 @@
                     <div class="col-lg-3 col-sm-6 col-xs-12 column">
                         <div class="footer-widget news-widget">
                             <h2>Últimas Noticias</h2>
-
+                        {% for obj in ultimas_noticias %}
                             <!--News Post-->
                             <div class="news-post">
                                 <div class="icon"></div>
-                                <div class="news-content"><figure class="image-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure><a href="#">Red Global por los DDHH y de las Mujeres</a></div>
-                                <div class="time">Agosto 28, 2018</div>
+                                <div class="news-content"><figure class="image-thumb"><img src="/media/{{obj.portada}}" alt="{{obj.titulo}}"></figure><a href="{% url 'noticia_detail' obj.id obj.slug %}">{{obj.titulo}}</a></div>
+                                <div class="time">{{obj.fecha}}</div>
                             </div>
-
-                            <!--News Post-->
-                            <div class="news-post">
-                                <div class="icon"></div>
-                                <div class="news-content"><figure class="image-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure><a href="#">Red Global por los DDHH y de las Mujeres</a></div>
-                                <div class="time">Agosto 28, 2018</div>
-                            </div>
-
-                            <!--News Post-->
-                            <div class="news-post">
-                                <div class="icon"></div>
-                                <div class="news-content"><figure class="image-thumb"><img src="http://fundacionluciernaga.org/fotograma(1).jpeg" alt=""></figure><a href="#">Red Global por los DDHH y de las Mujeres</a></div>
-                                <div class="time">Agosto 28, 2018</div>
-                            </div>
-
+                        {% endfor %}
                         </div>
                     </div>
 
@@ -192,7 +178,7 @@
         <div class="footer-bottom">
             <div class="auto-container clearfix">
                 <!--Copyright-->
-                <div class="copyright text-center">Todos los derechos reservados <a href="#">Fundación Luciernaga</a>. Desarollado por <a href="">SIMAS</a></div>
+                <div class="copyright text-center">Todos los derechos reservados <a href="/">Fundación Luciernaga</a>. Desarollado por <a href="http://www.simas.org.ni">SIMAS</a></div>
             </div>
         </div>
 
