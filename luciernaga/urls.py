@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from filebrowser.sites import site
-#from django.views.generic import TemplateView
+from django.views.generic import TemplateView
 
 admin.site.site_title = "Sitio Administrativo de Luciérnaga"
 admin.site.site_header = "Luciérnaga Administración"
@@ -30,6 +30,7 @@ urlpatterns = [
     path('admin/filebrowser/', site.urls),
     path('tinymce/', include('tinymce.urls')),
     path('pages/', include('django.contrib.flatpages.urls')),
+    path('contactenos/', TemplateView.as_view(template_name="contactenos.html")),
     #path('treenav/', include('treenav.urls')),
 
 ]

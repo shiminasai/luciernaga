@@ -1,10 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<section class="default-section pb-0 mb-50 static_page">
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url(/static/images/background/img.jpg);">
+        <div class="auto-container">
+            <div class="sec-title">
+                <h1>{{flatpage.title}}</span></h1>
+                <div class="bread-crumb">
+                    <a href="/">Inicio</a> / <a>{{flatpage.title}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<section class="default-section pt-50 mb-70 static_page">
     	<div class="auto-container">
     		<article class="inner-box mt-10 wow fadeInRight default-text-column" data-wow-delay="0ms" data-wow-duration="1500ms">
-    			<h2 class="fs-32"> {{flatpage.title}} </h2>
+    			<!--<h2 class="fs-32"> {{flatpage.title}} </h2>-->
                 <div class="text">
                 	<p>
                 		{{ flatpage.content }}

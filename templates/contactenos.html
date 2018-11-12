@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url(/static/images/background/img.jpg);">
+    	<div class="auto-container">
+        	<div class="sec-title">
+                <h1>Contáctenos</h1>
+                <div class="bread-crumb"><a href="/">Inicio</a> / <a href="#" class="current">Contáctenos</a></div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!--Default Section / Other Info-->
+    <section class="default-section other-info">
+    	<div class="auto-container">
+        
+        	<div class="row clearfix">
+                
+                <!--Info Column-->
+                <div class="column info-column col-lg-5 col-md-6 col-sm-12 col-xs-12">
+                	<article class="inner-box">
+                		<h3 class="margin-bott-20">Visítanos</h3>
+                        <div class="text margin-bott-40">Fundación Luciérnaga fortalece sus vínculos con otras organizaciones que trabajan en pro de los medios de información, cooperantes y comunidades que posibilitaron la elaboración y difusión de diversos materiales audiovisuales sobre momentos históricos relevantes en América Latina. Para más informacion puede contactarnos. </div>
+                        <ul class="info-box">
+                            <li><span class="icon flaticon-location"></span><strong>Dirección</strong> Reparto Bolonia, Sumedico 1 c. al Oeste, Managua, Nicaragua</li>
+                            <li><span class="icon flaticon-technology-5"></span><strong>Teléfono</strong> +(505) 2266-0811, 2268-7802</li>
+                            <li><span class="icon flaticon-interface-1"></span><strong>Correo</strong> luciernaga@gmail.com</li>
+                        </ul>
+                    </article>
+                </div>
+                
+                <!--Image Column-->
+                <div class="column image-column col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                	<article class="inner-box">
+                		<figure class="image-box"><img src="/static/images/background/foto%20casa%20luciernaga.JPG" alt=""></figure>
+                    </article>
+                </div>
+            
+            </div>
+        </div>
+    </section>
+    
+    
+    <!--Contact Section-->
+    <section class="contact-section no-padd-top">
+    	<div class="auto-container">
+        
+        	<div class="row clearfix">
+                
+                <!--Map Column-->
+                <div class="column map-column col-lg-5 col-md-6 col-sm-12 col-xs-12">
+                	<h2>NUESTRA UBICACIÓN EN EL MAPA</h2>
+                    
+                	<article class="inner-box">
+                		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.592709804908!2d-86.28779128468865!3d12.139995591405205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f715677bffec943%3A0xc8961813ef970ea9!2sFundaci%C3%B3n+Luci%C3%A9rnaga!5e0!3m2!1ses!2sni!4v1542060469548" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </article>
+                </div>
+                
+                <!--Form Column-->
+                <div class="column form-column col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                	<h2>Comunícate con nosotros </h2>
+                	<!--COntact Form-->
+                	<div class="inner-box contact-form">
+                    	<form method="post" action="sendemail.php" id="contact-form">
+                        	<div class="row clearfix">
+                            	<!--Form Group-->
+                                <div class="form-group col-md-6 col-xs-12">
+                                	<input type="text" name="username" value="" placeholder="Nombre">
+                                </div>
+                                <!--Form Group-->
+                                <div class="form-group col-md-6 col-xs-12">
+                                	<input type="text" name="email" value="" placeholder="Correo">
+                                </div>
+                                <!--Form Group-->
+                                <div class="form-group col-md-12 col-xs-12">
+                                	<textarea name="message" placeholder="Mensaje"></textarea>
+                                </div>
+                                
+                                <!--Form Group-->
+                                <div class="form-group col-md-12 col-xs-12">
+                                	<div class="text-right"><button type="submit" class="theme-btn btn-style-two">Enviar</button></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!--COntact Form-->
+                    
+                </div>
+            
+            </div>
+        </div>
+    </section>
+    <!--Team Section-->
+    <section class="team-section">
+        <div class="auto-container">
+            <div class="sec-title clearfix">
+                <div class="">
+                    <h2>Nuestro <span class="normal-font theme_color">Equipo</span></h2>
+                   
+                </div>
+            </div>
+            
+            <div class="row clearfix">
+                
+                <!--Column-->
+                <article class="column team-member col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image"><a href="mailto:mail@email.com"><img src="https://via.placeholder.com/250x250" alt=""></a></figure>
+                        <div class="member-info">
+                            <h3>Nombre del Trabajador</h3>
+                            <div class="designation">Cargo</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!--Column-->
+                <article class="column team-member col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image"><a href="mailto:mail@email.com"><img src="https://via.placeholder.com/250x250" alt=""></a></figure>
+                        <div class="member-info">
+                            <h3>Nombre del Trabajador</h3>
+                            <div class="designation">Cargo</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!--Column-->
+                <article class="column team-member col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image"><a href="mailto:mail@email.com"><img src="https://via.placeholder.com/250x250" alt=""></a></figure>
+                        <div class="member-info">
+                            <h3>Nombre del Trabajador</h3>
+                            <div class="designation">Cargo</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!--Column-->
+                <article class="column team-member col-lg-3 col-md-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image"><a href="mailto:mail@email.com"><img src="https://via.placeholder.com/250x250" alt=""></a></figure>
+                        <div class="member-info">
+                            <h3>Nombre del Trabajador</h3>
+                            <div class="designation">Cargo</div>
+                        </div>
+                    </div>
+                </article>
+                
+
+                
+            </div>
+            
+        </div>
+    </section>
+{% endblock content %}
