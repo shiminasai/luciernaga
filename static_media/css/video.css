@@ -111,8 +111,57 @@
     color: #25292f;
 }
 
+.team-section .team-member .image {
+    height: 270px;
+    overflow: hidden;
+}
+.team-section .owl-controls{
+    position:relative;
+    text-align:center;
+    padding:20px 0px;
+    top:0px;    
+}
 
+.team-section .owl-controls .owl-next,
+.team-section .owl-controls .owl-prev{
+    position:relative;
+    width:50px !important;
+    height:38px !important;
+    padding:0px !important;
+    background:#00723A !important;
+    color:#ffffff !important;
+    line-height:38px;
+    font-size:20px !important;
+    -webkit-transition:all 500ms ease;
+    -ms-transition:all 500ms ease;
+    -moz-transition:all 500ms ease;
+    transition:all 500ms ease;  
+}
 
+.team-section .owl-controls .owl-next:hover,
+.team-section .owl-controls .owl-prev:hover{
+    background:#000 !important; 
+}
+
+.team-section .owl-controls .owl-prev{
+    border-radius:4px 0px 0px 4px !important;
+    margin:0px !important;  
+}
+
+.team-section .owl-controls .owl-next{
+    border-radius:0px 4px 4px 0px !important;
+    margin:0px !important;
+    right:-1px; 
+}
+
+.team-section .owl-dots,
+.team-section.style-two .owl-nav{
+    display:none !important;
+}
+
+.team-section.style-two .owl-dots{
+    display:block !important;
+}
 
 @media (min-width: 768px){
   .crea_foro .comment-form .form-group input {

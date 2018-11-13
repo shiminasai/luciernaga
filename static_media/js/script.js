@@ -194,6 +194,37 @@
 		});    		
 	}
 
+	//Team Carousel Slider
+	if ($('.team-carousel').length) {
+		$('.team-carousel').owlCarousel({
+			loop:true,
+			margin:60,
+			autoplayHoverPause:false,
+			autoplay: 5000,
+			smartSpeed: 700,
+			dots:true,
+			nav:true,
+			navText: [ '<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>' ],
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				760:{
+					items:2
+				},
+				1024:{
+					items:3
+				},
+				1100:{
+					items:3
+				}
+			}
+		});    		
+	}
+
 	//Sponsors Slider
 	if ($('.sponsors-slider').length) {
 		$('.sponsors-slider').owlCarousel({
