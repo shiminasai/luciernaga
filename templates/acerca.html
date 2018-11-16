@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url(/static/images/background/img.jpg);">
+    	<div class="auto-container">
+        	<div class="sec-title">
+                <h1><span class="normal-font">Acerca de</span></h1>
+                <div class="bread-crumb">
+                    <a href="/">Inicio</a> / <a href="#">Acerca de</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Sidebar Page-->
+    <div class="sidebar-page">
+    	<div class="auto-container">
+    		<div class="visible-xs">
+    			<nav role="navigation">
+	            	<div id="menuToggle">
+
+	            		<input type="checkbox" />
+	            		<span></span>
+	            		<span></span>
+	            		<span></span>
+	            		<ul id="menu">
+	            			<li class="active"><a href="#tab1" data-toggle="tab">Historia</a></li>
+	            			<li class=""><a href="#tab2" data-toggle="tab">Alianzas</a></li>
+	            			<li class=""><a href="#tab3" data-toggle="tab">Proyectos</a></li>
+	            			<li class=""><a href="#tab4" data-toggle="tab">Formación</a></li>
+	            		</ul>
+	            	</div>
+	            	<p class="prueba">Contenido</p>
+	            </nav>
+    		</div>
+    		
+        	<div class="row clearfix">
+				<!--Sidebar-->
+	                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 hidden-xs">
+	                    <aside class="sidebar">
+	                        <div class="widget">
+	                        	<nav class="nav static_contenido">
+									<ul class="nav tabs">
+							          <li class="active"><a href="#tab1" data-toggle="tab">Historia</a></li>
+							          <li class=""><a href="#tab2" data-toggle="tab">Alianzas</a></li>
+							          <li class=""><a href="#tab3" data-toggle="tab">Proyectos</a></li>
+							          <li class=""><a href="#tab4" data-toggle="tab">Formación</a></li>                             
+									</ul>
+								</nav>
+
+	                        </div>
+
+	                    </aside>
+	                    
+	                </div>
+	            <!--Sidebar-->
+                <!--Content Side-->
+	                <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+
+	                	<div class="tab-content">
+	                		<div class="tab-pane active text-style" id="tab1">
+	                			<h2>Lorem ipsum</h2>
+	                			<p>
+	                				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+	                				standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make 
+	                				a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+	                				essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+	                				and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  
+	                			</p>
+	                			<hr>
+	                			<img src="http://placehold.it/350x250" class="img-rounded pull-right">   
+	                		</div>
+	                		<div class="tab-pane text-style" id="tab2">
+	                			<h2>Dolor asit amet</h2>
+	                			<p>Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
+	                				ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
+	                				dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+	                				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
+	                			et dolore magna aliquyam erat, sed diam voluptua.</p>
+	                			<hr>
+	                			<img src="http://placehold.it/150x90" class="img-rounded pull-left">
+	                		</div>
+	                		<div class="tab-pane text-style" id="tab3">
+	                			<h2>Stet clita</h2>
+	                			<p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum 
+	                				iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla 
+	                				facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit 
+	                			augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,</p>
+	                			<hr>
+	                			<div class="col-xs-6 col-md-3">
+	                				<img src="http://placehold.it/150x150" class="img-rounded pull-right">
+	                			</div>
+	                		</div>
+	                	</div>
+
+
+	                </div>
+                <!--Content Side-->
+            </div>
+        </div>
+    </div>
+{% endblock content %}

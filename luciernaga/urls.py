@@ -31,6 +31,7 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('pages/', include('django.contrib.flatpages.urls')),
     path('contactenos/', TemplateView.as_view(template_name="contactenos.html")),
+    path('acerca_de/', TemplateView.as_view(template_name="acerca.html")),
     #path('treenav/', include('treenav.urls')),
 
 ]

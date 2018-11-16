@@ -73,7 +73,7 @@
     color: #fff !important;
 }
 .owl-relacion .owl-carousel.owl-nav-style.owl-nav3 .owl-nav .owl-prev {
-    right: 51px !important;
+    right: 72px !important;
     left: auto !important;
 }
 .owl-relacion .owl-carousel.owl-nav-style.owl-nav3 .owl-nav .owl-next {
@@ -163,6 +163,22 @@
     display:block !important;
 }
 
+.static_contenido li{
+    border-left: 3px #00723A solid;
+    margin-bottom: 3px;
+}
+.static_contenido li a{
+    color: #2f2f31;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2em;
+}
+.static_contenido li.active a{
+    background: #00723A;
+    color: white;
+
+}
 @media (min-width: 768px){
   .crea_foro .comment-form .form-group input {
     width: auto;
