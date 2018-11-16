@@ -4,15 +4,18 @@
 
 {% block content %}
 	<!--Page Title-->
-    <section class="page-title" style="background-image:url(/static/images/background/img.jpg);">
-    	<div class="auto-container">
-        	<div class="sec-title">
+{% for portada in  site_config.fotossecciones_set.all %}
+    {% if request.path == portada.url %}
+    <section class="page-title" style="background-image:url(/media/{{portada.foto}});">
+        <div class="auto-container">
+            <div class="sec-title">
                 <h1>Lista <span class="normal-font">Eventos</span></h1>
                 <div class="bread-crumb"><a href="/">Inicio</a>
             </div>
         </div>
     </section>
-
+    {% endif %}
+{% endfor %}
 
     <!--Events Section-->
     <section class="events-section latest-events">

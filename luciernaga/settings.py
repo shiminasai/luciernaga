@@ -164,20 +164,20 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme': 'modern',
     'plugins': '''
             textcolor save link image media preview codesample contextmenu
-            table code lists fullscreen  insertdatetime  nonbreaking
+            table code lists fullscreen  insertdatetime  nonbreaking bbcode
             contextmenu directionality searchreplace wordcount visualblocks
             visualchars code fullscreen autolink lists  charmap print  hr
-            anchor pagebreak
+            anchor pagebreak bbcode
             ''',
     'toolbar1': '''
             fullscreen preview bold italic underline | fontselect,
             fontsizeselect  | forecolor backcolor | alignleft alignright |
             aligncenter alignjustify | indent outdent | bullist numlist table |
-            | link image media | codesample |
+            | link image media | codesample | bbcode |
             ''',
     'toolbar2': '''
             visualblocks visualchars |
-            charmap hr pagebreak nonbreaking anchor |  code |
+            charmap hr pagebreak nonbreaking anchor |  code | bbcode |
             ''',
     'contextmenu': 'formats | link image',
     'menubar': True,

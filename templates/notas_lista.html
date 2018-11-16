@@ -4,7 +4,9 @@
 
 {% block content %}
     <!--Page Title-->
-    <section class="page-title" style="background-image:url(/static/images/background/img.jpg);">
+{% for portada in  site_config.fotossecciones_set.all %}
+    {% if request.path == portada.url %}
+    <section class="page-title" style="background-image:url(/media/{{portada.foto}});">
     	<div class="auto-container">
         	<div class="sec-title">
                 <h1>Lista <span class="normal-font">Noticias</span></h1>
@@ -12,6 +14,8 @@
             </div>
         </div>
     </section>
+    {% endif %}
+{% endfor %}
 
 
     <!--Blog News Section-->

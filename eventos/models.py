@@ -15,6 +15,7 @@ class Eventos(models.Model):
     fecha_inicio = models.DateTimeField()
     fecha_finalizacion = models.DateTimeField()
     descripcion = models.TextField()
+    pais = models.CharField(max_length=50, null=True, blank=True)
     lugar = models.CharField(max_length=250)
     name = models.CharField('Ciudad', max_length=100)
     position = PlainLocationField(based_fields=['name'], zoom=7)

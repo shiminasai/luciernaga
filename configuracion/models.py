@@ -28,3 +28,17 @@ class FotosPortada(models.Model):
     class Meta:
         verbose_name = 'Foto de portada'
         verbose_name_plural = 'Fotos de las portadas'
+
+class FotosSecciones(models.Model):
+    sitio = models.ForeignKey(SiteConfiguration, on_delete=models.CASCADE)
+    titulo = models.CharField(max_length=50, null=True, blank=True)
+    url = models.CharField('url de la seccion', max_length=50)
+    foto = models.FileField(upload_to='fotosecciones/')
+
+    def __str__(self):
+        return 'fotos de secciones'
+
+    class Meta:
+        verbose_name = 'Foto de sección'
+        verbose_name_plural = 'Fotos de las secciones'
+
