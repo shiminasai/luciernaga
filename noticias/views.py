@@ -74,6 +74,6 @@ class ContactenosView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['personal'] = PersonalLuciernaga.objects.order_by('id')
+        context['personal'] = PersonalLuciernaga.objects.order_by('-id')
 
         return context
