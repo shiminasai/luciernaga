@@ -2,17 +2,19 @@
 
 {% block content %}
     <!--Page Title-->
-    <section class="page-title" style="background-image:url(/static/images/background/img.jpg);">
-    	<div class="auto-container">
-        	<div class="sec-title">
+{% for portada in  site_config.fotossecciones_set.all %}
+    {% if request.path == portada.url %}
+    <section class="page-title" style="background-image:url(/media/{{portada.foto}});">
+        <div class="auto-container">
+            <div class="sec-title">
                 <h1><span class="normal-font">Acerca de</span></h1>
                 <div class="bread-crumb">
-                    <a href="/">Inicio</a> / <a href="#">Acerca de</a>
-                </div>
+                    <a href="/">Inicio</a> / <a href="/acerca-de/">Acerca de</a>
             </div>
         </div>
     </section>
-
+    {% endif %}
+{% endfor %}
 
     <!--Sidebar Page-->
     <div class="sidebar-page">
@@ -26,7 +28,7 @@
 	            		<span></span>
 	            		<span></span>
 	            		<ul id="menu">
-                            {% for  pagina in site_config.acercasecciones_set.all %}
+                            {% for  pagina in site_config.acercasecciones_set.all reversed %}
                                 <li class="{% if forloop.counter == 1 %}active {%endif%}"><a href="#tab-{{pagina.id}}" data-toggle="tab">{{pagina.titulo}}</a></li>
                             {% endfor %}
 	            		</ul>
@@ -42,7 +44,7 @@
 	                        <div class="widget">
 	                        	<nav class="nav static_contenido">
 									<ul class="nav tabs">
-                                    {% for pagina in site_config.acercasecciones_set.all %}
+                                    {% for pagina in site_config.acercasecciones_set.all reversed %}
                                          <li class="{% if forloop.counter == 1 %}active {%endif%}"><a href="#tab-{{pagina.id}}" data-toggle="tab">{{pagina.titulo}}</a></li>
                                     {% endfor %}
 									</ul>
@@ -58,7 +60,7 @@
 	                <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
 
 	                	<div class="tab-content">
-                        {% for pagina in site_config.acercasecciones_set.all %}
+                        {% for pagina in site_config.acercasecciones_set.all reversed %}
 	                		<div class="tab-pane {% if forloop.counter == 1 %}active {%endif%} text-style" id="tab-{{pagina.id}}">
 	                			<h2>{{pagina.titulo}}</h2>
 	                			<p>
