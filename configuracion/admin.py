@@ -1,6 +1,15 @@
 from django.contrib import admin
+from django import forms
 from solo.admin import SingletonModelAdmin
+from tinymce import TinyMCE
 from .models import SiteConfiguration, FotosPortada, FotosSecciones, AcercaSecciones
+
+class MyFormContent(forms.ModelForm):
+    contenido = forms.CharField(widget=TinyMCE(mce_attrs={'width': 800}))
+
+    class Meta:
+        model = AcercaSecciones
+        fields = '__all__'
 
 class FotosInlines(admin.TabularInline):
     model = FotosPortada
@@ -13,6 +22,7 @@ class SeccionesInlines(admin.TabularInline):
     max_num = 10
 
 class AcercaInlines(admin.TabularInline):
+    form = MyFormContent
     model = AcercaSecciones
     extra = 3
 
