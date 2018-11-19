@@ -42,3 +42,11 @@ class FotosSecciones(models.Model):
         verbose_name = 'Foto de sección'
         verbose_name_plural = 'Fotos de las secciones'
 
+
+class AcercaSecciones(models.Model):
+    sitio = models.ForeignKey(SiteConfiguration, on_delete=models.CASCADE)
+    titulo = models.CharField(max_length=250)
+    contenido = models.TextField()
+
+    def __str__(self):
+        return self.titulo

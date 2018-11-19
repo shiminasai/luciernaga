@@ -16,4 +16,6 @@ urlpatterns = [
          views.VideotecasListView.as_view(), name='videoteca_list'),
     path('videoteca/<int:pk>-<str:slug>',
          views.VideotecaDetailView.as_view(), name='videoteca_detail'),
+    path('contactenos/',
+        views.ContactenosView.as_view(), name='contactenos'),
 ]

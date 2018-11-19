@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.flatpages.admin import FlatpageForm, FlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from django import forms
-from .models import Noticias, Temas
+from .models import Noticias, Temas, PersonalLuciernaga
 from sorl.thumbnail.admin import AdminImageMixin
 from tinymce import TinyMCE
 
@@ -31,5 +31,5 @@ class AdminNoticias(AdminImageMixin, admin.ModelAdmin):
 
 admin.site.register(Noticias, AdminNoticias)
 admin.site.register(Temas)
-
+admin.site.register(PersonalLuciernaga)
 

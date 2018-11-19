@@ -43,3 +43,16 @@ class Noticias(models.Model):
     class Meta:
         verbose_name = 'Noticia'
         verbose_name_plural = 'Noticias'
+
+
+class PersonalLuciernaga(models.Model):
+    nombre_completo = models.CharField(max_length=250)
+    foto = ImageField(upload_to='personal/')
+    cargo = models.CharField(max_length=250)
+    correo = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.nombre_completo
+
+    class Meta:
+        verbose_name_plural = 'Personal de Luciérnaga'

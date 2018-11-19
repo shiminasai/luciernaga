@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load thumbnail %}
+
 {% block content %}
     <!--Page Title-->
     <section class="page-title" style="background-image:url(/static/images/background/img.jpg);">
@@ -10,14 +12,14 @@
             </div>
         </div>
     </section>
-    
-    
+
+
     <!--Default Section / Other Info-->
     <section class="default-section other-info">
     	<div class="auto-container">
-        
+
         	<div class="row clearfix">
-                
+
                 <!--Info Column-->
                 <div class="column info-column col-lg-5 col-md-6 col-sm-12 col-xs-12">
                 	<article class="inner-box">
@@ -30,34 +32,34 @@
                         </ul>
                     </article>
                 </div>
-                
+
                 <!--Image Column-->
                 <div class="column image-column col-lg-7 col-md-6 col-sm-12 col-xs-12">
                 	<article class="inner-box">
                 		<figure class="image-box"><img src="/static/images/background/foto%20casa%20luciernaga.JPG" alt=""></figure>
                     </article>
                 </div>
-            
+
             </div>
         </div>
     </section>
-    
-    
+
+
     <!--Contact Section-->
     <section class="contact-section no-padd-top">
     	<div class="auto-container">
-        
+
         	<div class="row clearfix">
-                
+
                 <!--Map Column-->
                 <div class="column map-column col-lg-5 col-md-6 col-sm-12 col-xs-12">
                 	<h2>NUESTRA UBICACIÓN EN EL MAPA</h2>
-                    
+
                 	<article class="inner-box">
                 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.592709804908!2d-86.28779128468865!3d12.139995591405205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f715677bffec943%3A0xc8961813ef970ea9!2sFundaci%C3%B3n+Luci%C3%A9rnaga!5e0!3m2!1ses!2sni!4v1542060469548" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </article>
                 </div>
-                
+
                 <!--Form Column-->
                 <div class="column form-column col-lg-7 col-md-6 col-sm-12 col-xs-12">
                 	<h2>Comunícate con nosotros </h2>
@@ -77,7 +79,7 @@
                                 <div class="form-group col-md-12 col-xs-12">
                                 	<textarea name="message" placeholder="Mensaje"></textarea>
                                 </div>
-                                
+
                                 <!--Form Group-->
                                 <div class="form-group col-md-12 col-xs-12">
                                 	<div class="text-right"><button type="submit" class="theme-btn btn-style-two">Enviar</button></div>
@@ -85,9 +87,9 @@
                             </div>
                         </form>
                     </div><!--COntact Form-->
-                    
+
                 </div>
-            
+
             </div>
         </div>
     </section>
@@ -97,64 +99,32 @@
             <div class="sec-title clearfix">
                 <div class="">
                     <h2>Nuestro <span class="normal-font theme_color">Equipo</span></h2>
-                   
+
                 </div>
             </div>
-            
+
             <div class="team-carousel">
-                
+
                 <!--Column-->
+            {% for obj in personal %}
                 <article class="team-member slide-item wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <div class="inner-box">
-                        <figure class="image"><a href="mailto:mail@email.com"><img src="https://c6oxm85c.cloudimg.io/cdno/n/q85/https://az617363.vo.msecnd.net/imgmodels/models/md10002871/23f8934e-aff3-4b84-8b97-82fee56d4c14_thumb.jpg" alt=""></a></figure>
+                        <figure class="image"><a href="mailto:{{obj.correo}}">
+                            {% thumbnail obj.foto "350x250" crop="center" as im %}
+                                 <img src="{{im.url}}" alt="{{obj.nombre_completo}}">
+                            {% endthumbnail %}
+                           </a></figure>
                         <div class="member-info">
-                            <h3>Nombre del Trabajador</h3>
-                            <div class="designation">Cargo</div>
-                            <a href="mailto:caorreo@correo.com"><i class="fa fa-envelope"></i> correo@correo.com</a>
+                            <h3>{{obj.nombre_completo}}</h3>
+                            <div class="designation">{{obj.cargo}}</div>
+                            <a href="mailto:caorreo@correo.com"><i class="fa fa-envelope"></i>{{obj.correo}}</a>
                         </div>
                     </div>
                 </article>
+            {% endfor %}
 
-                <!--Column-->
-                <article class="team-member slide-item wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image"><a href="mailto:mail@email.com"><img src="https://c6oxm85c.cloudimg.io/cdno/n/q85/https://az617363.vo.msecnd.net/imgmodels/models/md10002871/23f8934e-aff3-4b84-8b97-82fee56d4c14_thumb.jpg" alt=""></a></figure>
-                        <div class="member-info">
-                            <h3>Nombre del Trabajador</h3>
-                            <div class="designation">Cargo</div>
-                            <a href="mailto:caorreo@correo.com"><i class="fa fa-envelope"></i> correo@correo.com</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!--Column-->
-                <article class="team-member slide-item wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image"><a href="mailto:mail@email.com"><img src="https://c6oxm85c.cloudimg.io/cdno/n/q85/https://az617363.vo.msecnd.net/imgmodels/models/md10002871/23f8934e-aff3-4b84-8b97-82fee56d4c14_thumb.jpg" alt=""></a></figure>
-                        <div class="member-info">
-                            <h3>Nombre del Trabajador</h3>
-                            <div class="designation">Cargo</div>
-                            <a href="mailto:caorreo@correo.com"><i class="fa fa-envelope"></i> correo@correo.com</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!--Column-->
-                <article class="team-member slide-item wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image"><a href="mailto:mail@email.com"><img src="https://c6oxm85c.cloudimg.io/cdno/n/q85/https://az617363.vo.msecnd.net/imgmodels/models/md10002871/23f8934e-aff3-4b84-8b97-82fee56d4c14_thumb.jpg" alt=""></a></figure>
-                        <div class="member-info">
-                            <h3>Nombre del Trabajador</h3>
-                            <div class="designation">Cargo</div>
-                            <a href="mailto:caorreo@correo.com"><i class="fa fa-envelope"></i> correo@correo.com</a>
-                        </div>
-                    </div>
-                </article>
-                
-
-                
             </div>
-            
+
         </div>
     </section>
 {% endblock content %}

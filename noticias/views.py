@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView
-from .models import Noticias, Temas
+from .models import Noticias, Temas, PersonalLuciernaga
 from eventos.models import Eventos
 from videoteca.models import Videotecas
 
@@ -68,3 +68,12 @@ class VideotecaDetailView(DetailView):
         return context
 
 
+class ContactenosView(TemplateView):
+
+    template_name = 'contactenos.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['personal'] = PersonalLuciernaga.objects.all()
+
+        return context
