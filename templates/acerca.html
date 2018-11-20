@@ -37,7 +37,7 @@
 	            </nav>
     		</div>
 
-        	<div class="row clearfix">
+        	<div class="row clearfix acerca_page">
 				<!--Sidebar-->
 	                <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 hidden-xs">
 	                    <aside class="sidebar">
@@ -63,9 +63,9 @@
                         {% for pagina in site_config.acercasecciones_set.all reversed %}
 	                		<div class="tab-pane {% if forloop.counter == 1 %}active {%endif%} text-style" id="tab-{{pagina.id}}">
 	                			<h2>{{pagina.titulo}}</h2>
-	                			<p>
+	                			<div class="text">
 	                				{{pagina.contenido|safe}}
-	                			</p>
+	                			</div>
 	                			<hr>
 	                		</div>
                         {% endfor %}

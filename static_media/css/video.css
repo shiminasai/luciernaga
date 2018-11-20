@@ -193,7 +193,9 @@
 }
 @media (max-width: 600px){
 
-  .blog-news-column .inner-box .text img, .blog-news-column .inner-box .text iframe, .default-featured-column .inner-box .text img, .default-section .text_about img{
+  .blog-news-column .inner-box .text img, .blog-news-column .inner-box .text iframe,
+  .acerca_page .tab-content .text img, .acerca_page .tab-content .text iframe,
+  .default-featured-column .inner-box .text img, .default-section .text_about img{
     width: 100% !important;
     height: auto !important;
     margin:10px 0px !important;

@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+
+{% load thumbnail el_pagination_tags %}
+
+{% block content %}
+    
+    
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url(http://fundacionluciernaga.org/img.php?i=files/59d4ee99ca2cad34bb3fdaff5cfb8d9e130.jpg&width=1024);">
+    	<div class="auto-container">
+        	<div class="sec-title">
+                <h1>Publicaciones</h1>
+                <div class="bread-crumb"><a href="/">Inicio</a></div>
+            </div>
+        </div>
+    </section>
+    
+    <!--Team Section-->
+    <section class="team-section member-details">
+        <div class="auto-container">
+            <!--Filters Section-->
+            <div class="filters-section">
+                <div class="filter-form">
+                    <form method="post" action="index.html">
+                        <div class="row clearfix">
+                            <div class="form-group col-md-5 col-sm-5 col-xs-12">
+                                <div class="field-label">Género</div>
+                                <select name="" id="input" class="form-control" required="required">
+                                    <option value="">Drama</option>
+                                    <option value="">Ficción</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group col-md-5 col-sm-5 col-xs-12">
+                                <div class="field-label">Temas</div>
+                                <input type="text" name="keyword" class="form-control" value="" placeholder="Keyword">
+                            </div>
+                            <div class="form-group col-md-2 col-sm-2 col-xs-12">
+                                <div class="field-label">&nbsp;</div>
+                                <button type="button" class="theme-btn btn-style-two">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        	
+
+            
+        </div>
+    </section>
+
+
+    <section class="pt-0 pb-60" >
+        <div class="auto-container">
+            <h4 class="inner-title double-line line-left">Catálogo de publicaciones</h4>
+            <div class="row clearfix">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
+                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
+                        <div class="content-box">
+                            <h3><a href="#">Soñando despiertas</a></h3>
+                        </div>
+                    </article>           
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
+                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <img src="http://fundacionluciernaga.org/files/440f73573cf7de67e09cf2c3c7dcd369.jpg" alt="" width="100%">
+                        <div class="content-box">
+                            <h3><a href="#">Perú Adentro</a></h3>
+                        </div>
+                    </article>           
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
+                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <img src="http://fundacionluciernaga.org/files/34d6e7af5dff03b26f031064b7209584.jpg" alt="" width="100%">
+                        <div class="content-box">
+                            <h3><a href="#">El Tigre Suelto</a></h3>
+                        </div>
+                    </article>           
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
+                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
+                        <div class="content-box">
+                            <h3><a href="#">Soñando despiertas</a></h3>
+                        </div>
+                    </article>           
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
+                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
+                        <div class="content-box">
+                            <h3><a href="#">Soñando despiertas</a></h3>
+                        </div>
+                    </article>           
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
+                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <img src="http://fundacionluciernaga.org/files/440f73573cf7de67e09cf2c3c7dcd369.jpg" alt="" width="100%">
+                        <div class="content-box">
+                            <h3><a href="#">Perú Adentro</a></h3>
+                        </div>
+                    </article>           
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
+                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <img src="http://fundacionluciernaga.org/files/34d6e7af5dff03b26f031064b7209584.jpg" alt="" width="100%">
+                        <div class="content-box">
+                            <h3><a href="#">El Tigre Suelto</a></h3>
+                        </div>
+                    </article>           
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
+                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
+                        <div class="content-box">
+                            <h3><a href="#">Soñando despiertas</a></h3>
+                        </div>
+                    </article>           
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
+                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
+                        <div class="content-box">
+                            <h3><a href="#">Soñando despiertas</a></h3>
+                        </div>
+                    </article>           
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
+                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <img src="http://fundacionluciernaga.org/files/440f73573cf7de67e09cf2c3c7dcd369.jpg" alt="" width="100%">
+                        <div class="content-box">
+                            <h3><a href="#">Perú Adentro</a></h3>
+                        </div>
+                    </article>           
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
+                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <img src="http://fundacionluciernaga.org/files/34d6e7af5dff03b26f031064b7209584.jpg" alt="" width="100%">
+                        <div class="content-box">
+                            <h3><a href="#">El Tigre Suelto</a></h3>
+                        </div>
+                    </article>           
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 list-videos">
+                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
+                        <div class="content-box">
+                            <h3><a href="#">Soñando despiertas</a></h3>
+                        </div>
+                    </article>           
+                </div>          
+                
+            </div>
+        </div>
+    </section>
+
+{% endblock%}
