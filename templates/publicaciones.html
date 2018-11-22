@@ -3,8 +3,8 @@
 {% load thumbnail el_pagination_tags %}
 
 {% block content %}
-    
-    
+
+
     <!--Page Title-->
     <section class="page-title" style="background-image:url(http://fundacionluciernaga.org/img.php?i=files/59d4ee99ca2cad34bb3fdaff5cfb8d9e130.jpg&width=1024);">
     	<div class="auto-container">
@@ -14,7 +14,7 @@
             </div>
         </div>
     </section>
-    
+
     <!--Team Section-->
     <section class="team-section member-details">
         <div class="auto-container">
@@ -43,9 +43,6 @@
                     </form>
                 </div>
             </div>
-        	
-
-            
         </div>
     </section>
 
@@ -54,103 +51,23 @@
         <div class="auto-container">
             <h4 class="inner-title double-line line-left">Catálogo de publicaciones</h4>
             <div class="row clearfix">
+                {% for obj in object_list %}
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 list-videos">
                     <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
+                    {% if obj.portada %}
+                        {% thumbnail obj.portada "270x375" crop="center" as im %}
+                            <img src="{{im.url}}" alt="{{obj.titulo}}" width="100%">
+                        {% endthumbnail %}
+                    {% else %}
+                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="{{obj.titulo}}" width="100%">
+                    {% endif %}
                         <div class="content-box">
-                            <h3><a href="#">Soñando despiertas</a></h3>
+                            <h3><a href="{% url 'catalogos_detail' obj.id obj.slug %}">{{obj.titulo}}</a></h3>
                         </div>
-                    </article>           
+                    </article>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/440f73573cf7de67e09cf2c3c7dcd369.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Perú Adentro</a></h3>
-                        </div>
-                    </article>           
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/34d6e7af5dff03b26f031064b7209584.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">El Tigre Suelto</a></h3>
-                        </div>
-                    </article>           
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Soñando despiertas</a></h3>
-                        </div>
-                    </article>           
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Soñando despiertas</a></h3>
-                        </div>
-                    </article>           
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/440f73573cf7de67e09cf2c3c7dcd369.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Perú Adentro</a></h3>
-                        </div>
-                    </article>           
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/34d6e7af5dff03b26f031064b7209584.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">El Tigre Suelto</a></h3>
-                        </div>
-                    </article>           
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Soñando despiertas</a></h3>
-                        </div>
-                    </article>           
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Soñando despiertas</a></h3>
-                        </div>
-                    </article>           
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/440f73573cf7de67e09cf2c3c7dcd369.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Perú Adentro</a></h3>
-                        </div>
-                    </article>           
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/34d6e7af5dff03b26f031064b7209584.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">El Tigre Suelto</a></h3>
-                        </div>
-                    </article>           
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 list-videos">
-                    <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="" width="100%">
-                        <div class="content-box">
-                            <h3><a href="#">Soñando despiertas</a></h3>
-                        </div>
-                    </article>           
-                </div>          
-                
+                {% endfor %}
+
             </div>
         </div>
     </section>

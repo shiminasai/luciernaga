@@ -18,4 +18,8 @@ urlpatterns = [
          views.VideotecaDetailView.as_view(), name='videoteca_detail'),
     path('contactenos/',
         views.ContactenosView.as_view(), name='contactenos'),
+    path('catalogos/',
+        views.CatalogosListView.as_view(), name='catalogos'),
+    path('detalle-catalogo/<int:pk>-<str:slug>',
+        views.CatalogoDetailView.as_view(), name='catalogos_detail'),
 ]

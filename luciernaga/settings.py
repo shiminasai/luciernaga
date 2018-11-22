@@ -25,11 +25,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.flatpages',
-    #apps
-    'noticias',
-    'eventos',
-    'videoteca',
-    'configuracion',
     #third party
     'taggit',
     'sorl.thumbnail',
@@ -41,6 +36,13 @@ INSTALLED_APPS = [
     'solo.apps.SoloAppConfig',
     'el_pagination',
     'sitetree',
+    'places',
+    'embed_video',
+     #apps
+    'noticias',
+    'eventos',
+    'videoteca',
+    'configuracion',
 ]
 
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBdQtBr_qwV2fMWrT4FrzBOziYTw2odlVo'
@@ -52,6 +54,11 @@ GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBdQtBr_qwV2fMWrT4FrzBOziYTw2odlVo'
 # GEOPOSITION_MARKER_OPTIONS = {
 #     'cursor': 'move'
 # }
+
+PLACES_MAPS_API_KEY='AIzaSyBdQtBr_qwV2fMWrT4FrzBOziYTw2odlVo'
+PLACES_MAP_WIDGET_HEIGHT=480
+PLACES_MAP_OPTIONS='{"center": { "lat": 38.971584, "lng": -95.235072 }, "zoom": 10}'
+PLACES_MARKER_OPTIONS='{"draggable": true}'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -191,39 +198,39 @@ TINYMCE_DEFAULT_CONFIG = {
 #TINYMCE_SPELLCHECKER = True
 TINYMCE_COMPRESSOR = True
 
-JET_DEFAULT_THEME = 'light-gray'
-JET_SIDE_MENU_COMPACT = True
-JET_THEMES = [
-    {
-        'theme': 'default', # theme folder name
-        'color': '#47bac1', # color of the theme's button in user menu
-        'title': 'Default' # theme title
-    },
-    {
-        'theme': 'green',
-        'color': '#44b78b',
-        'title': 'Green'
-    },
-    {
-        'theme': 'light-green',
-        'color': '#2faa60',
-        'title': 'Light Green'
-    },
-    {
-        'theme': 'light-violet',
-        'color': '#a464c4',
-        'title': 'Light Violet'
-    },
-    {
-        'theme': 'light-blue',
-        'color': '#5EADDE',
-        'title': 'Light Blue'
-    },
-    {
-        'theme': 'light-gray',
-        'color': '#222',
-        'title': 'Light Gray'
-    }
-]
+# JET_DEFAULT_THEME = 'light-gray'
+# JET_SIDE_MENU_COMPACT = True
+# JET_THEMES = [
+#     {
+#         'theme': 'default', # theme folder name
+#         'color': '#47bac1', # color of the theme's button in user menu
+#         'title': 'Default' # theme title
+#     },
+#     {
+#         'theme': 'green',
+#         'color': '#44b78b',
+#         'title': 'Green'
+#     },
+#     {
+#         'theme': 'light-green',
+#         'color': '#2faa60',
+#         'title': 'Light Green'
+#     },
+#     {
+#         'theme': 'light-violet',
+#         'color': '#a464c4',
+#         'title': 'Light Violet'
+#     },
+#     {
+#         'theme': 'light-blue',
+#         'color': '#5EADDE',
+#         'title': 'Light Blue'
+#     },
+#     {
+#         'theme': 'light-gray',
+#         'color': '#222',
+#         'title': 'Light Gray'
+#     }
+# ]
 
 

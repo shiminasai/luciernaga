@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView
 from .models import Noticias, Temas, PersonalLuciernaga
 from eventos.models import Eventos
-from videoteca.models import Videotecas
+from videoteca.models import Videotecas, CatalogosPDF
 
 # Create your views here.
 
@@ -62,18 +62,24 @@ class VideotecaDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['ultimas_videotecas'] = Videotecas.objects.exclude(pk=self.object.pk).order_by('-id')[:3]
+        context['ultimas_videotecas'] = Videotecas.objects.filter(genero=self.object.genero).exclude(pk=self.object.pk).order_by('-id')[:3]
         context['temas'] = Temas.objects.all()
 
         return context
 
-
 class ContactenosView(TemplateView):
-
     template_name = 'contactenos.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['personal'] = PersonalLuciernaga.objects.all()
-
         return context
+
+
+class CatalogosListView(ListView):
+    template_name = 'publicaciones.html'
+    model = CatalogosPDF
+
+class CatalogoDetailView(DetailView):
+    model = CatalogosPDF
+    template_name = 'detalle_publicacion.html'

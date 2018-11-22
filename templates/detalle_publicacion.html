@@ -7,13 +7,13 @@
     <section class="page-title" style="background-image:url(materiales/img/Panorama.png);">
     	<div class="auto-container">
         	<div class="sec-title">
-                <h1>Loma Verde. Resumen primera temporada</h1>
-                <div class="bread-crumb"><a href="index.html">Inicio</a> / <a href="#" class="current">Videoteca</a></div>
+                <h1>{{object.titulo}}</h1>
+                <div class="bread-crumb"><a href="index.html">Inicio</a> / <a href="/catalogos/" class="current">Catálogo</a></div>
             </div>
         </div>
     </section>
-    
-    
+
+
     <!--Team Section-->
     <section class="team-section member-details">
         <div class="auto-container">
@@ -24,49 +24,45 @@
                     <div class="row clearfix">
                         <div class="column image-column col-lg-5 col-md-3 col-sm-3 col-xs-12">
                             <figure class="image">
-                                <img class="img-responsive" src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549739.jpg" alt="nombre" width="100%">
-                                {% if object.imagen_portada %}
-                                    <img class="img-responsive" src="/media/{{object.imagen_portada}}" alt="{{object.titulo}}" width="100%">
+                                {% if object.portada %}
+                                    <img class="img-responsive" src="/media/{{object.portada}}" alt="{{object.titulo}}" width="100%">
                                 {% else %}
-                                    <img class="img-responsive" src="/media/{{object.imagen_fill}}" alt="{{object.titulo}}">
+                                    <img class="img-responsive" src="/media/{{object.portada}}" alt="{{object.titulo}}">
                                 {% endif %}
                             </figure>
                         </div>
 
                         <div class="column content-column col-lg-7 col-md-9 col-sm-9 col-xs-12">
                             <div class="member-info padd-bott-30">
-                                <h3>Loma Verde. Resumen primera temporada</h3>
-                                <ul class="list-inline video_info"> 
-                                    <li><a href="">Félix Zurita de Higes</a></li> • 
-                                    <li>28 Agosto 2018</li>
+                                <h3>{{object.titulo}}</h3>
+                                <ul class="list-inline video_info">
+                                    <li><a href="#">Autores: {{object.autores}}</a></li> •
+                                    <li>Año de publicación: {{object.year}}</li>
                                 </ul>
-                                
+
                             </div>
-                           
+
                             <h4><strong>Sinópsis</strong></h4>
                             <div class="content">
                                 <div class="text no-border no-padd-bottom">
                                     <p>
-                                        Loma Verde es una pequeña comunidad rural en el norte de Nicaragua situada en un paraje de verdes colinas y cafetales.  Allí la vida transcurre en una aparente calma pero un día, la tranquilidad del pueblo se ve perturbada por la aparición de unos afiches relacionados con la prevención del VIH y el uso del condón. Esto da mucho que hablar en la comunidad, principalmente entre las mujeres como Merche, una campesina humilde que vive sumisa y dedicada a su familia ¿Y si lo que dicen esos afiches fuera cierto?
-                                    </p>
-                                        Loma Verde es una serie nacional producida por Fundación Luciérnaga y Alba Films, que nació como una iniciativa de abordar temas como el VIH, la violencia de género, el machismo y el abuso sexual de una forma amena y dinámica. 
-                                    </p>
-                                    <p>
-                                        A la fecha se han producido dos temporadas de Loma Verde y próximamente se estrenará la tercera temporada Final en 2019. 
+                                       {{object.sinopsis|safe}}
                                     </p>
                                 </div>
                                 <div class="pb-20">
-                                    <a href="/videotecas/" class="theme-btn btn-style-two">Descargar <span class="fa fa-download"></span></a>
+                                {% if object.archivoscatalogos_set.all %}
+                                    {% for obj in object.archivoscatalogos_set.all %}
+                                        <a href="/media/{{obj.archivo}}" class="theme-btn btn-style-two">Descargar <span class="fa fa-download"></span></a>
+                                    {% endfor %}
+                                {% endif %}
                                 </div>
-                                
-                                
                                 <div class="social-links">
                                     <a href="https://www.facebook.com/sharer.php?u=http://fundacionluciernaga.org{{request.path}}" class="customer share"><span class="fa fa-facebook-f"></span></a>
                                     <a href="http://fundacionluciernaga.org{{request.path}}&amp;text={{object.titulo}}" class="customer share"><span class="fa fa-twitter"></span></a>
                                     <a href="https://plus.google.com/share?url=http://fundacionluciernaga.org{{request.path}}" class="customer share"><span class="fa fa-google-plus"></span></a>
                                 </div>
                             </div>
-                        </div>>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -74,7 +70,7 @@
         </div>
     </section>
 
-    
+
 {% endblock %}
 {% block extra_js %}
     <script src="/static/js/share.js"></script>

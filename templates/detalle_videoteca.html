@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+
+{% load embed_video_tags thumbnail %}
+
 {% block share_fb %}
     <meta property="og:title" content="{{object.titulo}}" />
 
@@ -87,7 +90,12 @@
                                     </tbody>
                                 </table>
                                 <div class="pb-20">
-                                    <a href="/videotecas/" class="theme-btn btn-style-two">Descargar <span class="fa fa-download"></span></a>
+                                {% if object.guiasdidacticas_set.all %}
+                                    {% for obj in object.guiasdidacticas_set.all %}
+                                        <a href="/media/{{obj.archivo}}" class="theme-btn btn-style-two">Descargar <span class="fa fa-download"></span></a>
+                                    {% endfor %}
+                                {% endif %}
+
                                 </div>
 
                                 <div class="social-links">
@@ -106,8 +114,8 @@
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
                         <br>
                         <div class="lista_episodios">
-                            <h4 class="inner-title double-line line-left">Lista de episodios</h4>
-                            <ul class="list-group">
+                            <!--<h4 class="inner-title double-line line-left">Lista de episodios</h4>
+                             <ul class="list-group">
                                 <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="list-group-item lightbox-image">Episodio 1: Loma verde</a>
                                 <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="list-group-item lightbox-image">Episodio 2: Loma verde</a>
                                 <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="list-group-item lightbox-image">Episodio 3: Loma verde</a>
@@ -118,49 +126,30 @@
                                 <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="list-group-item lightbox-image">Episodio 8: Loma verde</a>
                                 <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="list-group-item lightbox-image">Episodio 9: Loma verde</a>
                                 <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="list-group-item lightbox-image">Episodio 10: Loma verde</a>
-                            </ul>
-                            <!-- <h4 class="inner-title double-line line-left">Video</h4>
-                            <iframe width="100%" height="500px" src="https://www.youtube.com/embed/vlWPgRyOUck" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-
+                            </ul>-->
+                            {% if object.url_video %}
+                                <h4 class="inner-title double-line line-left">Video</h4>
+                                {% video object.url_video '600x500' %}
+                            {% endif %}
                         </div>
                     </div>
                     <div class="column default-featured-column links-column col-lg-4 col-md-6 col-sm-12 col-xs-12">
                     <article class="inner-box mb-md-60 estaesprueba">
                         <div class="vertical-links-outer owl-relacion">
                             <div class="text-uppercase p-20" data-bac="#393d42">
-                                <h2 class="white_color fw-b fs-24 mr-xs-80 mr-xxs-0">Video <span class="theme_color">Relacionados</span></h2>
+                                <h2 class="white_color fw-b fs-24 mr-xs-80 mr-xxs-0">Videoteca <span class="theme_color">Relacionadas</span></h2>
                             </div>
                             <div class="blog-news-column video-relacion owl-video owl-nav-style owl-nav3">
+                            {% for ultimas in ultimas_videotecas %}
                                 <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-
-                                   <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549739.jpg" alt="">
-                                    <!-- <div class="content-box">
-                                        <h3><a href="#">Episodio 1</a></h3>
-                                    </div> -->
+                                    {% thumbnail ultimas.portada "370x515" crop="center" as im %}
+                                        <img src="{{ im.url }}" alt="{{ultimas.titulo}}">
+                                    {% endthumbnail %}
+                                    <div class="content-box">
+                                        <h3><a href="{% url 'videoteca_detail' ultimas.id ultimas.slug %}">{{ultimas.titulo}}</a></h3>
+                                    </div>
                                 </article>
-                                <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-
-                                   <img src="http://fundacionluciernaga.org/img.php?i=files/edcaa645069d395992272ab8301c2549578.jpg&width=100" alt="">
-                                    <!-- <div class="content-box">
-                                        <h3><a href="#">Episodio 1</a></h3>
-                                    </div> -->
-                                </article>
-                                <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-
-                                   <img src="http://fundacionluciernaga.org/img.php?i=files/edcaa645069d395992272ab8301c2549578.jpg&width=100" alt="">
-                                    <!-- <div class="content-box">
-                                        <h3><a href="#">Episodio 1</a></h3>
-                                    </div> -->
-                                </article>
-                                <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-
-                                   <img src="http://fundacionluciernaga.org/img.php?i=files/edcaa645069d395992272ab8301c2549578.jpg&width=100" alt="">
-                                    <!-- <div class="content-box">
-                                        <h3><a href="#">Episodio 1</a></h3>
-                                    </div> -->
-                                </article>
-
-
+                            {% endfor %}
                             </div>
 
                         </div>
