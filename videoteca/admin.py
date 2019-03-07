@@ -62,7 +62,7 @@ class GuiasInlines(admin.TabularInline):
 class VideotecasAdmin(ImportExportModelAdmin):
     resource_class = VideotecasResource
     inlines = [GuiasInlines]
-    list_display = ['cod_cat', 'titulo', 'genero', 'idioma', '_tiene_guias']
+    list_display = ['cod_cat', 'titulo', 'genero', '_tiene_guias']
     list_filter = ('genero', 'idioma',)
     search_fields = ('titulo', 'sintesis',)
 

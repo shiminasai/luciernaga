@@ -77,7 +77,7 @@ class Videotecas(models.Model):
     fotografia = models.CharField('Fotografía', max_length=250, null=True, blank=True)
     genero = models.ForeignKey(Generos, on_delete=models.CASCADE)
     guion = models.CharField('Guión', max_length=250, null=True, blank=True)
-    idioma = models.ForeignKey(Idiomas, on_delete=models.CASCADE)
+    idioma = models.ManyToManyField(Idiomas)
     musica_original = models.CharField('Música original', max_length=250, null=True, blank=True)
     observaciones = models.TextField(null=True, blank=True)
     pais_prod = models.ManyToManyField( Pais,
