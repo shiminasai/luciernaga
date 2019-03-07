@@ -71,7 +71,7 @@ class Videotecas(models.Model):
     #fecha = models.DateTimeField(auto_now_add=True)
     titulo = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, editable=False)
-    coleccion = models.ForeignKey(Coleccion, on_delete=models.CASCADE)
+    coleccion = models.ForeignKey(Coleccion, on_delete=models.CASCADE, null=True, blank=True)
     duracion = models.CharField('Duración' , max_length=150, null=True, blank=True)
     edicion = models.CharField('Edición', max_length=250, null=True, blank=True)
     fotografia = models.CharField('Fotografía', max_length=250, null=True, blank=True)
@@ -80,10 +80,10 @@ class Videotecas(models.Model):
     idioma = models.ForeignKey(Idiomas, on_delete=models.CASCADE)
     musica_original = models.CharField('Música original', max_length=250, null=True, blank=True)
     observaciones = models.TextField(null=True, blank=True)
-    pais_prod = models.ForeignKey( Pais, on_delete=models.CASCADE,
-                            verbose_name='Pais de producción',  related_name='pais_produccion', null=True, blank=True)
-    pais_ref = models.ForeignKey(Pais, on_delete=models.CASCADE,
-                            verbose_name='Pais de referidos', related_name='pais_referidos', null=True, blank=True)
+    pais_prod = models.ManyToManyField( Pais,
+                            verbose_name='Pais de producción',  related_name='pais_produccion', blank=True)
+    pais_ref = models.ManyToManyField(Pais,
+                            verbose_name='Pais de referidos', related_name='pais_referidos', blank=True)
     produccion = models.CharField('Producción', max_length=250, null=True, blank=True)
     productora = models.CharField('Productora', max_length=250, null=True, blank=True)
     realizacion = models.CharField('Realización', max_length=250, null=True, blank=True)
@@ -94,8 +94,8 @@ class Videotecas(models.Model):
     url_video = models.URLField(null=True, blank=True)
     imagen_portada = models.ImageField(null=True, blank=True)
     imagen_fill = models.ImageField(null=True, blank=True)
-    #anio = models.CharField('Año', max_length=50)
-    #apoyo = models.CharField('Apoyo de', max_length=50)
+    anio = models.CharField('Año', max_length=50, null=True, blank=True)
+    apoyo = models.CharField('Apoyo de', max_length=250, null=True, blank=True)
 
     def save(self, *args, **kwargs):
       self.slug = defaultfilters.slugify(self.titulo)
