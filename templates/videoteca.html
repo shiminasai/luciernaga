@@ -20,12 +20,73 @@
     <!--Team Section-->
     <section class="team-section member-details">
         <div class="auto-container">
-            <!--Filters Section-->
+            <div class="" role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="tabpanel" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#search" aria-controls="search" role="tab" data-toggle="tab">Búsqueda</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#plussearch" aria-controls="plussearch" role="tab" data-toggle="tab">Búsqueda avanzada</a>
+                    </li>
+                </ul>
+            
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="search">
+                        <div class="filters-section">
+                            <div class="filter-form">
+                                <form method="post" action="index.html">
+                                    <div class="row clearfix">
+                                        <div class="form-group col-md-4 col-sm-4 col-xs-12">
+                                            <div class="field-label">Buscar</div>
+                                            <input class="" type="text">
+                                        </div>
+                                        <div class="form-group col-md-4 col-sm-4 col-xs-12">
+                                            <div class="field-label">Serie</div>
+                                            <select name="" id="input" class="" required="required">
+                                                <option></option>
+                                                <option value="">Drama</option>
+                                                <option value="">Ficción</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4 col-sm-4 col-xs-12">
+                                            <div class="field-label">Género</div>
+                                            <select name="" id="input" class="" required="required">
+                                                <option></option>
+                                                <option value="">Drama</option>
+                                                <option value="">Ficción</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4 col-sm-4 col-xs-12">
+                                            <div class="field-label">Temas</div>
+                                            <select name="" id="input" class="" required="required">
+                                                <option></option>
+                                                <option value="">Drama</option>
+                                                <option value="">Ficción</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-2 col-sm-6 col-xs-12">
+                                            <div class="field-label">&nbsp;</div>
+                                            <button type="button" class="theme-btn btn-style-two">Buscar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="plussearch">2</div>
+                </div>
+            </div>
+            <!--
             <div class="filters-section">
                 <div class="filter-form">
                     <form method="post" action="index.html">
                         <div class="row clearfix">
-                            <div class="form-group col-md-5 col-sm-5 col-xs-12">
+                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                 <div class="field-label">Género</div>
                                 <select name="" id="input" class="form-control" required="required">
                                     <option value="">Drama</option>
@@ -44,7 +105,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div>-->
 
         </div>
     </section>
@@ -57,7 +118,7 @@
 
 
                 <!--Featured Column-->
-                <div class="column default-featured-column style-three" data-bac="#fcfcfc">
+                <div class="column default-featured-column style-three col-lg-12" >
                     <h4 class="inner-title double-line line-left">Loma Verde Primera temporada  </h4>
                     <div class="blog-news-column featured-video owl-video owl-nav-style owl-nav3">
                         <!--Default Featured Column-->
