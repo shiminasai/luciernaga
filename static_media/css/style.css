@@ -3943,7 +3943,7 @@ li.col-xs-12:before{
 .member-details .team-member .image img{
 	position:relative;
 	display:block;
-	width:auto;	
+	width:100%;	
 }
 
 .team-section .team-member .member-info{

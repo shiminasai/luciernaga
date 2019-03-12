@@ -43,8 +43,10 @@
                     		<figure class="image">
                                 {% if object.imagen_portada %}
                                     <img class="img-responsive" src="/media/{{object.imagen_portada}}" alt="{{object.titulo}}" width="100%">
-                                {% else %}
+                                {% elif object.imagen_fill %}
                                     <img class="img-responsive" src="/media/{{object.imagen_fill}}" alt="{{object.titulo}}">
+                                {% else %}
+                                    <img class="img-responsive" src="https://via.placeholder.com/450x625" alt="{{object.titulo}}" width="100%">
                                 {% endif %}
                             </figure>
                         </div>
@@ -56,6 +58,7 @@
                                     <li><a href="">{{object.productora}}</a></li> •
                                     <li>28 Agosto 2018</li> •
                                     <li>{{object.duracion}}</li>
+                                    <li>{{object.idioma}}</li>
                                 </ul>
 
                             </div>
