@@ -29,3 +29,12 @@
 	color:#ffffff;
 	background:#00723A;	
 }
+
+.relacionados .owl-controls{
+	top:-40px;
+	padding: 0px;
+	margin-top: 0px;
+}
+.font-weight{
+	font-weight: bold;
+}
