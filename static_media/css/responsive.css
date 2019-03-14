@@ -78,7 +78,6 @@
 		float:none;
 		text-align:center;
 		padding-left:0px;
-		margin:0px 15px 10px;
 	}
 	
 	.header-style-two .header-top .info-box .icon{
@@ -94,10 +93,7 @@
 		top:-10px;	
 	}
 	
-	.header-style-two .header-top .info-outer{
-		width:100%;
-		text-align:center;	
-	}
+
 	
 	.main-header .header-lower .outer-box{
 		padding-right:0px;	

@@ -67,7 +67,13 @@
                 <div class="column default-featured-column style-two">
                     <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <figure class="image-box video-box">
-                            <img src="https://i.ytimg.com/vi/XNJYpnaGwYU/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLA32q6iPcRKlGAVoUvzpByYWam9Ww" alt="">
+                            {% if object.imagen_portada %}
+                                <img class="img-responsive" src="/media/{{object.imagen_portada}}" alt="{{object.titulo}}" width="100%">
+                            {% elif object.imagen_fill %}
+                                <img class="img-responsive" src="/media/{{object.imagen_fill}}" alt="{{object.titulo}}">
+                            {% else %}
+                                <img class="img-responsive" src="https://via.placeholder.com/250x140" alt="{{object.titulo}}" width="100%">
+                            {% endif %}
                             <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
                         </figure>
                         <div class="content-box">
