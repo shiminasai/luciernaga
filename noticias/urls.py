@@ -22,4 +22,6 @@ urlpatterns = [
         views.CatalogosListView.as_view(), name='catalogos'),
     path('detalle-catalogo/<int:pk>-<str:slug>',
         views.CatalogoDetailView.as_view(), name='catalogos_detail'),
+    path('busqueda-videoteca',
+        views.busqueda_videoteca, name='busqueda_videoteca'),
 ]
