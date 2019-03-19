@@ -4621,7 +4621,7 @@ li.col-xs-12:before{
 	margin-bottom:10px;
 }
 
-.filters-section .form-group input, .filters-section .form-group select{
+.filters-section .form-group input.form-control, .filters-section .form-group select.form-control{
 	position:relative;
 	display:block;
 	width:100%;
@@ -4636,6 +4636,7 @@ li.col-xs-12:before{
 	-moz-transition:all 500ms ease;
 	transition:all 500ms ease;	
 }
+
 
 .filters-section .form-group input:focus, .filters-section .form-group select:focus{
 	border-color:#00723A;	

@@ -54,7 +54,7 @@
                                             <div class="field-label">{{form.temas.label}}</div>
                                             {{form.temas}}
                                         </div>
-                                        <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <div class="col-md-12 col-sm-6 col-xs-12">
                                             <input class='theme-btn btn-style-two' type="submit" value="Buscar">
                                         </div>
                                     </div>
@@ -100,7 +100,7 @@
                                             <div class="field-label">{{form.idioma.label}}</div>
                                             {{form.idioma}}
                                         </div>
-                                        <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <div class="col-md-12 col-sm-6 col-xs-12">
                                              <input class='theme-btn btn-style-two' type="submit" value="Buscar">
                                         </div>
                                     </div>
@@ -201,7 +201,7 @@
                             <a href="{% url 'videoteca_detail' obj.pk obj.slug%}"><img class="img-responsive" src="https://via.placeholder.com/270x375" alt="{{obj.titulo}}" width="100%"></a>
                         {% endif %}
                         <div class="content-box">
-                            <h3><a href="{% url 'videoteca_detail' obj.pk obj.slug%}">{{obj.titulo|truncatewords_html:6}}</a></h3>
+                            <h3><a href="{% url 'videoteca_detail' obj.pk obj.slug%}">{{obj.titulo|truncatechars:6}}</a></h3>
                         </div>
                     </article>
                 </div>
@@ -221,5 +221,7 @@
 <script type="text/javascript">
     $( "a.endless_page_link:contains('>')" ).text( "Siguiente" ).addClass("next").append( '&ensp;<span class="fa fa-angle-right"></span>' );
     $( "a.endless_page_link:contains('<')" ).text( "Anterior" ).addClass("prev").prepend( '<span class="fa fa-angle-left"></span>&ensp;' );
+    $( ".filters-section .form-group input").addClass("form-control");
+    $( ".filters-section .form-group select" ).addClass("form-control");
 </script>
 {% endblock extra_js %}
