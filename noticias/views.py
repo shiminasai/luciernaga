@@ -98,12 +98,12 @@ def busqueda_videoteca(request, template='videoteca_busqueda.html'):
     if request.method == 'POST':
         params['cod_cat__contains'] = request.POST.get('codigo_cat')
         params['titulo__icontains'] = request.POST.get('titulo')
-        params['serie__nombre__contains'] = request.POST.get('serie')
-        params['genero__nombre__contains'] = request.POST.get('genero')
-        params['temas__nombre__contains'] = request.POST.get('temas')
-        params['pais__nombre__contains'] = request.POST.get('pais')
+        params['serie__id'] = request.POST.get('serie')
+        params['genero__id'] = request.POST.get('genero')
+        params['temas__id'] = request.POST.get('temas')
+        params['pais__id'] = request.POST.get('pais')
         params['anio__icontains'] = request.POST.get('anio')
-        params['idioma__nombre__icontains'] = request.POST.get('idioma')
+        params['idioma__id'] = request.POST.get('idioma')
 
     unvalid_keys = []
     for key in params:
