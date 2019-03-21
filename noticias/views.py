@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Noticias, Temas, PersonalLuciernaga
 from eventos.models import Eventos
 from videoteca.models import Videotecas, CatalogosPDF
@@ -113,15 +114,15 @@ def busqueda_videoteca(request, template='videoteca_busqueda.html'):
     for key in unvalid_keys:
         del params[key]
 
-    object_list = Videotecas.objects.filter(**params)
+    videoteca_list = Videotecas.objects.filter(**params)
 
-    # paginator = Paginator(videoteca_list, 10)
-    # page = request.GET.get('page')
-    # try:
-    #     object_list = paginator.page(page)
-    # except PageNotAnInteger:
-    #     object_list = paginator.page(1)
-    # except EmptyPage:
-    #     object_list = paginator.page(paginator.num_pages)
+    paginator = Paginator(videoteca_list, 10)
+    page = request.GET.get('page')
+    try:
+        object_list = paginator.page(page)
+    except PageNotAnInteger:
+        object_list = paginator.page(1)
+    except EmptyPage:
+        object_list = paginator.page(paginator.num_pages)
 
     return render(request, template, locals())
