@@ -135,9 +135,23 @@
             {% endfor %}
             </div>
              <!-- Styled Pagination -->
+
             <div class="styled-pagination text-center padd-top-20 margin-bott-40">
-                {% show_pages %}
+                <span class="step-links">
+                    {% if object_list.has_previous %}
+                        <a href="?page={{ object_list.previous_page_number }}">{% trans "Anterior" %}</a>
+                    {% endif %}
+
+                    <span class="current">
+                        {% trans "Pagina" %} {{ object_list.number }} {% trans "de" %} {{ object_list.paginator.num_pages }}.
+                    </span>
+
+                    {% if object_list.has_next %}
+                        <a href="?page={{ object_list.next_page_number }}">{% trans "Siguientes" %}</a>
+                    {% endif %}
+                </span>
             </div>
+
         </div>
     </section>
 

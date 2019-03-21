@@ -116,7 +116,7 @@ def busqueda_videoteca(request, template='videoteca_busqueda.html'):
 
     videoteca_list = Videotecas.objects.filter(**params)
 
-    paginator = Paginator(videoteca_list, 10)
+    paginator = Paginator(videoteca_list, 12)
     page = request.GET.get('page')
     try:
         object_list = paginator.page(page)

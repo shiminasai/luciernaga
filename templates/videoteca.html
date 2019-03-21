@@ -115,76 +115,7 @@
         </div>
     </section>
     <section>
-<!--     <section class="pt-20 pb-20" >
-        <div class="auto-container">
 
-            <div class="row clearfix">
-
-
-
-                     <div class="column default-featured-column style-three col-lg-12" >
-                    <h4 class="inner-title double-line line-left">Loma Verde Primera temporada  </h4>
-                    <div class="blog-news-column featured-video owl-video owl-nav-style owl-nav3">
-
-                        <div class="column default-featured-column style-two">
-                            <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <figure class="image-box video-box">
-                                    <img src="https://i.ytimg.com/vi/rb5I3sVyiXw/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDLiX_PpZCfPrmMa16ydYx-ErEeGg" alt="">
-                                    <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
-                                </figure>
-                                <div class="content-box">
-                                    <h3><a href="#">Loma Verde. Capítulo 1</a></h3>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="column default-featured-column style-two">
-
-                            <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <figure class="image-box video-box">
-                                    <img src="https://i.ytimg.com/vi/Tr-Qpn9GXik/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLAPLJrBRzFRNJgo-GyBQf1NtP3ysQ" alt="">
-                                    <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
-                                </figure>
-                                <div class="content-box">
-                                    <h3><a href="#">Loma Verde. Capítulo 2</a></h3>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="column default-featured-column style-two">
-                            <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <figure class="image-box video-box">
-                                    <img src="https://i.ytimg.com/vi/R1KBdycm7x0/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCQUBJ_hpPD0TzKBf_UgYxhn3fquQ" alt="">
-                                    <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
-                                </figure>
-                                <div class="content-box">
-                                    <h3><a href="#">Loma Verde. Capítulo 3</a></h3>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="column default-featured-column style-two">
-                            <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <figure class="image-box video-box">
-                                    <img src="https://i.ytimg.com/vi/vlWPgRyOUck/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDRTY7adjLenNiUDJZEPy2ht8l23A" alt="">
-                                    <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
-                                </figure>
-                                <div class="content-box">
-                                    <h3><a href="#">Loma Verde. Capítulo 4</a></h3>
-                                </div>
-                            </article>
-                        </div>
-
-
-
-                    </div>
-                </div>
-
-
-
-            </div>
-        </div>
-    </section> -->
     <section class="pt-0 pb-60" >
         <div class="auto-container">
             <h4 class="inner-title double-line line-left">Últimas producciones  </h4>
@@ -201,7 +132,7 @@
                             <a href="{% url 'videoteca_detail' obj.pk obj.slug%}"><img class="img-responsive" src="https://via.placeholder.com/270x375" alt="{{obj.titulo}}" width="100%"></a>
                         {% endif %}
                         <div class="content-box">
-                            <h3><a href="{% url 'videoteca_detail' obj.pk obj.slug%}">{{obj.titulo|truncatechars:6}}</a></h3>
+                            <h3><a href="{% url 'videoteca_detail' obj.pk obj.slug%}">{{obj.titulo|truncatechars:45}}</a></h3>
                         </div>
                     </article>
                 </div>
