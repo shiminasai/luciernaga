@@ -57,6 +57,33 @@ class EventoDetailView(DetailView):
 class VideotecasListView(ListView):
     template_name = 'videoteca.html'
     model = Videotecas
+    form_class = BusquedaVideoteca
+    paginated_by = 12
+
+    def get_queryset(self):
+        params = {}
+
+        form = self.form_class(self.request.GET)
+        if form.is_valid():
+            params['cod_cat__contains'] = form.cleaned_data['codigo_cat']
+            params['titulo__icontains'] = form.cleaned_data['titulo']
+            params['serie'] = form.cleaned_data['serie']
+            params['genero'] = form.cleaned_data['genero']
+            params['temas'] = form.cleaned_data['temas']
+            params['pais'] = form.cleaned_data['pais']
+            params['anio__icontains'] = form.cleaned_data['anio']
+            params['idioma'] = form.cleaned_data['idioma']
+            unvalid_keys = []
+            for key in params:
+                if not params[key]:
+                    unvalid_keys.append(key)
+
+            for key in unvalid_keys:
+                del params[key]
+            #print(params)
+            #print(Videotecas.objects.filter(**params).count())
+            return Videotecas.objects.filter(**params)
+        return Videotecas.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -93,36 +120,42 @@ class CatalogoDetailView(DetailView):
     template_name = 'detalle_publicacion.html'
 
 
-def busqueda_videoteca(request, template='videoteca_busqueda.html'):
-    form = BusquedaVideoteca()
-    params = {}
-    if request.method == 'POST':
-        params['cod_cat__contains'] = request.POST.get('codigo_cat')
-        params['titulo__icontains'] = request.POST.get('titulo')
-        params['serie__id'] = request.POST.get('serie')
-        params['genero__id'] = request.POST.get('genero')
-        params['temas__id'] = request.POST.get('temas')
-        params['pais__id'] = request.POST.get('pais')
-        params['anio__icontains'] = request.POST.get('anio')
-        params['idioma__id'] = request.POST.get('idioma')
+# def busqueda_videoteca(request, template='videoteca_busqueda.html'):
+#     form = BusquedaVideoteca(request.POST or None)
+#     params = {}
+#     if request.method == 'POST':
+#         params['cod_cat__contains'] = request.POST.get('codigo_cat')
+#         params['titulo__icontains'] = request.POST.get('titulo')
+#         params['serie__id'] = request.POST.get('serie')
+#         params['genero__id'] = request.POST.get('genero')
+#         params['temas__id'] = request.POST.get('temas')
+#         params['pais__id'] = request.POST.get('pais')
+#         params['anio__icontains'] = request.POST.get('anio')
+#         params['idioma__id'] = request.POST.get('idioma')
 
-    unvalid_keys = []
-    for key in params:
-        if not params[key]:
-            unvalid_keys.append(key)
+#     unvalid_keys = []
+#     for key in params:
+#         if not params[key]:
+#             unvalid_keys.append(key)
 
-    for key in unvalid_keys:
-        del params[key]
+#     for key in unvalid_keys:
+#         del params[key]
 
-    videoteca_list = Videotecas.objects.filter(**params)
+#     print(params)
 
-    paginator = Paginator(videoteca_list, 12)
-    page = request.GET.get('page')
-    try:
-        object_list = paginator.page(page)
-    except PageNotAnInteger:
-        object_list = paginator.page(1)
-    except EmptyPage:
-        object_list = paginator.page(paginator.num_pages)
+#     videoteca_list = Videotecas.objects.filter(**params)
+#     print("------------")
+#     print(len(videoteca_list))
+#     print("------------")
 
-    return render(request, template, locals())
+#     paginator = Paginator(videoteca_list, 12)
+#     page = request.GET.get('page')
+#     object_list = paginator.get_page(page)
+    # try:
+    #     object_list = paginator.page(page)
+    # except PageNotAnInteger:
+    #     object_list = paginator.page(1)
+    # except EmptyPage:
+    #     object_list = paginator.page(paginator.num_pages)
+
+    #return render(request, template, locals())

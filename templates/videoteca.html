@@ -36,7 +36,7 @@
                     <div role="tabpanel" class="tab-pane active" id="search">
                         <div class="filters-section">
                             <div class="filter-form">
-                                <form method="post" action="{% url 'busqueda_videoteca' %}"> {% csrf_token %}
+                                <form method="get" action="{% url 'videoteca_list' %}">
                                     <div class="row clearfix">
                                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
                                             <div class="field-label">{{ form.titulo.label }}</div>
@@ -65,7 +65,7 @@
                     <div role="tabpanel" class="tab-pane" id="plussearch">
                         <div class="filters-section">
                             <div class="filter-form">
-                                <form method="post" action="{% url 'busqueda_videoteca' %}"> {% csrf_token %}
+                                <form method="get" action="{% url 'videoteca_list' %}">
 
                                     <div class="row clearfix">
                                         <div class="form-group col-md-3 col-sm-6 col-xs-12">
