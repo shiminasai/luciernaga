@@ -4,16 +4,18 @@
 
 {% block content %}
 
-
-    <!--Page Title-->
-    <section class="page-title" style="background-image:url(http://fundacionluciernaga.org/img.php?i=files/59d4ee99ca2cad34bb3fdaff5cfb8d9e130.jpg&width=1024);">
-    	<div class="auto-container">
-        	<div class="sec-title">
-                <h1>Publicaciones</h1>
-                <div class="bread-crumb"><a href="/">Inicio</a></div>
+{% for portada in  site_config.fotossecciones_set.all %}
+    {% if request.path == portada.url %}
+    <section class="page-title" style="background-image:url(/media/{{portada.foto}});">
+        <div class="auto-container">
+            <div class="sec-title">
+                <h1>{{portada.titulo}}</h1>
+                <div class="bread-crumb"><a href="/">Inicio</a>
             </div>
         </div>
     </section>
+    {% endif %}
+{% endfor %}
 
     <!--Team Section-->
     <section class="team-section member-details">

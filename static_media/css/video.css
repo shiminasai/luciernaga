@@ -1,14 +1,16 @@
 /*=============================
 =            index            =
 =============================*/
-.default-featured-column.style-two .content-box{
-    height: 95px;
-}
 
 
 /*=============================
 =            section            =
 =============================*/
+.list-event .content-box{
+    height: 300px;
+}
+
+
 
 .lista_notas .blog-news-column h3{
     height: 60px;
@@ -96,7 +98,7 @@
 .list-videos .content-box h3 {
     font-size: 18px;
     font-weight: 700;
-    text-transform: capitalize;
+    text-transform: initial;
     height: 50px;
 }
 .list-videos .content-box h3 a {
@@ -112,7 +114,12 @@
 .footer-bottom{
     background: #313131;
 }
-
+.contact-widget li.theme_color a{
+    color: #00723A !important;
+}
+.copyright a{
+    color: #c9c9c9;
+}
 .static_page .text {
     margin-bottom: 20px;
     color: #25292f;

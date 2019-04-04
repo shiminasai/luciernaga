@@ -9,7 +9,7 @@
     <section class="page-title" style="background-image:url(/media/{{portada.foto}});">
         <div class="auto-container">
             <div class="sec-title">
-                <h1>Lista <span class="normal-font">Eventos</span></h1>
+                <h1>{{portada.titulo}}</h1>
                 <div class="bread-crumb"><a href="/">Inicio</a>
             </div>
         </div>
@@ -25,7 +25,7 @@
             {% paginate 6 object_list %}
             {% for obj in  object_list %}
                 <!--Featured Column-->
-                <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12 list-event">
                 	<article class="inner-box">
                 		<figure class="image-box">
                         {% if obj.portada %}
