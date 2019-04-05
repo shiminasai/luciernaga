@@ -83,5 +83,6 @@
 <script type="text/javascript">
     $( "a.endless_page_link:contains('>')" ).text( "Siguiente" ).addClass("next").append( '&ensp;<span class="fa fa-angle-right"></span>' );
     $( "a.endless_page_link:contains('<')" ).text( "Anterior" ).addClass("prev").prepend( '<span class="fa fa-angle-left"></span>&ensp;' );
+    $( ".form-group input[type='text']" ).addClass("form-control");
 </script>
 {% endblock extra_js %}

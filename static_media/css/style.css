@@ -4357,7 +4357,7 @@ li.col-xs-12:before{
 	border-color:#00723A;	
 }
 
-.sidebar .search-box .form-group button{
+.sidebar .search-box .form-group .button{
 	position:absolute;
 	right:0px;
 	top:0px;
@@ -4370,7 +4370,9 @@ li.col-xs-12:before{
 	color:#ffffff;
 	background:#252525;
 	border-radius:0px 5px 5px 0px;
+	font-family: 'FontAwesome';
 }
+
 
 .sidebar .search-box .form-group input:focus + button,
 .sidebar .search-box .form-group button:hover{
@@ -4630,7 +4632,7 @@ li.col-xs-12:before{
 	color:#555555;
 	background:#ffffff;
 	border: 1px solid #ccc;
-	height: 41px;
+	height: 50px;
 	-webkit-transition:all 500ms ease;
 	-ms-transition:all 500ms ease;
 	-moz-transition:all 500ms ease;
