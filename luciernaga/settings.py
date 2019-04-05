@@ -146,8 +146,8 @@ LOCATION_FIELD = {
     'map.provider': 'openstreetmap',
     'map.zoom': 13,
 
-    'search.provider': 'google',
-    'search.suffix': '',
+    'search.provider': 'nominatim',
+    'search.suffix': 'Nicaragua',
 
     # OpenStreetMap
     'provider.openstreetmap.max_zoom': 18,
