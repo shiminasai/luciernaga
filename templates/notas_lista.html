@@ -24,19 +24,15 @@
     		<!--Filters Section-->
             <div class="filters-section">
             	<div class="filter-form">
-                	<form method="post" action="index.html">
+                	<form method="get" action="{% url 'noticias_list' %}">
                     	<div class="row clearfix">
-                        	<div class="form-group col-md-5 col-sm-5 col-xs-12">
-                            	<div class="field-label">Palabra clave</div>
-                                <input type="text" name="date" class="datepicker" value="" placeholder="Palabra clave">
-                            </div>
-                            <div class="form-group col-md-5 col-sm-5 col-xs-12">
-                            	<div class="field-label">Temas</div>
-                                <input type="text" name="" value="" placeholder="Temas">
+                        	<div class="form-group col-md-10 col-sm-10 col-xs-12">
+                            	<div class="field-label">{{ form.titulo.label }}</div>
+                                {{form.titulo}}
                             </div>
                             <div class="form-group col-md-2 col-sm-2 col-xs-12">
                             	<div class="field-label">&nbsp;</div>
-                                <button type="button" class="theme-btn btn-style-two">Buscar</button>
+                                <input class='theme-btn btn-style-two' type="submit" value="Buscar">
                             </div>
                         </div>
                     </form>

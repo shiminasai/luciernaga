@@ -6,6 +6,7 @@ from .models import Noticias, Temas, PersonalLuciernaga
 from eventos.models import Eventos
 from videoteca.models import Videotecas, CatalogosPDF
 from videoteca.forms import BusquedaVideoteca
+from .forms import BusquedaNoticias, BusquedaEventos
 
 # Create your views here.
 
@@ -24,33 +25,117 @@ class HomeView(TemplateView):
 class NoticiasListView(ListView):
     template_name = 'notas_lista.html'
     model = Noticias
+    form_class = BusquedaNoticias
+    paginated_by = 12
+
+    def get_queryset(self):
+        params = {}
+
+        form = self.form_class(self.request.GET)
+        if form.is_valid():
+            params['titulo__icontains'] = form.cleaned_data['titulo']
+            unvalid_keys = []
+            for key in params:
+                if not params[key]:
+                    unvalid_keys.append(key)
+
+            for key in unvalid_keys:
+                del params[key]
+            return Noticias.objects.filter(**params)
+        return Noticias.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = BusquedaNoticias()
+
+        return context
 
 class NoticiaDetailView(DetailView):
     model = Noticias
     template_name = 'blog_single.html'
     #context_object_name = 'nota'
+    form_class = BusquedaNoticias
+
+    def get_queryset(self):
+        params = {}
+
+        form = self.form_class(self.request.GET)
+        if form.is_valid():
+            params['titulo__icontains'] = form.cleaned_data['titulo']
+            unvalid_keys = []
+            for key in params:
+                if not params[key]:
+                    unvalid_keys.append(key)
+
+            for key in unvalid_keys:
+                del params[key]
+            return Noticias.objects.filter(**params)
+        return Noticias.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['ultimas_noticias'] = Noticias.objects.exclude(pk=self.object.pk).order_by('-fecha')[:3]
         context['temas'] = Temas.objects.all()
+        context['form'] = BusquedaNoticias()
 
         return context
 
 class EventosListView(ListView):
     template_name = 'eventos_lista.html'
     model = Eventos
+    form_class = BusquedaEventos
+    paginated_by = 12
+
+    def get_queryset(self):
+        params = {}
+
+        form = self.form_class(self.request.GET)
+        if form.is_valid():
+            params['titulo__icontains'] = form.cleaned_data['titulo']
+            unvalid_keys = []
+            for key in params:
+                if not params[key]:
+                    unvalid_keys.append(key)
+
+            for key in unvalid_keys:
+                del params[key]
+            return Eventos.objects.filter(**params)
+        return Eventos.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = BusquedaEventos()
+
+        return context
 
 class EventoDetailView(DetailView):
     model = Eventos
     template_name = 'event_single.html'
     #context_object_name = 'nota'
+    form_class = BusquedaEventos
+
+    def get_queryset(self):
+        params = {}
+
+        form = self.form_class(self.request.GET)
+        if form.is_valid():
+            params['titulo__icontains'] = form.cleaned_data['titulo']
+            unvalid_keys = []
+            for key in params:
+                if not params[key]:
+                    unvalid_keys.append(key)
+
+            for key in unvalid_keys:
+                del params[key]
+            return Eventos.objects.filter(**params)
+        return Eventos.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['ultimas_noticias'] = Noticias.objects.order_by('-fecha')[:3]
         context['temas'] = Temas.objects.all()
         context['position'] = self.object.position.split(',')
+        context['form'] = BusquedaEventos()
 
         return context
 
