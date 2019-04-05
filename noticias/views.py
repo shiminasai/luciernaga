@@ -58,7 +58,7 @@ class VideotecasListView(ListView):
     template_name = 'videoteca.html'
     model = Videotecas
     form_class = BusquedaVideoteca
-    paginated_by = 12
+    paginate_by = 12
 
     def get_queryset(self):
         params = {}
