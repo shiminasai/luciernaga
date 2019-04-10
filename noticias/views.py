@@ -155,7 +155,7 @@ class VideotecasListView(ListView):
             params['serie'] = form.cleaned_data['serie']
             params['genero'] = form.cleaned_data['genero']
             params['temas'] = form.cleaned_data['temas']
-            params['pais'] = form.cleaned_data['pais']
+            params['pais_prod'] = form.cleaned_data['pais']
             params['anio__icontains'] = form.cleaned_data['anio']
             params['idioma'] = form.cleaned_data['idioma']
             unvalid_keys = []

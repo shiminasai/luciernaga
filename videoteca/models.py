@@ -15,6 +15,7 @@ class Generos(models.Model):
     class Meta:
         verbose_name = 'Género'
         verbose_name_plural = 'Géneros'
+        ordering = ('nombre',)
 
 class Idiomas(models.Model):
     nombre = models.CharField(max_length=250)
@@ -25,6 +26,7 @@ class Idiomas(models.Model):
     class Meta:
         verbose_name = 'Idioma'
         verbose_name_plural = 'Idiomas'
+        ordering = ('nombre',)
 
 class Temas(models.Model):
     nombre = models.CharField(max_length=250)
@@ -55,6 +57,7 @@ class Pais(models.Model):
     class Meta:
         verbose_name = 'Pais'
         verbose_name_plural = 'Paises'
+        ordering = ('nombre',)
 
 class Series(models.Model):
     nombre = models.CharField(max_length=250)
@@ -65,6 +68,7 @@ class Series(models.Model):
     class Meta:
         verbose_name = 'serie'
         verbose_name_plural = 'series'
+        ordering = ('nombre',)
 
 class Videotecas(models.Model):
     cod_cat = models.CharField('Codigo categoría', max_length=50)

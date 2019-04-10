@@ -50,3 +50,7 @@ class AcercaSecciones(models.Model):
 
     def __str__(self):
         return self.titulo
+
+    class Meta:
+        verbose_name = 'Acerca de sección'
+        verbose_name_plural = 'Acerca de secciones'

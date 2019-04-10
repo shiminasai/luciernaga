@@ -52,8 +52,8 @@ class SeriesAdmin(ImportExportModelAdmin):
 class PaisAdmin(ImportExportModelAdmin):
     resource_class = PaisResource
 
-class ColeccionAdmin(ImportExportModelAdmin):
-    resource_class = ColeccionResource
+# class ColeccionAdmin(ImportExportModelAdmin):
+#     resource_class = ColeccionResource
 
 class GuiasInlines(admin.TabularInline):
     model = GuiasDidacticas
@@ -81,6 +81,6 @@ admin.site.register(Idiomas, IdiomasAdmin)
 admin.site.register(Temas, TemasAdmin)
 admin.site.register(Series, SeriesAdmin)
 admin.site.register(Pais, PaisAdmin)
-admin.site.register(Coleccion, ColeccionAdmin)
+#admin.site.register(Coleccion, ColeccionAdmin)
 admin.site.register(Videotecas, VideotecasAdmin)
 admin.site.register(CatalogosPDF, CatalogosAdmin)
