@@ -20,6 +20,13 @@
     <meta name="twitter:creator" content="@LUCIÉRNAGA">
 {% endblock share_fb %}
 {% block content %}
+<!-- <style type="text/css">
+   .fancybox-skin {
+    background: transparent;
+    padding: 0px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.0)!important;
+}
+</style> -->
     <!--Page Title-->
     <section class="page-title" style="background-image:url(/static/images/background/img.jpg);">
     	<div class="auto-container">
@@ -43,8 +50,6 @@
                     		<figure class="image">
                                 {% if object.imagen_portada %}
                                     <img class="img-responsive" src="/media/{{object.imagen_portada}}" alt="{{object.titulo}}" width="100%">
-                                {% elif object.imagen_fill %}
-                                    <img class="img-responsive" src="/media/{{object.imagen_fill}}" alt="{{object.titulo}}">
                                 {% else %}
                                     <img class="img-responsive" src="https://via.placeholder.com/450x625" alt="{{object.titulo}}" width="100%">
                                 {% endif %}
@@ -151,15 +156,10 @@
                                                 <td>{{object.fotografia}}</td>
                                             </tr>
                                         {% endif %}
+
                                         {% if object.musica_original %}
                                             <tr>
-                                                <td><STRONG>Canción Original</STRONG></td>
-                                                <td>{{object.musica_original}}</td>
-                                            </tr>
-                                        {% endif %}
-                                        {% if object.musica_original %}
-                                            <tr>
-                                                <td><strong>Música</strong></td>
+                                                <td><strong>Música Original</strong></td>
                                                 <td>{{object.musica_original}}</td>
                                             </tr>
                                         {% endif %}
@@ -193,25 +193,44 @@
                                 <div class="social-links">
                                     <a href="https://www.facebook.com/sharer.php?u=http://fundacionluciernaga.org{{request.path}}" class="customer share"><span class="fa fa-facebook-f"></span></a>
                                     <a href="http://fundacionluciernaga.org{{request.path}}&amp;text={{object.titulo}}" class="customer share"><span class="fa fa-twitter"></span></a>
-                                    <a href="https://plus.google.com/share?url=http://fundacionluciernaga.org{{request.path}}" class="customer share"><span class="fa fa-google-plus"></span></a>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </article>
-            <hr>
-            <div class="inner-box">
+            <h4 class="inner-title double-line line-left">Video</h4>
+            <div class="inner-box mb-60">
                 <div class="row clearfix">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
-                        <br>
                         <div class="lista_episodios">
-                            <h4 class="inner-title double-line line-left">Video</h4>
-                            {% if object.url_video %}
+
+                            
+                            <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <figure class="image-box video-box">
+                                    {% if object.imagen_fill  %}
+                                        {% thumbnail object.imagen_fill "770x435" crop="center" as im %}
+                                            <img class="img-responsive"  src="{{ im.url }}" alt="{{object.titulo}}">
+                                        {% endthumbnail %}
+                                    {% else %}
+                                        
+                                        <img src="https://via.placeholder.com/770x435" alt="{{ultimas.titulo}}">
+                                        
+                                    {% endif %}
+
+                                    
+                                    <a href="{{object.url_video}}" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
+                                </figure>
+                            </article>
+                            
+                           <!-- {% if object.url_video %}
+
                                 {% video object.url_video '100%x450' %}
+                            
                             {% else %}
                                 <img class="" src="https://via.placeholder.com/800x450.png?text=No+Video" alt="" width="100%">
-                            {% endif %}
+                            {% endif %}-->
                         </div>
                     </div>
                     <div class="column default-featured-column links-column col-lg-4 col-md-6 col-sm-12 col-xs-12">
@@ -223,15 +242,15 @@
                             <div class="blog-news-column video-relacion owl-video owl-nav-style owl-nav3 relacionados">
                             {% for ultimas in ultimas_videotecas %}
                                 <article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                                    {% if ultimas.portada %}
-                                        {% thumbnail ultimas.portada "370x515" crop="center" as im %}
+                                    {% if ultimas.imagen_fill %}
+                                        {% thumbnail ultimas.imagen_fill "370x210" crop="center" as im %}
                                             <a href="{% url 'videoteca_detail' ultimas.id ultimas.slug %}">
                                                 <img src="{{ im.url }}" alt="{{ultimas.titulo}}">
                                             </a>
                                         {% endthumbnail %}
                                     {% else %}
                                         <a href="{% url 'videoteca_detail' ultimas.id ultimas.slug %}">
-                                            <img src="https://via.placeholder.com/370x515" alt="{{ultimas.titulo}}">
+                                            <img src="https://via.placeholder.com/370X209" alt="{{ultimas.titulo}}">
                                         </a>
                                     {% endif %}
                                     
@@ -257,4 +276,22 @@
 {% endblock content %}
 {% block extra_js %}
     <script src="/static/js/share.js"></script>
+    <script type="text/javascript">
+    
+        $('.lightbox-image').fancybox({
+            openEffect  : 'elastic',
+            closeEffect : 'elastic',
+            padding: 0,
+            arrows: false,
+            width: '70%',
+            height: '90%',
+
+
+            helpers : {
+                media : {}
+            },
+
+        });
+    
+    </script>
 {% endblock extra_js %}
