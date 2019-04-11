@@ -45,8 +45,13 @@
 	                        	<nav class="nav static_contenido">
 									<ul class="nav tabs">
                                     {% for pagina in site_config.acercasecciones_set.all reversed %}
-                                         <li class="{% if forloop.counter == 1 %}active {%endif%}"><a href="#tab-{{pagina.id}}" data-toggle="tab">{{pagina.titulo}}</a></li>
+                                         <li class="">
+                                         	<a href="#tab-{{pagina.id}}" data-toggle="tab">{{pagina.titulo}}</a>
+                                         </li>
                                     {% endfor %}
+	                                    <li class="active">
+											<a href="#memorias" aria-controls="memorias" role="tab" data-toggle="tab">Memoria y evaluaciones</a>
+										</li>
 									</ul>
 								</nav>
 
@@ -61,14 +66,41 @@
 
 	                	<div class="tab-content">
                         {% for pagina in site_config.acercasecciones_set.all reversed %}
-	                		<div class="tab-pane {% if forloop.counter == 1 %}active {%endif%} text-style" id="tab-{{pagina.id}}">
-	                			<h2>{{pagina.titulo}}</h2>
+	                		<div class="tab-pane  text-style" id="tab-{{pagina.id}}">
+	                			<h2 class="inner-title double-line line-left">{{pagina.titulo}}</h2>
 	                			<div class="text">
 	                				{{pagina.contenido|safe}}
 	                			</div>
 	                			<hr>
 	                		</div>
                         {% endfor %}
+                        	<div role="tabpanel" class="tab-pane active" id="memorias">
+                        		<h2 class="inner-title double-line line-left">Memoria y evaluaciones</h2>
+                        		<div class="column default-featured-column style-two">
+		                            <article class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
+		                                <div class="row">
+		                                    <div class="col-md-3">
+		                                    	<a href="">
+			                                        <figure class="image-box">
+			                                            <a href="#"><img src="https://via.placeholder.com/200x280" alt="" width="100%"></a>
+			                                        </figure>
+		                                        </a>
+		                                    </div>
+		                                    <div class="col-md-9">
+		                                        <div class="content-box">
+		                                            <h3><a href="#">MEMORIA AIETI 2017</a></h3>
+		                                            
+		                                            <div class="text">
+			                                            En esta memoria se recogen las principales acciones llevadas a cabo en 2017 en el marco del II Plan Estratégico 2017-2022. AIETI cumple sus 37 años de existencia y resiliencia, en una situación global de grandes cambios y transformaciones sociales, políticas y económicas que han llevado a que vivamos tiempos de grandes injusticias sociales y de concentración del capital en pocas manos. Hemos visto un crecimiento desorbitado de desigualdades sociales, nuevas pobrezas, feminicidios, violencias de todo tipo contra las mujeres.
+			                                        </div>
+		                                            
+		                                            <a href="#" class="theme-btn btn-style-two btn-sm"><i class="fa fa-download"></i> Descargar</a>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </article>
+		                        </div>
+                        	</div>
 	                	</div>
 	                </div>
                 <!--Content Side-->

@@ -3529,7 +3529,7 @@ ul,li{
 .page-title h1{
 	font-size:48px;
 	margin-bottom:15px;
-	text-transform:uppercase;
+	/*text-transform:uppercase;*/
 	font-weight:800;
 	color:#ffffff;
 }
@@ -3542,7 +3542,7 @@ ul,li{
 .page-title .bread-crumb a{
 	position:relative;
 	font-size:15px;
-	text-transform:uppercase;
+	/*text-transform:uppercase;*/
 	color:#ffffff;
 	margin:0px 5px;
 }

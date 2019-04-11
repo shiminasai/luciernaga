@@ -133,7 +133,7 @@
                                         {% endif %}
                                         {% if object.realizacion %}
                                             <tr>
-                                                <td><strong>Dirección </strong></td>
+                                                <td><strong>Realización</strong></td>
                                                 <td>{{object.realizacion}}</td>
                                             </tr>
                                         {% endif %}
@@ -152,20 +152,20 @@
 
                                         {% if object.fotografia %}
                                             <tr>
-                                                <td><strong>Fotografias</strong></td>
+                                                <td><strong>Fotografía</strong></td>
                                                 <td>{{object.fotografia}}</td>
                                             </tr>
                                         {% endif %}
 
                                         {% if object.musica_original %}
                                             <tr>
-                                                <td><strong>Música Original</strong></td>
+                                                <td><strong>Música original</strong></td>
                                                 <td>{{object.musica_original}}</td>
                                             </tr>
                                         {% endif %}
                                         {% if object.idioma %}
                                             <tr>
-                                                <td><STRONG>País ref</STRONG></td>
+                                                <td><STRONG>Países referidos</STRONG></td>
                                                 <td>
                                                     {% for x in object.pais_ref.all %}
                                                         {{x}},
@@ -179,6 +179,14 @@
                                                 <td>{{object.apoyo}}</td>
                                             </tr>
                                         {% endif %}
+                                        {% if object.observaciones %}
+                                            <tr>
+                                                <td><STRONG>Observaciones</STRONG></td>
+                                                <td>{{object.observaciones}}</td>
+                                            </tr>
+                                        {% endif %}
+                                        
+                                        
                                     </tbody>
                                 </table>
                                 <div class="pb-20">
