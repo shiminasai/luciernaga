@@ -28,7 +28,7 @@ marker.bindPopup("{{object.lugar}}").openPopup();
     <section class="page-title" style="background-image:url(/static/images/background/img.jpg);">
     	<div class="auto-container">
         	<div class="sec-title">
-                <h1>Detalle <span class="normal-font">{{object.titulo}}</span></h1>
+                <h1><span class="normal-font">{{object.titulo}}</span></h1>
                 <div class="bread-crumb"><a href="/">Inicio</a> / <a href="/eventos/">Eventos</a></div>
             </div>
         </div>
@@ -56,7 +56,7 @@ marker.bindPopup("{{object.lugar}}").openPopup();
                                 {% endif %}
 
                                 </figure>
-                                <div class="content-box padd-top-40">
+                                <div class="content-box padd-top-40 mb-20">
                                     <div class="row detail-header clearfix">
                                         <div class="col-md-12 col-sm-12">
                                             <h3 class="fs-28"><a href="#">{{object.titulo}}</a></h3>
@@ -108,8 +108,23 @@ marker.bindPopup("{{object.lugar}}").openPopup();
                                         </div>
                                     </div>
 
+
                                 </div>
+                                
+
                             </article>
+                            <div class="post-share-options clearfix">
+                                <div class="pull-left tags"><strong>Tag</strong> :
+                                    {% for tag in object.tags.all %}
+                                            <a href="{{tag.slug}}">{{tag}}</a> {% if  forloop.last%}{% else %},{% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div class="pull-right social-links-two clearfix">
+                                    <a href="https://www.facebook.com/sharer.php?u=http://fundacionluciernaga.org{{request.path}}" class="facebook img-circle customer share"><span class="fa fa-facebook-f"></span></a>
+                                    <a href="http://fundacionluciernaga.org{{request.path}}&amp;text={{object.titulo}}" class="twitter img-circle customer share"><span class="fa fa-twitter"></span></a>
+                                    
+                                </div>
+                            </div>
                         </div>
 
                     </section>

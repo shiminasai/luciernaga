@@ -316,3 +316,49 @@
 .font-weight{
     font-weight: bold;
 }
+
+/*================================
+=            noticias            =
+================================*/
+.blog-detail .content-box .text img{
+    margin:10px;
+}
+/*================================
+=            Eventos            =
+================================*/
+.event-details .post-share-options{
+    position:relative;
+    padding:10px 15px;
+    background:#f8f8f8;
+    border-bottom:1px solid #e0e0e0;
+}
+
+.event-details .post-share-options .tags a{
+    position:relative;
+    color:#999999;
+}
+
+.event-details .post-share-options .tags{
+    padding-top:5px;
+}
+.event-details .social-links-two a{
+    background:#545454;
+    color:#ffffff;
+    font-size:13px;
+    width:32px;
+    height:32px;
+    line-height:32px;
+    border:none;    
+}
+
+.event-details .social-links-two a:hover{
+    background:#00723A;
+    border-color:#00723A;
+}
+
+/*================================
+=     flatpage y acerca de      =
+================================*/
+.tab-content .text-style .text img, .default-section .text img{
+    margin:10px;
+}
