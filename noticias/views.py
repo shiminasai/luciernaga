@@ -139,6 +139,7 @@ class EventoDetailView(DetailView):
 
         return context
 
+from django.db.models import Q
 class VideotecasListView(ListView):
     template_name = 'videoteca.html'
     model = Videotecas
@@ -151,7 +152,11 @@ class VideotecasListView(ListView):
         form = self.form_class(self.request.GET)
         if form.is_valid():
             params['cod_cat__contains'] = form.cleaned_data['codigo_cat']
-            params['titulo__icontains'] = form.cleaned_data['titulo']
+            if form.cleaned_data['titulo']:
+                print("si existe la busqueda")
+
+                params['titulo__icontains'] = form.cleaned_data['titulo']
+                params['sintesis__icontains'] = form.cleaned_data['titulo']
             params['serie'] = form.cleaned_data['serie']
             params['genero'] = form.cleaned_data['genero']
             params['temas'] = form.cleaned_data['temas']
@@ -165,9 +170,9 @@ class VideotecasListView(ListView):
 
             for key in unvalid_keys:
                 del params[key]
-            #print(params)
+            print(Q(params))
             #print(Videotecas.objects.filter(**params).count())
-            return Videotecas.objects.filter(**params)
+            return Videotecas.objects.filter(Q(**params))
         return Videotecas.objects.all()
 
     def get_context_data(self, **kwargs):
