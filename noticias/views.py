@@ -4,7 +4,7 @@ from django.views.generic import ListView, DetailView, TemplateView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Noticias, Temas, PersonalLuciernaga
 from eventos.models import Eventos
-from videoteca.models import Videotecas, CatalogosPDF
+from videoteca.models import Videotecas
 from videoteca.forms import BusquedaVideoteca
 from .forms import BusquedaNoticias, BusquedaEventos
 
@@ -201,13 +201,13 @@ class ContactenosView(TemplateView):
         return context
 
 
-class CatalogosListView(ListView):
-    template_name = 'publicaciones.html'
-    model = CatalogosPDF
+# class CatalogosListView(ListView):
+#     template_name = 'publicaciones.html'
+#     model = CatalogosPDF
 
-class CatalogoDetailView(DetailView):
-    model = CatalogosPDF
-    template_name = 'detalle_publicacion.html'
+# class CatalogoDetailView(DetailView):
+#     model = CatalogosPDF
+#     template_name = 'detalle_publicacion.html'
 
 
 # def busqueda_videoteca(request, template='videoteca_busqueda.html'):

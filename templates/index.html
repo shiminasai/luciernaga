@@ -5,7 +5,7 @@
 {% block content%}
 <style type="text/css">
     .header-style-two .header-top .logo img{
-        max-width:100%;  
+        max-width:100%;
     }
 </style>
     <!--Main Slider-->
@@ -64,23 +64,25 @@
             <div class="video-owl owl-carousel owl-nav-style owl-nav3">
             {% for obj in videotecas %}
                 <!--Default Featured Column-->
+                {% if obj.url_video %}
                 <div class="column default-featured-column style-two">
                     <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <figure class="image-box video-box">
                             {% if object.imagen_portada %}
-                                <img class="img-responsive" src="/media/{{object.imagen_portada}}" alt="{{object.titulo}}" width="100%">
+                                <img class="img-responsive" src="/media/{{obj.imagen_portada}}" alt="{{object.titulo}}" width="100%">
                             {% elif object.imagen_fill %}
-                                <img class="img-responsive" src="/media/{{object.imagen_fill}}" alt="{{object.titulo}}">
+                                <img class="img-responsive" src="/media/{{obj.imagen_fill}}" alt="{{object.titulo}}">
                             {% else %}
                                 <img class="img-responsive" src="https://via.placeholder.com/250x140" alt="{{object.titulo}}" width="100%">
                             {% endif %}
-                            <a href="https://www.youtube.com/watch?v=4VnKykt_wmc" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
+                            <a href="{{obj.url_video}}" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
                         </figure>
                         <div class="content-box">
                             <h3><a href="{% url 'videoteca_detail' obj.pk obj.slug%}">{{obj.titulo}}</a></h3>
                         </div>
                     </article>
                 </div>
+                {% endif %}
             {% endfor %}
 
             </div>
@@ -156,12 +158,12 @@
                                     </div>
                                 {% endfor %}
                             </div>
-                            
+
                         </div>
                     </article>
                 </div>
 
-                
+
 
 
             </div>

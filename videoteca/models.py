@@ -105,11 +105,11 @@ class Videotecas(models.Model):
       self.slug = defaultfilters.slugify(self.titulo)
       super(Videotecas, self).save(*args, **kwargs)
 
-    def _tiene_guias(self, *args, **kwargs):
-        if self.guiasdidacticas_set.count() > 0:
-            return True
-        return False
-    _tiene_guias.boolean = True
+    # def _tiene_guias(self, *args, **kwargs):
+    #     if self.guiasdidacticas_set.count() > 0:
+    #         return True
+    #     return False
+    # _tiene_guias.boolean = True
 
     def __str__(self):
         return self.titulo
@@ -118,51 +118,18 @@ class Videotecas(models.Model):
         verbose_name = 'Videoteca'
         verbose_name_plural = 'Videotecas'
 
-class GuiasDidacticas(models.Model):
-    guia = models.ForeignKey(Videotecas, on_delete=models.CASCADE)
-    titulo = models.CharField('Titulo de la guia', max_length=50)
-    archivo = models.FileField(upload_to='guiasVideotecas/')
+class EnlacePublicacion(models.Model):
+    videoteca = models.ForeignKey(Videotecas, on_delete=models.CASCADE)
+    url = models.URLField()
 
     def __str__(self):
-        return self.titulo
+        return self.url
 
     class Meta:
-        verbose_name = 'Guia Didactica'
-        verbose_name_plural = 'Guias Didacticas'
-
-class CatalogosPDF(models.Model):
-    titulo = models.CharField(max_length=250)
-    slug = models.SlugField(max_length=250, editable=False)
-    portada = ImageField(upload_to='colecciones/')
-    sinopsis = models.TextField()
-    year = models.CharField('año', max_length=20)
-    autores = models.CharField(max_length=250)
-
-    def save(self, *args, **kwargs):
-      self.slug = defaultfilters.slugify(self.titulo)
-      super(CatalogosPDF, self).save(*args, **kwargs)
-
-    def __str__(self):
-        return self.titulo
-
-    def _tiene_pdf(self, *args, **kwargs):
-        if self.archivoscatalogos_set.count() > 0:
-            return True
-        return False
-    _tiene_pdf.boolean = True
-
-    class Meta:
-        verbose_name = 'Catálogo'
-        verbose_name_plural = 'Catálogos'
+        verbose_name = 'Enlace publicación'
+        verbose_name_plural = 'Enlaces publicaciones'
 
 
-class ArchivosCatalogos(models.Model):
-    catalogo = models.ForeignKey(CatalogosPDF, on_delete=models.CASCADE)
-    archivo = models.FileField(upload_to='catalogos/')
-
-    class Meta:
-        verbose_name = 'Archivo para catálogo'
-        verbose_name_plural = 'Archivos para los catálogos'
 
 
 

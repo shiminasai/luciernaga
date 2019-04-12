@@ -62,9 +62,9 @@
                                 <ul class="list-inline video_info">
                                     <li>{{object.genero}}</li> •
                                     <li>{{object.anio}}</li> •
-                                    <li>{{object.duracion}}</li> • 
-                                    
-                                    
+                                    <li>{{object.duracion}}</li> •
+
+
                                 </ul>
 
                             </div>
@@ -99,36 +99,36 @@
                                                 <td><STRONG>Temas</STRONG></td>
                                                 <td>
                                                     {% for x in object.temas.all %}
-                                                        {{x}}, 
+                                                        {{x}}{% if forloop.last %}{%else%},{% endif %}
                                                     {% endfor %}
                                                 </td>
                                             </tr>
                                         {% endif %}
-                                        {% if object.idioma %}
+                                        {% if object.pais_prod.all %}
                                             <tr>
                                                 <td><STRONG>País producción</STRONG></td>
                                                 <td>
                                                     {% for x in object.pais_prod.all %}
-                                                        {{x}}, 
+                                                        {{x}}{% if forloop.last %}{%else%},{% endif %}
                                                     {% endfor %}
                                                 </td>
                                             </tr>
                                         {% endif %}
-                                        {% if object.idioma %}
+                                        {% if object.idioma.all %}
                                             <tr>
                                                 <td><STRONG>Idioma</STRONG></td>
                                                 <td>
                                                     {% for x in object.idioma.all %}
-                                                        {{x}}, 
+                                                        {{x}}{% if forloop.last %}{%else%},{% endif %}
                                                     {% endfor %}
                                                 </td>
                                             </tr>
                                         {% endif %}
-                                        
+
                                         {% if  object.subtitulos %}
                                             <tr>
                                                 <td><STRONG>Subtitulos</STRONG></td>
-                                                <td>{{object.subtitulos}}</td> 
+                                                <td>{{object.subtitulos}}</td>
                                             </tr>
                                         {% endif %}
                                         {% if object.realizacion %}
@@ -163,12 +163,12 @@
                                                 <td>{{object.musica_original}}</td>
                                             </tr>
                                         {% endif %}
-                                        {% if object.idioma %}
+                                        {% if object.pais_ref.all %}
                                             <tr>
                                                 <td><STRONG>Países referidos</STRONG></td>
                                                 <td>
                                                     {% for x in object.pais_ref.all %}
-                                                        {{x}},
+                                                        {{x}}{% if forloop.last %}{%else%},{% endif %}
                                                     {% endfor %}
                                                 </td>
                                             </tr>
@@ -185,8 +185,8 @@
                                                 <td>{{object.observaciones}}</td>
                                             </tr>
                                         {% endif %}
-                                        
-                                        
+
+
                                     </tbody>
                                 </table>
                                 <div class="pb-20">
@@ -201,7 +201,7 @@
                                 <div class="social-links">
                                     <a href="https://www.facebook.com/sharer.php?u=http://fundacionluciernaga.org{{request.path}}" class="customer share"><span class="fa fa-facebook-f"></span></a>
                                     <a href="http://fundacionluciernaga.org{{request.path}}&amp;text={{object.titulo}}" class="customer share"><span class="fa fa-twitter"></span></a>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -214,7 +214,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8">
                         <div class="lista_episodios">
 
-                            
+
                             <article class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                                 <figure class="image-box video-box">
                                     {% if object.imagen_fill  %}
@@ -222,20 +222,20 @@
                                             <img class="img-responsive"  src="{{ im.url }}" alt="{{object.titulo}}">
                                         {% endthumbnail %}
                                     {% else %}
-                                        
+
                                         <img src="https://via.placeholder.com/770x435" alt="{{ultimas.titulo}}">
-                                        
+
                                     {% endif %}
 
-                                    
+
                                     <a href="{{object.url_video}}" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a>
                                 </figure>
                             </article>
-                            
+
                            <!-- {% if object.url_video %}
 
                                 {% video object.url_video '100%x450' %}
-                            
+
                             {% else %}
                                 <img class="" src="https://via.placeholder.com/800x450.png?text=No+Video" alt="" width="100%">
                             {% endif %}-->
@@ -261,7 +261,7 @@
                                             <img src="https://via.placeholder.com/370X209" alt="{{ultimas.titulo}}">
                                         </a>
                                     {% endif %}
-                                    
+
                                     <div class="content-box">
                                         <h4 class="font-weight text-center"><a href="{% url 'videoteca_detail' ultimas.id ultimas.slug %}">{{ultimas.titulo}}</a></h4>
                                     </div>
@@ -285,7 +285,7 @@
 {% block extra_js %}
     <script src="/static/js/share.js"></script>
     <script type="text/javascript">
-    
+
         $('.lightbox-image').fancybox({
             openEffect  : 'elastic',
             closeEffect : 'elastic',
@@ -300,6 +300,6 @@
             },
 
         });
-    
+
     </script>
 {% endblock extra_js %}
