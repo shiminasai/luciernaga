@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load thumbnail %}
 {% block content %}
     <!--Page Title-->
 {% for portada in  site_config.fotossecciones_set.all %}
@@ -78,26 +78,40 @@
                         		<h2 class="inner-title double-line line-left">Memoria y evaluaciones</h2>
                         		<div class="column default-featured-column style-two">
 		                            <article class="inner-box wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
+                                    {% for obj in memorias %}
 		                                <div class="row">
 		                                    <div class="col-md-3">
 		                                    	<a href="">
-			                                        <figure class="image-box">
-			                                            <a href="#"><img src="https://via.placeholder.com/200x280" alt="" width="100%"></a>
-			                                        </figure>
+                                                {% if obj.portada %}
+                                                     <figure class="image-box">
+                                                        {% thumbnail obj.portada "200x280" crop="center" as im %}
+                                                            <a href="#"><img src="{{ im.url }}" alt="{{obj.titulo}}" width="100%"></a>
+                                                        {% endthumbnail %}
+                                                    </figure>
+                                                {% else %}
+                                                     <figure class="image-box">
+                                                        <a href="#"><img src="https://via.placeholder.com/200x280" alt="" width="100%"></a>
+                                                    </figure>
+                                                {% endif %}
 		                                        </a>
 		                                    </div>
 		                                    <div class="col-md-9">
 		                                        <div class="content-box">
-		                                            <h3><a href="#">MEMORIA AIETI 2017</a></h3>
-		                                            
+		                                            <h3><a href="#">{{obj.titulo}}</a></h3>
+
 		                                            <div class="text">
-			                                            En esta memoria se recogen las principales acciones llevadas a cabo en 2017 en el marco del II Plan Estratégico 2017-2022. AIETI cumple sus 37 años de existencia y resiliencia, en una situación global de grandes cambios y transformaciones sociales, políticas y económicas que han llevado a que vivamos tiempos de grandes injusticias sociales y de concentración del capital en pocas manos. Hemos visto un crecimiento desorbitado de desigualdades sociales, nuevas pobrezas, feminicidios, violencias de todo tipo contra las mujeres.
+			                                            {{obj.descripcion|safe}}
 			                                        </div>
-		                                            
-		                                            <a href="#" class="theme-btn btn-style-two btn-sm"><i class="fa fa-download"></i> Descargar</a>
+                                                {% if obj.archivosmemorias_set.all %}
+                                                    {% for pdf in obj.archivosmemorias_set.all %}
+                                                        <a href="/media/{{pdf.archivo}}" target="_blank" class="theme-btn btn-style-two btn-sm"><i class="fa fa-download"></i> Descargar</a>
+                                                    {% endfor %}
+                                                {% endif %}
+
 		                                        </div>
 		                                    </div>
 		                                </div>
+                                     {% endfor %}
 		                            </article>
 		                        </div>
                         	</div>

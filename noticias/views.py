@@ -5,6 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Noticias, Temas, PersonalLuciernaga
 from eventos.models import Eventos
 from videoteca.models import Videotecas
+from memorias.models import Memorias
 from videoteca.forms import BusquedaVideoteca
 from .forms import BusquedaNoticias, BusquedaEventos
 
@@ -22,27 +23,38 @@ class HomeView(TemplateView):
 
         return context
 
+class AcercaView(TemplateView):
+
+    template_name = 'acerca.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['memorias'] = Memorias.objects.all().order_by('-id')[:4]
+
+        return context
+
 class NoticiasListView(ListView):
     template_name = 'notas_lista.html'
     model = Noticias
+    queryset =  Noticias.objects.order_by('-fecha')
     form_class = BusquedaNoticias
     paginated_by = 12
 
-    def get_queryset(self):
-        params = {}
+    # def get_queryset(self):
+    #     params = {}
 
-        form = self.form_class(self.request.GET)
-        if form.is_valid():
-            params['titulo__icontains'] = form.cleaned_data['titulo']
-            unvalid_keys = []
-            for key in params:
-                if not params[key]:
-                    unvalid_keys.append(key)
+    #     form = self.form_class(self.request.GET)
+    #     if form.is_valid():
+    #         params['titulo__icontains'] = form.cleaned_data['titulo']
+    #         unvalid_keys = []
+    #         for key in params:
+    #             if not params[key]:
+    #                 unvalid_keys.append(key)
 
-            for key in unvalid_keys:
-                del params[key]
-            return Noticias.objects.filter(**params)
-        return Noticias.objects.all()
+    #         for key in unvalid_keys:
+    #             del params[key]
+    #         return Noticias.objects.filter(**params)
+    #     return Noticias.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -83,24 +95,25 @@ class NoticiaDetailView(DetailView):
 class EventosListView(ListView):
     template_name = 'eventos_lista.html'
     model = Eventos
+    queryset =  Eventos.objects.order_by('-fecha_inicio')
     form_class = BusquedaEventos
     paginated_by = 12
 
-    def get_queryset(self):
-        params = {}
+    # def get_queryset(self):
+    #     params = {}
 
-        form = self.form_class(self.request.GET)
-        if form.is_valid():
-            params['titulo__icontains'] = form.cleaned_data['titulo']
-            unvalid_keys = []
-            for key in params:
-                if not params[key]:
-                    unvalid_keys.append(key)
+    #     form = self.form_class(self.request.GET)
+    #     if form.is_valid():
+    #         params['titulo__icontains'] = form.cleaned_data['titulo']
+    #         unvalid_keys = []
+    #         for key in params:
+    #             if not params[key]:
+    #                 unvalid_keys.append(key)
 
-            for key in unvalid_keys:
-                del params[key]
-            return Eventos.objects.filter(**params)
-        return Eventos.objects.all()
+    #         for key in unvalid_keys:
+    #             del params[key]
+    #         return Eventos.objects.filter(**params)
+    #     return Eventos.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
