@@ -104,6 +104,16 @@
                                                 </td>
                                             </tr>
                                         {% endif %}
+                                        {% if object.subtema.all %}
+                                            <tr>
+                                                <td><STRONG>Sub-Temas</STRONG></td>
+                                                <td>
+                                                    {% for x in object.subtema.all %}
+                                                        {{x}}{% if forloop.last %}{%else%},{% endif %}
+                                                    {% endfor %}
+                                                </td>
+                                            </tr>
+                                        {% endif %}
                                         {% if object.pais_prod.all %}
                                             <tr>
                                                 <td><STRONG>País producción</STRONG></td>

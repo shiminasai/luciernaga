@@ -3,7 +3,8 @@ from import_export import resources
 from .models import ( Generos, Idiomas,
                                         Temas, Videotecas,
                                         Series, Pais,
-                                        EnlacePublicacion
+                                        EnlacePublicacion,
+                                        SubTemas,
                                     )
 from import_export.admin import ImportExportModelAdmin
 
@@ -44,6 +45,8 @@ class IdiomasAdmin(ImportExportModelAdmin):
 
 class TemasAdmin(ImportExportModelAdmin):
     resource_class = TemasResource
+    ordering = ['id']
+    search_fields = ['nombre']
 
 class SeriesAdmin(ImportExportModelAdmin):
     resource_class = SeriesResource
@@ -64,12 +67,29 @@ class VideotecasAdmin(ImportExportModelAdmin):
     list_display = ['cod_cat', 'titulo', 'genero']
     list_filter = ('genero', 'idioma',)
     search_fields = ('titulo', 'sintesis',)
+    autocomplete_fields = ['temas']
 
+    class Media:
+
+        css = {
+            "all": ('/static/css/bootstrap-multiselect.css', )
+        }
+        js = (
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+            '/static/js/bootstrap.min.js',
+            '/static/js/bootstrap-multiselect.js',
+            '/static/js/admin_subtemas.js',
+        )
+
+class SubTemasAdmin(admin.ModelAdmin):
+    list_display = ['tema','nombre']
+    list_display_links = ['tema','nombre']
 
 # Register your models here.
 admin.site.register(Generos, GenerosAdmin)
 admin.site.register(Idiomas, IdiomasAdmin)
 admin.site.register(Temas, TemasAdmin)
+admin.site.register(SubTemas, SubTemasAdmin)
 admin.site.register(Series, SeriesAdmin)
 admin.site.register(Pais, PaisAdmin)
 admin.site.register(Videotecas, VideotecasAdmin)

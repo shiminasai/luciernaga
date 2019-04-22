@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django import forms
-from .models import Generos, Series, Temas, Pais, Idiomas
+from .models import Generos, Series, Temas, Pais, Idiomas, Videotecas, SubTemas
 
 class BusquedaVideoteca(forms.Form):
     codigo_cat = forms.CharField(max_length=250, required=False)
@@ -12,3 +12,4 @@ class BusquedaVideoteca(forms.Form):
     pais = forms.ModelChoiceField(queryset=Pais.objects.all(), required=False)
     anio = forms.CharField(label='Año', max_length=250, required=False)
     idioma = forms.ModelChoiceField(queryset=Idiomas.objects.all(), required=False)
+

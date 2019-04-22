@@ -4,11 +4,11 @@ from django.views.generic import ListView, DetailView, TemplateView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Noticias, Temas, PersonalLuciernaga
 from eventos.models import Eventos
-from videoteca.models import Videotecas
+from videoteca.models import Videotecas, Temas, SubTemas
 from memorias.models import Memorias
 from videoteca.forms import BusquedaVideoteca
 from .forms import BusquedaNoticias, BusquedaEventos
-
+import json
 # Create your views here.
 
 class HomeView(TemplateView):
@@ -38,7 +38,7 @@ class NoticiasListView(ListView):
     model = Noticias
     queryset =  Noticias.objects.order_by('-fecha')
     form_class = BusquedaNoticias
-    paginated_by = 12
+    #paginated_by = 12
 
     # def get_queryset(self):
     #     params = {}
@@ -97,7 +97,7 @@ class EventosListView(ListView):
     model = Eventos
     queryset =  Eventos.objects.order_by('-fecha_inicio')
     form_class = BusquedaEventos
-    paginated_by = 12
+    #paginated_by = 12
 
     # def get_queryset(self):
     #     params = {}
@@ -157,7 +157,7 @@ class VideotecasListView(ListView):
     template_name = 'videoteca.html'
     model = Videotecas
     form_class = BusquedaVideoteca
-    paginate_by = 12
+    #paginate_by = 12
 
     def get_queryset(self):
         params = {}
@@ -262,3 +262,46 @@ class ContactenosView(TemplateView):
     #     object_list = paginator.page(paginator.num_pages)
 
     #return render(request, template, locals())
+
+class SearchResultsView(TemplateView):
+    template_name = "notas_lista.html"
+
+    def find_entries(self, query_string):
+        found_entries = None
+        if query_string:
+            entry_query_page = get_query(query_string, ['title','category', 'keywords', ])
+
+            found_entries = Study.objects.filter(entry_query_page).order_by('title')
+
+        return found_entries
+
+    def get_context_data(self, **kwargs):
+        context = super(SearchResultsView, self).get_context_data(**kwargs)
+        query_string = ''
+        if ('q' in self.request.GET) and self.request.GET['q'].strip():
+            query_string = self.request.GET['q']
+        context["all_found_entries"] = self.find_entries(query_string)
+
+        return context
+
+
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
+def get_subtemas(request):
+    '''Metodo para obtener los subtemas via Ajax segun los temas selectos'''
+    ids = request.GET.get('ids', '')
+    dicc = {}
+    resultado = []
+    if ids:
+        lista = ids.split(',')
+        for id in lista:
+            tema = get_object_or_404(Temas, pk=id)
+            subtema = SubTemas.objects.filter(tema__id=tema.pk).order_by('nombre')
+            for obj in subtema:
+                muni = {'id': obj.id, 'nombre': obj.nombre}
+                #if not muni in dicc[obj.tema.nombre]:
+                dicc[obj.tema.nombre] = muni
+
+    resultado.append(dicc)
+    print(resultado)
+    return HttpResponse(json.dumps(resultado), content_type='application/json')

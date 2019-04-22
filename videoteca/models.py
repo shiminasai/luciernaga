@@ -37,6 +37,19 @@ class Temas(models.Model):
     class Meta:
         verbose_name = 'Tema'
         verbose_name_plural = 'Temas'
+        ordering = ['-id']
+
+class SubTemas(models.Model):
+    tema = models.ForeignKey(Temas, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.nombre
+
+    class Meta:
+        verbose_name = 'Sub tema'
+        verbose_name_plural = 'Sub Temas'
+        ordering = ['-id']
 
 class Coleccion(models.Model):
     nombre = models.CharField(max_length=250)
@@ -94,7 +107,8 @@ class Videotecas(models.Model):
     serie = models.ForeignKey(Series, on_delete=models.CASCADE, null=True, blank=True)
     sintesis = models.TextField('Síntesis', null=True, blank=True)
     subtitulos = models.CharField('Subtítulos', max_length=250, null=True, blank=True)
-    temas = models.ManyToManyField(Temas, verbose_name='Temas finales', blank=True)
+    temas = models.ManyToManyField(Temas, verbose_name='Temas principales', blank=True)
+    subtema = models.ManyToManyField(SubTemas, verbose_name="Temas secundarios", blank=True )
     url_video = models.URLField(null=True, blank=True)
     imagen_portada = models.ImageField(null=True, blank=True)
     imagen_fill = models.ImageField(null=True, blank=True)

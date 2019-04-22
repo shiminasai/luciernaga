@@ -1,4 +1,5 @@
 from django.urls import path
+from django.conf.urls import url
 
 from . import views
 
@@ -24,4 +25,9 @@ urlpatterns = [
     #     views.CatalogoDetailView.as_view(), name='catalogos_detail'),
     #path('busqueda-videoteca',
     #    views.busqueda_videoteca, name='busqueda_videoteca'),
+    path(
+        'ajax/subtemas/',
+        views.get_subtemas,
+        name='get-subtemas',
+    ),
 ]
