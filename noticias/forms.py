@@ -7,3 +7,9 @@ class BusquedaNoticias(forms.Form):
 
 class BusquedaEventos(forms.Form):
     titulo = forms.CharField(max_length=250, required=False)
+
+class BusquedaPublicacion(forms.Form):
+    titulo = forms.CharField(max_length=250, required=False,
+                            widget=forms.TextInput(attrs={'class': "form-control",
+                                                   'placeholder':"Buscar..."})
+                            )

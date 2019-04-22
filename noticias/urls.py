@@ -20,7 +20,7 @@ urlpatterns = [
     path('contactenos/',
         views.ContactenosView.as_view(), name='contactenos'),
     path('publicaciones/',
-        views.PublicacionesListView.as_view(), name='publicaciones'),
+        views.PublicacionesListView.as_view(), name='publicaciones_list'),
     path('detalle-publicacion/<int:pk>-<str:slug>',
         views.PublicacionDetailView.as_view(), name='publicacion_detail'),
     #path('busqueda-videoteca',

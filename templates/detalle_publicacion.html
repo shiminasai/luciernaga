@@ -50,8 +50,8 @@
                                     </p>
                                 </div>
                                 <div class="pb-20">
-                                {% if object.archivoscatalogos_set.all %}
-                                    {% for obj in object.archivoscatalogos_set.all %}
+                                {% if object.archivospublicaciones_set.all %}
+                                    {% for obj in object.archivospublicaciones_set.all %}
                                         <a href="/media/{{obj.archivo}}" class="theme-btn btn-style-two">Descargar <span class="fa fa-download"></span></a>
                                     {% endfor %}
                                 {% endif %}
