@@ -25,15 +25,18 @@ marker.bindPopup("{{object.lugar}}").openPopup();
 
 {% block content %}
     <!--Page Title-->
-    <section class="page-title" style="background-image:url(/static/images/background/img.jpg);">
-    	<div class="auto-container">
-        	<div class="sec-title">
-                <h1><span class="normal-font">{{object.titulo}}</span></h1>
+{% for portada in  site_config.fotossecciones_set.all %}
+    {% if request.path == portada.url %}
+    <section class="page-title" style="background-image:url(/media/{{portada.foto}});">
+        <div class="auto-container">
+            <div class="sec-title">
+                <h1>{{portada.titulo}}</h1>
                 <div class="bread-crumb"><a href="/">Inicio</a> / <a href="/eventos/">Eventos</a></div>
             </div>
         </div>
     </section>
-
+    {% endif %}
+{% endfor %}
 
     <!--Sidebar Page-->
     <div class="sidebar-page">
@@ -110,7 +113,7 @@ marker.bindPopup("{{object.lugar}}").openPopup();
 
 
                                 </div>
-                                
+
 
                             </article>
                             <div class="post-share-options clearfix">
@@ -122,7 +125,7 @@ marker.bindPopup("{{object.lugar}}").openPopup();
                                 <div class="pull-right social-links-two clearfix">
                                     <a href="https://www.facebook.com/sharer.php?u=http://fundacionluciernaga.org{{request.path}}" class="facebook img-circle customer share"><span class="fa fa-facebook-f"></span></a>
                                     <a href="http://fundacionluciernaga.org{{request.path}}&amp;text={{object.titulo}}" class="twitter img-circle customer share"><span class="fa fa-twitter"></span></a>
-                                    
+
                                 </div>
                             </div>
                         </div>

@@ -28,15 +28,18 @@
 }
 </style> -->
     <!--Page Title-->
-    <section class="page-title" style="background-image:url(/static/images/background/img.jpg);">
-    	<div class="auto-container">
-        	<div class="sec-title">
+{% for portada in  site_config.fotossecciones_set.all %}
+    {% if request.path == portada.url %}
+    <section class="page-title" style="background-image:url(/media/{{portada.foto}});">
+        <div class="auto-container">
+            <div class="sec-title">
                 <h3 class="font-weight">{{object.titulo}}</h3>
-                <div class="bread-crumb"><a href="/">Inicio</a> / <a href="/videotecas/" class="current">Videoteca</a></div>
+               <div class="bread-crumb"><a href="/">Inicio</a> / <a href="/videotecas/" class="current">Videoteca</a></div>
             </div>
         </div>
     </section>
-
+    {% endif %}
+{% endfor %}
 
     <!--Team Section-->
     <section class="team-section member-details">

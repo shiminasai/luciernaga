@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'videoteca',
     'configuracion',
     'memorias',
+    'publicaciones',
 ]
 
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBdQtBr_qwV2fMWrT4FrzBOziYTw2odlVo'
