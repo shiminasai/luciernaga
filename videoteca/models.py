@@ -131,6 +131,7 @@ class Videotecas(models.Model):
     class Meta:
         verbose_name = 'Videoteca'
         verbose_name_plural = 'Videotecas'
+        ordering = ['-id']
 
 class EnlacePublicacion(models.Model):
     videoteca = models.ForeignKey(Videotecas, on_delete=models.CASCADE)

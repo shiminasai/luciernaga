@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, TemplateView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Q
 from .models import Noticias, Temas, PersonalLuciernaga
 from eventos.models import Eventos
 from videoteca.models import Videotecas, Temas, SubTemas
@@ -162,15 +163,19 @@ class VideotecasListView(ListView):
 
     def get_queryset(self):
         params = {}
+        queryset = Videotecas.objects.all()
+        conteo_final = Videotecas.objects.all().count()
+        frase = 'ÚLTIMAS PRODUCCIONES'
 
         form = self.form_class(self.request.GET)
         if form.is_valid():
             params['cod_cat__contains'] = form.cleaned_data['codigo_cat']
             if form.cleaned_data['titulo']:
-                print("si existe la busqueda")
-
-                params['titulo__icontains'] = form.cleaned_data['titulo']
-                params['sintesis__icontains'] = form.cleaned_data['titulo']
+                queryset = Videotecas.objects.filter(
+                            Q(titulo__icontains=form.cleaned_data['titulo']) |
+                            Q(sintesis__icontains=form.cleaned_data['titulo']) |
+                            Q(observaciones__icontains=form.cleaned_data['titulo'])
+                            )
             params['serie'] = form.cleaned_data['serie']
             params['genero'] = form.cleaned_data['genero']
             params['temas'] = form.cleaned_data['temas']
@@ -184,14 +189,21 @@ class VideotecasListView(ListView):
 
             for key in unvalid_keys:
                 del params[key]
-            print(Q(params))
-            #print(Videotecas.objects.filter(**params).count())
-            return Videotecas.objects.filter(Q(**params))
-        return Videotecas.objects.all()
+
+            if params or form.cleaned_data['titulo']:
+                conteo_final = len(queryset.filter(**params))
+                frase = 'RESULTADOS PRODUCCIONES'
+                aja = queryset.filter(**params)
+                return (aja, conteo_final, frase)
+        return (queryset, conteo_final, frase)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = BusquedaVideoteca()
+        algo = self.get_queryset()
+        context['object_list'] = algo[0]
+        context['conteo'] = algo[1]
+        context['frase'] = algo[2]
 
         return context
 
@@ -219,7 +231,6 @@ class PublicacionesListView(ListView):
     model = Publicaciones
     queryset =  Publicaciones.objects.order_by('-id')
     form_class = BusquedaPublicacion
-    #paginated_by = 12
 
     def get_queryset(self):
         params = {}
@@ -267,8 +278,6 @@ class PublicacionDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context['ultimas_noticias'] = Noticias.objects.exclude(pk=self.object.pk).order_by('-fecha')[:3]
-        # context['temas'] = Temas.objects.all()
         context['form'] = BusquedaPublicacion()
 
         return context
