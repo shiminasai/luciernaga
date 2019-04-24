@@ -1,7 +1,8 @@
 (function($) {
 
 var carlos = $('#id_subtema').select2('data');
-alert(carlos);
+var currentLocation = window.location.pathname.split('/');
+//alert(currentLocation[5]);
 
 var foo = [];
 $(document).on('change','#id_temas',function(){
@@ -13,7 +14,13 @@ $(document).on('change','#id_temas',function(){
 
     $.getJSON('/ajax/subtemas/?ids='+foo.join(","), function(data){
         //console.log(data);
-        $('#id_subtema').html('');
+        if (currentLocation[5] == 'change' )
+        {
+            $('#id_subtema').html('');
+        }else {
+            $('#id_subtema').html('');
+        }
+
         $('#id_subtema').select2();
         var subtemas = $('#id_subtema')
         if(data){
