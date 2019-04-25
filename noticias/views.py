@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, TemplateView
+from django.views.generic import ListView, DetailView, TemplateView, FormView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
+from django.core.mail import send_mail, BadHeaderError
 from .models import Noticias, Temas, PersonalLuciernaga
 from eventos.models import Eventos
 from videoteca.models import Videotecas, Temas, SubTemas
 from memorias.models import Memorias
 from videoteca.forms import BusquedaVideoteca
 from publicaciones.models import Publicaciones
-from .forms import BusquedaNoticias, BusquedaEventos, BusquedaPublicacion
+from .forms import BusquedaNoticias, BusquedaEventos, BusquedaPublicacion, ContactForm
 import json
 # Create your views here.
 
@@ -218,14 +219,6 @@ class VideotecaDetailView(DetailView):
 
         return context
 
-class ContactenosView(TemplateView):
-    template_name = 'contactenos.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['personal'] = PersonalLuciernaga.objects.all()
-        return context
-
 class PublicacionesListView(ListView):
     template_name = 'publicaciones.html'
     model = Publicaciones
@@ -282,69 +275,6 @@ class PublicacionDetailView(DetailView):
 
         return context
 
-
-# def busqueda_videoteca(request, template='videoteca_busqueda.html'):
-#     form = BusquedaVideoteca(request.POST or None)
-#     params = {}
-#     if request.method == 'POST':
-#         params['cod_cat__contains'] = request.POST.get('codigo_cat')
-#         params['titulo__icontains'] = request.POST.get('titulo')
-#         params['serie__id'] = request.POST.get('serie')
-#         params['genero__id'] = request.POST.get('genero')
-#         params['temas__id'] = request.POST.get('temas')
-#         params['pais__id'] = request.POST.get('pais')
-#         params['anio__icontains'] = request.POST.get('anio')
-#         params['idioma__id'] = request.POST.get('idioma')
-
-#     unvalid_keys = []
-#     for key in params:
-#         if not params[key]:
-#             unvalid_keys.append(key)
-
-#     for key in unvalid_keys:
-#         del params[key]
-
-#     print(params)
-
-#     videoteca_list = Videotecas.objects.filter(**params)
-#     print("------------")
-#     print(len(videoteca_list))
-#     print("------------")
-
-#     paginator = Paginator(videoteca_list, 12)
-#     page = request.GET.get('page')
-#     object_list = paginator.get_page(page)
-    # try:
-    #     object_list = paginator.page(page)
-    # except PageNotAnInteger:
-    #     object_list = paginator.page(1)
-    # except EmptyPage:
-    #     object_list = paginator.page(paginator.num_pages)
-
-    #return render(request, template, locals())
-
-class SearchResultsView(TemplateView):
-    template_name = "notas_lista.html"
-
-    def find_entries(self, query_string):
-        found_entries = None
-        if query_string:
-            entry_query_page = get_query(query_string, ['title','category', 'keywords', ])
-
-            found_entries = Study.objects.filter(entry_query_page).order_by('title')
-
-        return found_entries
-
-    def get_context_data(self, **kwargs):
-        context = super(SearchResultsView, self).get_context_data(**kwargs)
-        query_string = ''
-        if ('q' in self.request.GET) and self.request.GET['q'].strip():
-            query_string = self.request.GET['q']
-        context["all_found_entries"] = self.find_entries(query_string)
-
-        return context
-
-
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 def get_subtemas(request):
@@ -365,3 +295,29 @@ def get_subtemas(request):
     resultado.append(dicc)
     print(resultado)
     return HttpResponse(json.dumps(resultado), content_type='application/json')
+
+class ContactenosView(FormView):
+    form_class = ContactForm
+    template_name = 'contactenos.html'
+    success_url = '/contactenos/'
+
+    def form_valid(self, form):
+        self.send_mail(form.cleaned_data)
+        return super().form_valid(form)
+
+    def send_mail(self, valid_data):
+        message = "{name} / {email} dice: ".format(
+        name=valid_data['name'],
+        email=valid_data['email'])
+        message += "\n\n{0}".format(valid_data['message'])
+        send_mail(
+            subject='Contacto desde la web',
+            message=message,
+            from_email='noreply@fundacionluciernaga.org',
+            recipient_list=['crocha09.09@gmail.com'],
+        )
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['personal'] = PersonalLuciernaga.objects.all()
+        return context

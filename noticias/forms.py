@@ -13,3 +13,8 @@ class BusquedaPublicacion(forms.Form):
                             widget=forms.TextInput(attrs={'class': "form-control",
                                                    'placeholder':"Buscar..."})
                             )
+
+class ContactForm(forms.Form):
+    name = forms.CharField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Nombre'}))
+    email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'placeholder': 'Correo'}))
+    message = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Mensaje'}))

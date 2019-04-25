@@ -69,19 +69,20 @@
                 	<h2>Comunícate con nosotros </h2>
                 	<!--COntact Form-->
                 	<div class="inner-box contact-form">
-                    	<form method="post" action="sendemail.php" id="contact-form">
+                    	<form method="post" action="." id="contact-form">
+                            {% csrf_token %}
                         	<div class="row clearfix">
                             	<!--Form Group-->
                                 <div class="form-group col-md-6 col-xs-12">
-                                	<input type="text" name="username" value="" placeholder="Nombre">
+                                    {{form.name}}
                                 </div>
                                 <!--Form Group-->
                                 <div class="form-group col-md-6 col-xs-12">
-                                	<input type="text" name="email" value="" placeholder="Correo">
+                                    {{form.email}}
                                 </div>
                                 <!--Form Group-->
                                 <div class="form-group col-md-12 col-xs-12">
-                                	<textarea name="message" placeholder="Mensaje"></textarea>
+                                    {{form.message}}
                                 </div>
 
                                 <!--Form Group-->
