@@ -25,6 +25,10 @@ class TemasResource(resources.ModelResource):
     class Meta:
         model = Temas
 
+class SubTemasResource(resources.ModelResource):
+    class Meta:
+        model = SubTemas
+
 class SeriesResource(resources.ModelResource):
     class Meta:
         model = Series
@@ -81,7 +85,10 @@ class VideotecasAdmin(ImportExportModelAdmin):
             '/static/js/admin_subtemas.js',
         )
 
-class SubTemasAdmin(admin.ModelAdmin):
+class SubTemasAdmin(ImportExportModelAdmin):
+    resource_class = SubTemasResource
+    ordering = ['id']
+    search_fields = ['nombre']
     list_display = ['tema','nombre']
     list_display_links = ['tema','nombre']
 
