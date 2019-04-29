@@ -6,7 +6,7 @@ var foo = [];
 $(document).on('change','#id_temas',function(){
 
     var count = $('#id_subtema option:selected').length;
-    console.log(count);
+    //console.log(count);
 
     $('#id_temas :selected').each(function(i, selected){
         foo[i] = $(selected).val();
@@ -28,8 +28,10 @@ $(document).on('change','#id_temas',function(){
            $.each(data, function(i, item){
             $.each(item, function(j, item2){
                 var group = $('<optgroup></optgroup>').attr('label', j);
-                group.append($('<option></option>').val(item2.id).html(item2.nombre));
-
+                //group.append($('<option></option>').val(item2.id).html(item2.nombre));
+                $.each(item2, function(k, item3){
+                    group.append($('<option></option>').val(item3.id).html(item3.nombre));
+                });
                 group.appendTo(subtemas);
                 $('#id_subtema').select2();
             });
