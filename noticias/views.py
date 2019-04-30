@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, TemplateView, FormView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
@@ -275,8 +276,6 @@ class PublicacionDetailView(DetailView):
 
         return context
 
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404
 def get_subtemas(request):
     '''Metodo para obtener los subtemas via Ajax segun los temas selectos'''
     ids = request.GET.get('ids', '')
@@ -285,15 +284,20 @@ def get_subtemas(request):
     if ids:
         lista = ids.split(',')
         for id in lista:
-            tema = get_object_or_404(Temas, pk=id)
-            subtema = SubTemas.objects.filter(tema__id=tema.pk).order_by('nombre')
-            for obj in subtema:
+            try:
+                tema = get_object_or_404(Temas, pk=id)
+                subtemas = SubTemas.objects.filter(tema__id=tema.pk).order_by('nombre')
+            except:
+                pass
+            for obj in subtemas:
+                dicc[obj.tema.nombre] = []
+            for obj in subtemas:
                 muni = {'id': obj.id, 'nombre': obj.nombre}
-                #if not muni in dicc[obj.tema.nombre]:
-                dicc[obj.tema.nombre] = muni
+                if not muni in dicc[obj.tema.nombre]:
+                    dicc[obj.tema.nombre].append(muni)
 
     resultado.append(dicc)
-    print(resultado)
+    #print(resultado)
     return HttpResponse(json.dumps(resultado), content_type='application/json')
 
 class ContactenosView(FormView):
