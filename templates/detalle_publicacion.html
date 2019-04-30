@@ -49,6 +49,18 @@
                                        {{object.sinopsis|safe}}
                                     </p>
                                 </div>
+                                <table class="table">
+                                    <tbody>
+                                        {% if object.enlacevideoteca_set.all %}
+                                                <td><STRONG>Video relacionado</STRONG></td>
+                                                <td>
+                                                    {% for x in object.enlacevideoteca_set.all %}
+                                                        <a href="{{x.url}}" class="theme_color">{{x.nombre}}</a>{% if forloop.last %}{%else%},{% endif %}
+                                                    {% endfor %}
+                                                </td>
+                                        {% endif %}
+                                    </tbody>
+                                </table>
                                 <div class="pb-20">
                                 {% if object.archivospublicaciones_set.all %}
                                     {% for obj in object.archivospublicaciones_set.all %}
