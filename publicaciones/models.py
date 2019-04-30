@@ -37,3 +37,15 @@ class ArchivosPublicaciones(models.Model):
     class Meta:
         verbose_name = 'Archivo para publicación'
         verbose_name_plural = 'Archivos para las publicaciones'
+
+class EnlaceVideoteca(models.Model):
+    publicacion = models.ForeignKey(Publicaciones, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=250)
+    url = models.URLField()
+
+    def __str__(self):
+        return self.url
+
+    class Meta:
+        verbose_name = 'Enlace Videoteca'
+        verbose_name_plural = 'Enlaces Videotecas'

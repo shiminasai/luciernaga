@@ -135,6 +135,7 @@ class Videotecas(models.Model):
 
 class EnlacePublicacion(models.Model):
     videoteca = models.ForeignKey(Videotecas, on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=250, null=True)
     url = models.URLField()
 
     def __str__(self):
