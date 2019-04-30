@@ -49,10 +49,14 @@
                     <article class="inner-box wow fadeInUp mb-10" data-wow-delay="300ms" data-wow-duration="1500ms">
                     {% if obj.portada %}
                         {% thumbnail obj.portada "270x375" crop="center" as im %}
-                            <img src="{{im.url}}" alt="{{obj.titulo}}" width="100%">
+                            <a href="{% url 'publicacion_detail' obj.id obj.slug %}">
+                                <img src="{{im.url}}" alt="{{obj.titulo}}" width="100%">
+                            </a>
                         {% endthumbnail %}
                     {% else %}
-                        <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="{{obj.titulo}}" width="100%">
+                        <a href="{% url 'publicacion_detail' obj.id obj.slug %}">
+                            <img src="http://fundacionluciernaga.org/files/edcaa645069d395992272ab8301c2549578.jpg" alt="{{obj.titulo}}" width="100%">
+                        </a>
                     {% endif %}
                         <div class="content-box">
                             <h3><a href="{% url 'publicacion_detail' obj.id obj.slug %}">{{obj.titulo}}</a></h3>
