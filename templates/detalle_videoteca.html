@@ -101,21 +101,19 @@
                                             <tr>
                                                 <td><STRONG>Temas</STRONG></td>
                                                 <td>
-                                                   <p>HISTORIA Y POLÍTICA:Procesos de cambio social, Historia de América, Derechos indígenas</p>
-                                                   <p>DERECHOS HUMANOS: Derechos indígenas, resistencia, lucha por la tierra, Derechos del niño y la niña</p>
+                                                   <p>
+                                                    {% for tema in object.temas.all %}
+                                                       <strong>{{tema}}:</strong>
+                                                       {% for subtema in object.subtema.all %}
+                                                           {% if subtema.tema == tema %}
+                                                               {{subtema}}{% if forloop.last %}{%else%},{% endif %}
+                                                           {% endif %}
+                                                       {% endfor %}
+                                                    {% endfor %}</p>
                                                 </td>
                                             </tr>
                                         {% endif %}
-                                        <!--{% if object.subtema.all %}
-                                            <tr>
-                                                <td><STRONG>Sub-Temas</STRONG></td>
-                                                <td>
-                                                    {% for x in object.subtema.all %}
-                                                        {{x}}{% if forloop.last %}{%else%},{% endif %}
-                                                    {% endfor %}
-                                                </td>
-                                            </tr>
-                                        {% endif %}-->
+
                                         {% if object.pais_prod.all %}
                                             <tr>
                                                 <td><STRONG>País producción</STRONG></td>
@@ -206,14 +204,14 @@
                                                         {{x.url}}{% if forloop.last %}{%else%},{% endif %}
                                                     {% endfor %}
                                                 </td>
-                                            
+
                                             </tr>
                                         {% endif %}
 
 
                                     </tbody>
                                 </table>
-                             
+
                                 <div class="pb-20">
                                 {% if object.guiasdidacticas_set.all %}
                                     {% for obj in object.guiasdidacticas_set.all %}
