@@ -44,9 +44,9 @@ INSTALLED_APPS = [
     'configuracion',
     'memorias',
     'publicaciones',
-    'compressor',
-    'cssmin',
-    'jsmin',
+    # 'compressor',
+    # 'cssmin',
+    # 'jsmin',
 ]
 
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBdQtBr_qwV2fMWrT4FrzBOziYTw2odlVo'
@@ -137,20 +137,20 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_media"),
 ]
 
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    # other finders..
-    'compressor.finders.CompressorFinder',
-)
-COMPRESS_ENABLED = True
-COMPRESS_ROOT = STATIC_ROOT
-COMPRESS_OFFLINE = True
+# STATICFILES_FINDERS = (
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#     # other finders..
+#     'compressor.finders.CompressorFinder',
+# )
+# COMPRESS_ENABLED = True
+# COMPRESS_ROOT = STATIC_ROOT
+# COMPRESS_OFFLINE = True
 
-if not COMPRESS_ENABLED:
-       COMPRESS_ENABLED = True
-       COMPRESS_CSS_FILTERS = ["compressor.filters.cssmin.CSSMinFilter"]
-       COMPRESS_JS_FILTERS = ["compressor.filters.jsmin.JSMinFilter"]
+# if not COMPRESS_ENABLED:
+#        COMPRESS_ENABLED = True
+#        COMPRESS_CSS_FILTERS = ["compressor.filters.cssmin.CSSMinFilter"]
+#        COMPRESS_JS_FILTERS = ["compressor.filters.jsmin.JSMinFilter"]
 
 LOCATION_FIELD_PATH = STATIC_URL + 'location_field'
 
