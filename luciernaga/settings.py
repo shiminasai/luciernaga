@@ -44,9 +44,9 @@ INSTALLED_APPS = [
     'configuracion',
     'memorias',
     'publicaciones',
-    # 'compressor',
-    # 'cssmin',
-    # 'jsmin',
+    'compressor',
+    'cssmin',
+    'jsmin',
 ]
 
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyBdQtBr_qwV2fMWrT4FrzBOziYTw2odlVo'
@@ -137,14 +137,14 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static_media"),
 ]
 
-# STATICFILES_FINDERS = (
-#     'django.contrib.staticfiles.finders.FileSystemFinder',
-#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#     # other finders..
-#     'compressor.finders.CompressorFinder',
-# )
-# COMPRESS_ENABLED = True
-# COMPRESS_ROOT = STATIC_ROOT
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+COMPRESS_ENABLED = True
+COMPRESS_ROOT = STATIC_ROOT
 
 # if not COMPRESS_ENABLED:
 #        COMPRESS_ENABLED = True
