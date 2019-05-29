@@ -3,16 +3,16 @@
     <meta property="og:title" content="{{object.titulo}}" />
 
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="http://fundacionluciernaga.org/media/{{object.portada}}">
+    <meta property="og:image" content="https://fundacionluciernaga.org/media/{{object.portada}}">
     <meta property="og:image:width" content="300" />
     <meta property="og:image:height" content="300" />
     <meta property="og:description" content="{{object.contenido|striptags}}" />
-    <meta property="og:url" content="http://fundacionluciernaga.org{{request.path}}" />
+    <meta property="og:url" content="https://fundacionluciernaga.org{{request.path}}" />
     <meta property="og:locale" content="es_ES" />
 
     <meta name="twitter:title" content="{{object.titulo}}">
     <meta name="twitter:description" content="{{object.contenido|striptags}}">
-    <meta name="twitter:image" content="http://fundacionluciernaga.org/media/{{object.portada}}">
+    <meta name="twitter:image" content="https://fundacionluciernaga.org/media/{{object.portada}}">
     <meta name="twitter:site" content="@LUCIÉRNAGA">
     <meta name="twitter:creator" content="@LUCIÉRNAGA">
 {% endblock share_fb %}
@@ -69,8 +69,8 @@
                                         {% endfor %}
                                     </div>
                                     <div class="pull-right social-links-two clearfix">
-                                    	<a href="https://www.facebook.com/sharer.php?u=http://fundacionluciernaga.org{{request.path}}" class="facebook img-circle customer share"><span class="fa fa-facebook-f"></span></a>
-                                        <a href="http://fundacionluciernaga.org{{request.path}}&amp;text={{object.titulo}}" class="twitter img-circle customer share"><span class="fa fa-twitter"></span></a>
+                                    	<a href="https://www.facebook.com/sharer.php?u=https://fundacionluciernaga.org{{request.path}}" class="facebook img-circle customer share"><span class="fa fa-facebook-f"></span></a>
+                                        <a href="https://fundacionluciernaga.org{{request.path}}&amp;text={{object.titulo}}" class="twitter img-circle customer share"><span class="fa fa-twitter"></span></a>
 
                                     </div>
                                 </div>

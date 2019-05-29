@@ -104,7 +104,7 @@
                                         <a href="{% url 'noticia_detail' nota.id nota.slug %}"><img src="{{ im.url }}" alt="{{nota.titulo}}"></a>
                                     {% endthumbnail %}
                                 {% else %}
-                                        <a href="{% url 'noticia_detail' nota.id nota.slug %}"><img src="https://fundacionluciernaga.org/fotograma(1).jpeg" alt="{{nota.titulo}}"></a>
+                                        <a href="{% url 'noticia_detail' nota.id nota.slug %}"><img src="https://via.placeholder.com/350x250" alt="{{nota.titulo}}"></a>
                                 {% endif %}
                                     <div class="news-date">{{nota.fecha|date:"d"}}<span class="month">{{nota.fecha|date:"M"}}</span></div>
                                 </figure>
@@ -138,7 +138,7 @@
                                                 <img src="{{im.url}}" alt="{{evento.titulo}}">
                                             {% endthumbnail %}
                                             {% else %}
-                                                <img src="https://fundacionluciernaga.org/img.php?i=files/5e05d022a820a15893d719cd553a8930753.jpg&width=120" alt="{{evento.titulo}}">
+                                                <img src="https://via.placeholder.com/120x71" alt="{{evento.titulo}}">
                                             {% endif %}
                                             </figure>
                                             <h4 class="title">{{evento.titulo}}</h4>
@@ -172,7 +172,7 @@
 
 
     <!--Main Features-->
-    <section class="main-features parallax-section theme-overlay overlay-deep-white" style="background-image:url(https://fundacionluciernaga.org/img.php?i=files/59d4ee99ca2cad34bb3fdaff5cfb8d9e130.jpg&width=1024);">
+    <section class="main-features parallax-section theme-overlay overlay-deep-white" style="background-image:url(static/images/background/img.jpg);">
         <div class="auto-container">
             <div class="title-box text-center mb-0">
                 <h1 class="fs-36 mb-15">Videoteca Casa Luciérnaga</h1>
