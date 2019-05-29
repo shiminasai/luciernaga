@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-{% load static solo_tags %}
-{% load sitetree %}
+{% load static solo_tags sitetree compress %}
 <html>
 <head>
     {% get_solo 'configuracion.SiteConfiguration' as site_config %}
@@ -14,21 +13,21 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-
-<!-- Stylesheets -->
-<link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
-<link href="{% static 'css/revolution-slider.css' %}" rel="stylesheet">
-<link href="{% static 'css/style.css' %}" rel="stylesheet">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<!-- Stylesheets -->
+
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'css/revolution-slider.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
 <link href="{% static 'css/bootstrap-margin-padding.css' %}" rel="stylesheet">
 <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
-
 <link href="{% static 'css/video.css' %}" rel="stylesheet">
 <link href="{% static 'css/xs-menu.css' %}" rel="stylesheet">
-
 <link href="{% static 'css/costume.css' %}" rel="stylesheet">
+
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
@@ -193,6 +192,7 @@
 <!--Scroll to top-->
 <div class="scroll-to-top scroll-to-target" data-target=".page-wrapper"><span class="fa fa-long-arrow-up"></span></div>
 
+
 <script src="{% static 'js/jquery.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/revolution.min.js' %}"></script>
@@ -205,8 +205,9 @@
 <script src="{% static 'js/circle-progress.js' %}"></script>
 <script src="{% static 'js/jquery.appear.js' %}"></script>
 <script src="{% static 'js/jquery.countTo.js' %}"></script>
-
 <script src="{% static 'js/script.js' %}"></script>
+
+
 <script src="https://cdn.plyr.io/3.4.3/plyr.js"></script>
 <script>const players = Plyr.setup('.js-player');</script>
 {% block extra_js %}{% endblock extra_js %}
