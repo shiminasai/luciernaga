@@ -24,6 +24,7 @@ class HomeView(TemplateView):
         context['noticias'] = Noticias.objects.all().order_by('-fecha')[:4]
         context['eventos'] = Eventos.objects.all().order_by('-fecha_inicio')[:8]
         context['videotecas'] = Videotecas.objects.all().order_by('-id')[:8]
+        context['total_videoteca'] = Videotecas.objects.count()
 
         return context
 
