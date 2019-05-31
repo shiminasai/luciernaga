@@ -19,6 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from filebrowser.sites import site
 from noticias.views import AcercaView
+from django.views.generic import TemplateView
 
 admin.site.site_title = "Sitio Administrativo de Luciérnaga"
 admin.site.site_header = "Luciérnaga Administración"
@@ -31,6 +32,7 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('pages/', include('django.contrib.flatpages.urls')),
     path('acerca-de/', AcercaView.as_view()),
+    path('404/', TemplateView.as_view(template_name="404.html"), name="404")
 
 ]
 
