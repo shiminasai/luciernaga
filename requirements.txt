@@ -3,7 +3,7 @@ chardet==3.0.4
 cssmin==0.2.0
 diff-match-patch==20121119
 dj-places==3.1.0
-Django==2.1.1
+Django==2.2.13
 django-appconf==1.0.3
 #django-compressor==2.2
 django-el-pagination==3.2.4
