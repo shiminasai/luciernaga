@@ -28,7 +28,7 @@ openpyxl==2.5.8
 Pillow==5.2.0
 psycopg2-binary==2.7.6
 pytz==2018.5
-PyYAML==3.13
+PyYAML==5.4
 #rcssmin==1.0.6
 requests==2.20.1
 #rjsmin==1.0.12
